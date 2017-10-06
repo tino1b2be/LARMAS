@@ -1,9 +1,20 @@
-from datetime import datetime
-
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.timezone import now
 
 from user.models import Language
+
+
+class Frequency(models.Model):
+    """
+    Model to store the minimum and maximum number of recordings for annotations.
+    """
+    max = models.IntegerField()
+    min = models.IntegerField()
+    date = models.DateTimeField(default=now)
+
+    def __str__(self):
+        return 'min=' + str(self.min) + '; max=' + str(self.max)
 
 
 class Annotation(models.Model):
@@ -29,7 +40,7 @@ class AnnotationRecording(models.Model):
     recording_url = models.TextField()
     annotation = models.ForeignKey(Annotation)
     quality = models.IntegerField(default=0)
-    date = models.DateTimeField(default=datetime.now())
+    date = models.DateTimeField(default=now)
     user = models.ForeignKey(User, blank=False)
     # todo implement checks
 
@@ -50,6 +61,7 @@ class AnnotationTranslation(models.Model):
     verified = models.BooleanField(default=False)
     language = models.ForeignKey(Language, blank=False)
     user = models.ForeignKey(User, blank=False)
+    date = models.DateTimeField(default=now)
     # todo implement checks
 
     def __str__(self):
