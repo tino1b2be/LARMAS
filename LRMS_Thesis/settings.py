@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'lrms',
     'user',
+    'annotations',
 ]
 
 MIDDLEWARE = [
