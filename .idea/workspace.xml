@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5cc220-cddd-4429-8fd5-1190779044ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/annotations/serializers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/views.py" afterPath="$PROJECT_DIR$/annotations/views.py" />
@@ -479,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507385839598</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Created serializer classes for Annotations and User">
+      <created>1507385900023</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1507385900023</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -552,7 +557,8 @@
     <MESSAGE value="Created new URLS for REST end-points.&#10;Created views for User (not implemented)" />
     <MESSAGE value="added ordering constraint in annotations.&#10;added a new language code field to language&#10;Created migrations" />
     <MESSAGE value="Added databases to the admin panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added databases to the admin panel" />
+    <MESSAGE value="Created serializer classes for Annotations and User" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created serializer classes for Annotations and User" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
