@@ -1,6 +1,8 @@
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.response import Response
 from rest_framework.status import \
-    HTTP_201_CREATED, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL_SERVER_ERROR
+    HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
+    HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK
 from rest_framework.views import APIView
 from LRMS_Thesis.settings import DEBUG
 from annotations.models import Annotation
@@ -23,7 +25,7 @@ class AnnotationsList(APIView):
 
         annotations = Annotation.objects.all()
         serializer = AnnotationSerializer(annotations, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=HTTP_200_OK)
 
     def post(self, request):
         """
@@ -50,13 +52,18 @@ class AnnotationsList(APIView):
         try:
             language = Language.objects.get(code=request.data['language'])
             text = request.data['text']
+            if len(text) < 2:
+                data = {
+                    'message': 'Annotation is too short',
+                }
+                return Response(data, status=HTTP_400_BAD_REQUEST)
             annotation = Annotation(text=text, language=language)
             annotation.save()
             serializer = AnnotationSerializer(annotation)
             return Response(serializer.data, status=HTTP_201_CREATED)
-        except Annotation.DoesNotExist:
+        except ObjectDoesNotExist:
             data = {
-                'message': 'That language goes not exist',
+                'message': 'That language is not supported.',
             }
             return Response(data, status=HTTP_400_BAD_REQUEST)
         except Exception as e:
