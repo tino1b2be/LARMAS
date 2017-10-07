@@ -16,6 +16,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     """
     Serializer class for the User Profile Model
     """
+    user = serializers.SlugRelatedField(slug_field='username', read_only=True)
 
     class Meta:
         model = UserProfile
