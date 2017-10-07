@@ -12,7 +12,7 @@ class UserRegistration(TestCase):
         data = {}
         # todo populate data object to register new user
         response = self.client.post(reverse('user:create_user'), data)
-        self.assertEquals(response.status_code, 403)
+        self.assertEquals(response.status_code, 400)
 
 
 class User(TestCase):
