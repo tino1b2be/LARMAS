@@ -8,14 +8,14 @@ class AnnotationSerializer(serializers.ModelSerializer):
     """
     language = serializers.SlugRelatedField(slug_field='name', read_only=True)
 
-    def create(self, validated_data):
-        return Annotation.objects.create(**validated_data)
-
-    def update(self, instance, validated_data):
-        instance.text = validated_data.get('text', instance.text)
-        instance.language = validated_data.get('language', instance.language)
-        instance.save()
-        return instance
+    # def create(self, validated_data):
+    #     return Annotation.objects.create(**validated_data)
+    #
+    # def update(self, instance, validated_data):
+    #     instance.text = validated_data.get('text', instance.text)
+    #     instance.language = validated_data.get('language', instance.language)
+    #     instance.save()
+    #     return instance
 
     class Meta:
         model = Annotation

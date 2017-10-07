@@ -32,10 +32,7 @@ class Annotation(models.Model):
         ordering = ('number_of_recordings',)
 
     def __str__(self):
-        return self.language.name \
-               + ' - "' \
-               + self.text \
-               + '"'
+        return self.language.name + ' - "' + self.text + '"'
 
 
 class AnnotationRecording(models.Model):
@@ -52,9 +49,7 @@ class AnnotationRecording(models.Model):
     def __str__(self):
         # <language_name> - <annotation_text>
         return self.annotation.language.name \
-               + ' - "' \
-               + self.annotation.text \
-               + '"'
+               + ' - "' + self.annotation.text + '"'
 
 
 class AnnotationTranslation(models.Model):
@@ -72,5 +67,4 @@ class AnnotationTranslation(models.Model):
     def __str__(self):
         # <old_language> to <new_language>
         return self.original_annotation.language.name \
-               + ' to ' \
-               + self.language.name
+               + ' to ' + self.language.name

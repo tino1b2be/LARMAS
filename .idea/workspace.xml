@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5cc220-cddd-4429-8fd5-1190779044ee" name="Default" comment="Added place holder responses to the User and UserRegistration geta nd post methods.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lrms/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lrms/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lrms/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lrms/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lrms/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lrms/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lrms/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lrms/views.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LRMS_Thesis/settings.py" afterPath="$PROJECT_DIR$/LRMS_Thesis/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/models.py" afterPath="$PROJECT_DIR$/annotations/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/serializers.py" afterPath="$PROJECT_DIR$/annotations/serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
@@ -590,7 +581,21 @@
       <option name="project" value="LOCAL" />
       <updated>1507391668882</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Deleted the lrms app (not being used)">
+      <created>1507393343196</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1507393343196</updated>
+    </task>
+    <task id="LOCAL-00024" summary="deleted lrms app (not being used)">
+      <created>1507393399762</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1507393399762</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -627,10 +632,10 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.50342464" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2424569" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2424569" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34051725" sideWeight="0.49657536" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2631579" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2631579" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15522985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -702,7 +707,9 @@
     <MESSAGE value="Created test cases for User.views" />
     <MESSAGE value="Created test cases for User.views. Some not yet implemented." />
     <MESSAGE value="Added place holder responses to the User and UserRegistration geta nd post methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added place holder responses to the User and UserRegistration geta nd post methods." />
+    <MESSAGE value="Deleted the lrms app (not being used)" />
+    <MESSAGE value="deleted lrms app (not being used)" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted lrms app (not being used)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
