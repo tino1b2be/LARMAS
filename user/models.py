@@ -7,7 +7,7 @@ class Language(models.Model):
     Model to store language data
     """
     name = models.CharField(max_length=45)
-    code = models.CharField(max_length=10)
+    code = models.CharField(max_length=10, unique=True)
     region = models.CharField(max_length=45, blank=True)
 
     def __str__(self):
@@ -19,7 +19,7 @@ class UserProfile(models.Model):
     Model to store details about the users
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    age = models.IntegerField(null=False)
+    age = models.IntegerField(default=0, blank=True)
     first_language = models.ForeignKey(
         Language,
         blank=False,
@@ -27,12 +27,10 @@ class UserProfile(models.Model):
     )
     second_language = models.ForeignKey(
         Language,
-        blank=False,
         related_name='second_language'
     )
     third_language = models.ForeignKey(
         Language,
-        blank=False,
         related_name='third_language'
     )
 
