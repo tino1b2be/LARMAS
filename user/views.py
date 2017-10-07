@@ -1,7 +1,13 @@
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.status import HTTP_403_FORBIDDEN, HTTP_400_BAD_REQUEST
+from rest_framework.status import HTTP_403_FORBIDDEN,\
+    HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_500_INTERNAL_SERVER_ERROR
+
+from LRMS_Thesis.settings import DEBUG
+from user.models import Language, UserProfile
+from user.serializers import UserProfileSerializer
 
 
 class UserView(APIView):
@@ -49,8 +55,9 @@ class UserRegistration(APIView):
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         # check if first language is valid
-        if not request.data.__contains__('first_language'):
-            data['message'] = 'first_language field is required'
+        code = request.data['language']
+        if not Language.objects.filter(code=code).exists():
+            data['message'] = 'first_language entered does not exist'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         try:
@@ -65,11 +72,50 @@ class UserRegistration(APIView):
             new_user.save()
 
             # create profile
-            # todo create corresponding user profile
-            # new_profile = UserProfile(
-            #
-            # )
-        except:
-            pass
+            new_profile = UserProfile(
+                user=new_user,
+                first_language=code,
+            )
+            try:
+                code = request.data.get('second_language', 'X')
+                if code == 'X':
+                    # second language not entered.
+                    new_profile.save()
+                    data['message'] = code + ' language is invalid.'
+                    s = UserProfileSerializer(new_profile)
+                    return Response(s.data, status=HTTP_201_CREATED)
 
-        return Response({}, status=HTTP_403_FORBIDDEN)
+                # second language entered
+                second_language = Language.objects.get(code=code)
+                new_profile.second_language = second_language
+
+                # add third language
+                code = request.data.get('third_language', 'X')
+                if code == 'X':
+                    # third language not entered.
+                    new_profile.save()
+                    data['message'] = code + ' language is invalid.'
+                    s = UserProfileSerializer(new_profile)
+                    return Response(s.data, status=HTTP_201_CREATED)
+
+                # third language entered
+                third_language = Language.objects.get(code=code)
+                new_profile.third_language = third_language
+                new_profile.save()
+                s = UserProfileSerializer(new_profile)
+                return Response(s, status=HTTP_201_CREATED)
+
+            except ObjectDoesNotExist:
+                new_user.delete()
+                data['message'] = 'language is invalid'
+                return Response(data, status=HTTP_400_BAD_REQUEST)
+
+            except Exception as e:
+                # todo log
+                data['message'] = str(e) if DEBUG else 'Something went wrong'
+                return Response(data, status=HTTP_400_BAD_REQUEST)
+
+        except Exception as e2:
+            # todo log
+            data['message'] = str(e2) if DEBUG else 'Something went wrong'
+            return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
