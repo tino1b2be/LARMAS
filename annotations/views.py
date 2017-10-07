@@ -2,7 +2,6 @@ from rest_framework.response import Response
 from rest_framework.status import \
     HTTP_201_CREATED, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL_SERVER_ERROR
 from rest_framework.views import APIView
-
 from LRMS_Thesis.settings import DEBUG
 from annotations.models import Annotation
 from annotations.serializers import AnnotationSerializer
@@ -59,7 +58,7 @@ class AnnotationsList(APIView):
             data = {
                 'message': 'That language goes not exist',
             }
-            return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(data, status=HTTP_400_BAD_REQUEST)
         except Exception as e:
             message = str(e) if DEBUG else 'An error has occurred'
             data = {
