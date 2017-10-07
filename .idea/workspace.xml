@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5cc220-cddd-4429-8fd5-1190779044ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/annotations/migrations/0005_auto_20171007_1058.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/annotations/serializers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/annotations/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/migrations/0002_language_code.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/serializers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LRMS_Thesis/urls.py" afterPath="$PROJECT_DIR$/LRMS_Thesis/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/admin.py" afterPath="$PROJECT_DIR$/annotations/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/models.py" afterPath="$PROJECT_DIR$/annotations/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/tests.py" afterPath="$PROJECT_DIR$/annotations/tests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/views.py" afterPath="$PROJECT_DIR$/annotations/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lrms/admin.py" afterPath="$PROJECT_DIR$/lrms/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lrms/models.py" afterPath="$PROJECT_DIR$/lrms/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lrms/tests.py" afterPath="$PROJECT_DIR$/lrms/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lrms/views.py" afterPath="$PROJECT_DIR$/lrms/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/admin.py" afterPath="$PROJECT_DIR$/user/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/models.py" afterPath="$PROJECT_DIR$/user/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/tests.py" afterPath="$PROJECT_DIR$/user/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/views.py" afterPath="$PROJECT_DIR$/user/views.py" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -461,7 +444,42 @@
       <option name="project" value="LOCAL" />
       <updated>1507301509880</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Removed unused imports">
+      <created>1507385522251</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1507385522252</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Removed unused imports">
+      <created>1507385609431</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1507385609431</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Created new URLS for REST end-points.&#10;Created views for User (not implemented)">
+      <created>1507385712993</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1507385712993</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added ordering constraint in annotations.&#10;added a new language code field to language&#10;Created migrations">
+      <created>1507385809773</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1507385809773</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added databases to the admin panel">
+      <created>1507385839598</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1507385839598</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -530,7 +548,11 @@
     <MESSAGE value="Changed the default time to Django.utils.timezone instead of using pythons datetime class.&#10;Created new migrations." />
     <MESSAGE value="Added the annotations app to the settings.&#10;added swift library to pip requirements&#10;created config file for flake" />
     <MESSAGE value="Updated the MySQL workbench database schema" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the MySQL workbench database schema" />
+    <MESSAGE value="Removed unused imports" />
+    <MESSAGE value="Created new URLS for REST end-points.&#10;Created views for User (not implemented)" />
+    <MESSAGE value="added ordering constraint in annotations.&#10;added a new language code field to language&#10;Created migrations" />
+    <MESSAGE value="Added databases to the admin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added databases to the admin panel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -715,7 +737,7 @@
         <state relative-caret-position="378">
           <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
-            <element signature="e#22#31#0" expanded="true" />
+            <element signature="e#22#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -725,7 +747,7 @@
         <state relative-caret-position="414">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#645#686#0" expanded="true" />
+            <element signature="e#645#686#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -743,7 +765,7 @@
         <state relative-caret-position="144">
           <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -771,7 +793,7 @@
         <state relative-caret-position="90">
           <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -829,7 +851,7 @@
         <state relative-caret-position="144">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -839,7 +861,7 @@
         <state relative-caret-position="180">
           <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -849,7 +871,7 @@
         <state relative-caret-position="180">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -893,7 +915,7 @@
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
