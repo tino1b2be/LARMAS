@@ -7,7 +7,8 @@ from user.models import Language
 
 class Frequency(models.Model):
     """
-    Model to store the minimum and maximum number of recordings for annotations.
+    Model to store the minimum and maximum number
+    of recordings for annotations.
     """
     max = models.IntegerField()
     min = models.IntegerField()
@@ -25,6 +26,10 @@ class Annotation(models.Model):
     language = models.ForeignKey(Language, blank=False)
     number_of_recordings = models.IntegerField(default=0)
     # todo implement checks
+
+    class Meta:
+        # this ordering will affect inserts.
+        ordering = ('number_of_recordings',)
 
     def __str__(self):
         return self.language.name \
