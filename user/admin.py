@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from user.models import UserProfile, Language
+
+admin.site.register(UserProfile)
+admin.site.register(Language)

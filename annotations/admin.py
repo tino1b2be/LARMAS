@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from annotations.models import \
+    Annotation, AnnotationRecording, AnnotationTranslation
+
+admin.site.register(Annotation)
+admin.site.register(AnnotationRecording)
+admin.site.register(AnnotationTranslation)
