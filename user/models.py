@@ -27,10 +27,12 @@ class UserProfile(models.Model):
     )
     second_language = models.ForeignKey(
         Language,
+        blank=True,
         related_name='second_language'
     )
     third_language = models.ForeignKey(
         Language,
+        blank=True,
         related_name='third_language'
     )
 
