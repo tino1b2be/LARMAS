@@ -1,0 +1,74 @@
+[
+  {
+    "model": "annotations.annotation",
+    "pk": 1,
+    "fields": {
+      "text": "This is a test",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.annotation",
+    "pk": 2,
+    "fields": {
+      "text": "Just another test",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.annotation",
+    "pk": 3,
+    "fields": {
+      "text": "Seems to be working fine",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.annotation",
+    "pk": 4,
+    "fields": {
+      "text": "Makadini",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.annotation",
+    "pk": 5,
+    "fields": {
+      "text": "Zita rako ndiyani?",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.annotation",
+    "pk": 6,
+    "fields": {
+      "text": "Wakazvarwa kupi?",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.annotation",
+    "pk": 7,
+    "fields": {
+      "text": "Where do you live?",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.annotation",
+    "pk": 8,
+    "fields": {
+      "text": "How are you?",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  }
+]
