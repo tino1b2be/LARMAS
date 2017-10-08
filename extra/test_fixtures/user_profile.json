@@ -1,0 +1,24 @@
+[
+  {
+    "model": "user.userprofile",
+    "pk": 1,
+    "fields": {
+      "user": 3,
+      "age": 0,
+      "first_language": 1,
+      "second_language": 2,
+      "third_language": 5
+    }
+  },
+  {
+    "model": "user.userprofile",
+    "pk": 2,
+    "fields": {
+      "user": 5,
+      "age": 0,
+      "first_language": 1,
+      "second_language": 4,
+      "third_language": 13
+    }
+  }
+]

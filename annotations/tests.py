@@ -1,13 +1,16 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from user.models import Language
-
 
 class TestAnnotationsViews(TestCase):
 
-    def setUp(self):
-        self.language = Language.objects.create(name='English', code='ENG-ZA')
+    fixtures = [
+        'annotations.json',
+        'frequency.json',
+        'language.json',
+        'user.json',
+        'user_profile.json',
+    ]
 
     def test_list_all_annotations(self):
         response = self.client.get(reverse('annotations:annotations'))

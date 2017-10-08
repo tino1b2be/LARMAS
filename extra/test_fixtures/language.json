@@ -1,0 +1,119 @@
+[
+  {
+    "model": "user.language",
+    "pk": 1,
+    "fields": {
+      "name": "English",
+      "code": "ENG-ZA",
+      "region": "Cape Town"
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 2,
+    "fields": {
+      "name": "Chishona",
+      "code": "SHO-ZW",
+      "region": "Zimbabwe"
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 3,
+    "fields": {
+      "name": "Afrikaans",
+      "code": "AFR-ZA",
+      "region": "Western Cape"
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 4,
+    "fields": {
+      "name": "Isindebele",
+      "code": "NDE-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 5,
+    "fields": {
+      "name": "Isixhosa",
+      "code": "XHO-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 6,
+    "fields": {
+      "name": "Isizulu",
+      "code": "ZUL-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 7,
+    "fields": {
+      "name": "Sesotho_sa_Leboa",
+      "code": "NSO-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 8,
+    "fields": {
+      "name": "Sesotho",
+      "code": "SSO-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 9,
+    "fields": {
+      "name": "Setswana",
+      "code": "TSW-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 10,
+    "fields": {
+      "name": "Siswati",
+      "code": "SWA-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 11,
+    "fields": {
+      "name": "Tshivenda",
+      "code": "VEN-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 12,
+    "fields": {
+      "name": "Xitsonga",
+      "code": "TSO-ZA",
+      "region": ""
+    }
+  },
+  {
+    "model": "user.language",
+    "pk": 13,
+    "fields": {
+      "name": "South_African_Sign_Language",
+      "code": "SSL-ZA",
+      "region": ""
+    }
+  }
+]
