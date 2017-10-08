@@ -25,7 +25,9 @@ SECRET_KEY = '_nsn8(wnmgb!x6vu=p6@d$x4k%qv%$ovla^n2^i=hwu&gw1wv^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '197.239.149.167',
+]
 
 
 # Application definition
@@ -132,4 +134,5 @@ FIXTURE_DIRS = (
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 100,
 }

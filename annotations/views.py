@@ -17,7 +17,6 @@ class AnnotationsList(ListAPIView):
     # todo only available to admin users
     queryset = Annotation.objects.all()
     serializer_class = AnnotationSerializer
-    paginate_by = 5  # todo finish this off
 
     # todo permission_classes = (IsAdminUser,)
 
