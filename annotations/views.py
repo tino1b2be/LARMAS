@@ -1,5 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
-from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
 from rest_framework.status import \
     HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
@@ -69,7 +69,8 @@ class AnnotationsList(ListAPIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class AnnotationDetail(RetrieveAPIView):
+class AnnotationDetail(RetrieveUpdateDestroyAPIView):
 
     queryset = Annotation.objects.all()
     serializer_class = AnnotationSerializer
+    # todo add admin permissions

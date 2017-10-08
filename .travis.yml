@@ -10,8 +10,6 @@ install:
 
 script:
   - flake8 --exclude **migrations*,manage.py,**settings.py
-  - python manage.py makemigrations
-  - python manage.py migrate
   - python manage.py test
 
 #after_success:
