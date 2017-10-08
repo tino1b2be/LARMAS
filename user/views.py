@@ -112,6 +112,7 @@ class UserRegistration(APIView):
 
             except Exception as e:
                 # todo log
+                new_user.delete()
                 data['message'] = str(e) if DEBUG else 'Something went wrong'
                 return Response(data, status=HTTP_400_BAD_REQUEST)
 
