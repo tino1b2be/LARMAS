@@ -16,7 +16,18 @@ class UserProfileSerializer(serializers.ModelSerializer):
     """
     Serializer class for the User Profile Model
     """
-    user = serializers.SlugRelatedField(slug_field='username', read_only=True)
+    user = serializers.SlugRelatedField(
+        slug_field='username',
+        read_only=True)
+    first_language = serializers.SlugRelatedField(
+        slug_field='name',
+        read_only=True)
+    second_language = serializers.SlugRelatedField(
+        slug_field='name',
+        read_only=True)
+    third_language = serializers.SlugRelatedField(
+        slug_field='name',
+        read_only=True)
 
     class Meta:
         model = UserProfile
