@@ -1,31 +1,25 @@
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.status import \
     HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
-    HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK
-from rest_framework.views import APIView
+    HTTP_500_INTERNAL_SERVER_ERROR
 from LRMS_Thesis.settings import DEBUG
 from annotations.models import Annotation
 from annotations.serializers import AnnotationSerializer
 from user.models import Language
 
 
-class AnnotationsList(APIView):
+class AnnotationsList(ListAPIView):
     """
     Response class to return all annotations or create a new annotation
     """
     # todo only available to admin users
+    queryset = Annotation.objects.all()
+    serializer_class = AnnotationSerializer
+    paginate_by = 5  # todo finish this off
 
-    def get(self, request):
-        """
-        End-Point to return return all annotations
-        :param request: request object
-        :return: JSON with all annotations
-        """
-
-        annotations = Annotation.objects.all()
-        serializer = AnnotationSerializer(annotations, many=True)
-        return Response(serializer.data, status=HTTP_200_OK)
+    # todo permission_classes = (IsAdminUser,)
 
     def post(self, request):
         """
@@ -73,3 +67,9 @@ class AnnotationsList(APIView):
             }
             # todo log error
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class AnnotationDetail(RetrieveAPIView):
+
+    queryset = Annotation.objects.all()
+    serializer_class = AnnotationSerializer
