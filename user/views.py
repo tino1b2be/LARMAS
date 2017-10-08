@@ -36,7 +36,6 @@ class UserRegistration(APIView):
 
         # check for username field
         if not request.data.__contains__('username'):
-            data['message'] = 'username field is required'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         # check if username is unique
@@ -55,7 +54,7 @@ class UserRegistration(APIView):
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         # check if first language is valid
-        code = request.data['language']
+        code = request.data['first_language']
         if not Language.objects.filter(code=code).exists():
             data['message'] = 'first_language entered does not exist'
             return Response(data, status=HTTP_400_BAD_REQUEST)
@@ -74,14 +73,13 @@ class UserRegistration(APIView):
             # create profile
             new_profile = UserProfile(
                 user=new_user,
-                first_language=code,
+                first_language=Language.objects.get(code=code),
             )
             try:
                 code = request.data.get('second_language', 'X')
                 if code == 'X':
                     # second language not entered.
                     new_profile.save()
-                    data['message'] = code + ' language is invalid.'
                     s = UserProfileSerializer(new_profile)
                     return Response(s.data, status=HTTP_201_CREATED)
 
@@ -94,7 +92,6 @@ class UserRegistration(APIView):
                 if code == 'X':
                     # third language not entered.
                     new_profile.save()
-                    data['message'] = code + ' language is invalid.'
                     s = UserProfileSerializer(new_profile)
                     return Response(s.data, status=HTTP_201_CREATED)
 
@@ -103,18 +100,18 @@ class UserRegistration(APIView):
                 new_profile.third_language = third_language
                 new_profile.save()
                 s = UserProfileSerializer(new_profile)
-                return Response(s, status=HTTP_201_CREATED)
+                return Response(s.data, status=HTTP_201_CREATED)
 
             except ObjectDoesNotExist:
                 new_user.delete()
-                data['message'] = 'language is invalid'
+                data['message'] = code + ' language code is invalid.'
                 return Response(data, status=HTTP_400_BAD_REQUEST)
 
             except Exception as e:
                 # todo log
                 new_user.delete()
                 data['message'] = str(e) if DEBUG else 'Something went wrong'
-                return Response(data, status=HTTP_400_BAD_REQUEST)
+                return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
         except Exception as e2:
             # todo log

@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5cc220-cddd-4429-8fd5-1190779044ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extra/db.sqlite3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extra/test_fixtures/annotations.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extra/test_fixtures/frequency.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extra/test_fixtures/language.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extra/test_fixtures/user.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extra/test_fixtures/user_profile.json" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/database_design/lrms_model.mwb" afterPath="$PROJECT_DIR$/extra/database_model/lrms_model.mwb" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/database_design/lrms_model.mwb.bak" afterPath="$PROJECT_DIR$/extra/database_model/lrms_model.mwb.bak" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LRMS_Thesis/settings.py" afterPath="$PROJECT_DIR$/LRMS_Thesis/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/tests.py" afterPath="$PROJECT_DIR$/annotations/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/models.py" afterPath="$PROJECT_DIR$/user/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/serializers.py" afterPath="$PROJECT_DIR$/user/serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/tests.py" afterPath="$PROJECT_DIR$/user/tests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/views.py" afterPath="$PROJECT_DIR$/user/views.py" />
     </list>
@@ -790,7 +780,21 @@
       <option name="project" value="LOCAL" />
       <updated>1507484709866</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Added fixtures for testing.">
+      <created>1507484765079</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1507484765079</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Added language slug fields to user profile serializer.&#10;added null=true to foreign keys inside user profile model">
+      <created>1507484883967</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1507484883967</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -893,8 +897,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created new URLS for REST end-points.&#10;Created views for User (not implemented)" />
-    <MESSAGE value="added ordering constraint in annotations.&#10;added a new language code field to language&#10;Created migrations" />
     <MESSAGE value="Added databases to the admin panel" />
     <MESSAGE value="Created serializer classes for Annotations and User" />
     <MESSAGE value="Updated Travis Build config.&#10;Created API endpoints to list and create annotations." />
@@ -918,7 +920,9 @@
     <MESSAGE value="Created test stubs for registration post method" />
     <MESSAGE value="Updated the workbench database model" />
     <MESSAGE value="Deleted old migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted old migrations" />
+    <MESSAGE value="Added fixtures for testing." />
+    <MESSAGE value="Added language slug fields to user profile serializer.&#10;added null=true to foreign keys inside user profile model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added language slug fields to user profile serializer.&#10;added null=true to foreign keys inside user profile model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
