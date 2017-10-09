@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from annotations.models import Annotation
+from annotations.models import Annotation, AnnotationRecording, AnnotationTranslation
 
 
 class AnnotationSerializer(serializers.ModelSerializer):
@@ -17,9 +17,11 @@ class AnnotationRecordingSerializer(serializers.ModelSerializer):
     """
     Serializer class for the AnnotationRecording model
     """
+    user = serializers.SlugRelatedField(slug_field='username', read_only=True)
+
     class Meta:
-        model = Annotation
-        fields = '__all__'
+        model = AnnotationRecording
+        fields = ('user', 'annotation', 'date', 'file_url')
 
 
 class AnnotationTranslationSerializer(serializers.ModelSerializer):
@@ -27,5 +29,5 @@ class AnnotationTranslationSerializer(serializers.ModelSerializer):
     Serializer class for the AnnotationTranslation model
     """
     class Meta:
-        model = Annotation
+        model = AnnotationTranslation
         fields = '__all__'
