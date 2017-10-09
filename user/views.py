@@ -1,9 +1,11 @@
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.status import HTTP_403_FORBIDDEN,\
-    HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_500_INTERNAL_SERVER_ERROR
+    HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_500_INTERNAL_SERVER_ERROR,\
+    HTTP_200_OK
 
 from LRMS_Thesis.settings import DEBUG
 from user.models import Language, UserProfile
@@ -14,19 +16,71 @@ class UserView(APIView):
     """
     View class to display or change user details
     """
+    permission_classes = (IsAuthenticated, )
+
     def get(self, request):
-        # todo implement
-        return Response({}, status=HTTP_403_FORBIDDEN)
+        try:
+            id = int(request.query_params.get('id', 0))
+            if request.user.is_staff:
+                try:
+                    s = User.objects.get(id=id)
+                    user_profile = UserProfile.objects.get(user=s)
+                    s = UserProfileSerializer(user_profile)
+                    return Response(s.data, status=HTTP_200_OK)
+                except ObjectDoesNotExist:
+                    data = {'detail': 'User does not exist'}
+                    return Response(data, status=HTTP_400_BAD_REQUEST)
+
+            elif (id == 0) or (id == request.user.id):
+                user_profile = UserProfile.objects.get(user=request.user)
+                s = UserProfileSerializer(user_profile)
+                return Response(s.data, status=HTTP_200_OK)
+            else:
+                return Response(status=HTTP_403_FORBIDDEN)
+        except Exception as e:
+            data = {'detail': str(e) if DEBUG else 'Something went wrong.'}
+            return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
     def post(self, request):
-        # todo implement
-        return Response({}, status=HTTP_403_FORBIDDEN)
+        try:
+            d = request.POST
+            user = User.objects.get(username=request.user.username)
+            user_profile = UserProfile.objects.get(user=request.user)
+            user.email = d.get('email', user.email)
+            user.first_name = d.get('first_name', user.first_name)
+            user.last_name = d.get('last_name', user.last_name)
+
+            l1 = d.get('first_language', 0)
+            l2 = d.get('second_language', 0)
+            l3 = d.get('third_language', 0)
+
+            if l1 != 0:
+                l11 = Language.objects.get(code=l1)
+                user_profile.first_language = l11
+            if l2 != 0:
+                l22 = Language.objects.get(code=l2)
+                user_profile.second_language = l22
+            if l3 != 0:
+                l33 = Language.objects.get(code=l3)
+                user_profile.third_language = l33
+
+            user.save()
+            user_profile.save()
+            s = UserProfileSerializer(user_profile)
+            return Response(s.data, status=HTTP_200_OK)
+        except ObjectDoesNotExist:
+            data = {'detail': 'User and/or Language does not exist.'}
+            return Response(data, status=HTTP_400_BAD_REQUEST)
+        except Exception as e2:
+            data = {'detail': str(e2) if DEBUG else 'Something went wrong'}
+            return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class UserRegistration(APIView):
     """
     View class to register a new user
     """
+    permission_classes = (AllowAny,)
 
     def get(self, request):
         return Response({}, status=HTTP_403_FORBIDDEN)

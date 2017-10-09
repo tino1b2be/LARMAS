@@ -1,12 +1,15 @@
-from django.core.exceptions import ObjectDoesNotExist
-from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
+from django.core.exceptions import ObjectDoesNotExist, SuspiciousFileOperation
+from rest_framework.decorators import permission_classes
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView,\
+    RetrieveAPIView
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
-from rest_framework.status import \
-    HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
+from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
     HTTP_500_INTERNAL_SERVER_ERROR
 from LRMS_Thesis.settings import DEBUG
-from annotations.models import Annotation
-from annotations.serializers import AnnotationSerializer
+from annotations.models import Annotation, AnnotationRecording
+from annotations.serializers import AnnotationSerializer,\
+    AnnotationRecordingSerializer
 from user.models import Language
 
 
@@ -14,12 +17,11 @@ class AnnotationsList(ListAPIView):
     """
     Response class to return all annotations or create a new annotation
     """
-    # todo only available to admin users
+
     queryset = Annotation.objects.all()
     serializer_class = AnnotationSerializer
 
-    # todo permission_classes = (IsAdminUser,)
-
+    @permission_classes((IsAdminUser,))
     def post(self, request):
         """
         create new annotation
@@ -73,3 +75,48 @@ class AnnotationDetail(RetrieveUpdateDestroyAPIView):
     queryset = Annotation.objects.all()
     serializer_class = AnnotationSerializer
     # todo add admin permissions
+
+
+class AnnotationRecordingView(RetrieveAPIView):
+    queryset = AnnotationRecording.objects.all()
+    serializer_class = AnnotationRecordingSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+        data = {'message': 'annotation field is required.'}
+
+        if not request.POST.__contains__('annotation'):
+            return Response(data, status=HTTP_400_BAD_REQUEST)
+
+        if not request.FILES.__contains__('file'):
+            data['message'] = 'No file attached.'
+            return Response(data, status=HTTP_400_BAD_REQUEST)
+
+        try:
+            user = request.user  # todo fix this
+            pk = request.POST.get('annotation')
+            annotation = Annotation.objects.get(pk=pk)
+            file = request.FILES.get('file')
+            if len(file.name) < 5:
+                # filename too short
+                raise SuspiciousFileOperation
+
+            # todo validate file
+
+            recording = AnnotationRecording(
+                user=user,
+                annotation=annotation,
+                file_url=file,
+                file_type=file.name[-3:].upper()
+            )
+            recording.save()
+            s = AnnotationRecordingSerializer(recording)
+            return Response(s.data, status=HTTP_201_CREATED)
+
+        except SuspiciousFileOperation:
+            data['message'] = 'filename too short'
+            return Response(data, status=HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            data['message'] = str(e) if DEBUG else 'Something went wrong.'
+            return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
