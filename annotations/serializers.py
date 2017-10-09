@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from annotations.models import Annotation, AnnotationRecording, AnnotationTranslation
+from annotations.models import Annotation, AnnotationRecording,\
+    AnnotationTranslation
 
 
 class AnnotationSerializer(serializers.ModelSerializer):

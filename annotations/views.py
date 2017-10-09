@@ -1,16 +1,10 @@
-from email import message
-
-from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist, SuspiciousFileOperation
 from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView,\
     RetrieveAPIView
-from rest_framework.parsers import FileUploadParser, MultiPartParser, FormParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
     HTTP_500_INTERNAL_SERVER_ERROR
-from rest_framework.viewsets import ModelViewSet
-
 from LRMS_Thesis.settings import DEBUG
 from annotations.models import Annotation, AnnotationRecording
 from annotations.serializers import AnnotationSerializer,\
@@ -100,7 +94,8 @@ class AnnotationRecordingView(RetrieveAPIView):
 
         try:
             user = request.user  # todo fix this
-            annotation = Annotation.objects.get(pk=request.POST.get('annotation'))
+            pk = request.POST.get('annotation')
+            annotation = Annotation.objects.get(pk=pk)
             file = request.FILES.get('file')
             if len(file.name) < 5:
                 # filename too short
