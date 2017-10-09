@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5cc220-cddd-4429-8fd5-1190779044ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/recordings/test1-1-2017-10-09_220119.2692140000.wav" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/annotations/migrations/0002_auto_20171009_1311.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/annotations/migrations/0003_auto_20171009_1335.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/annotations/migrations/0004_auto_20171009_1539.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/user/migrations/0002_auto_20171008_1740.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LRMS_Thesis/settings.py" afterPath="$PROJECT_DIR$/LRMS_Thesis/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/annotations/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/tests.py" afterPath="$PROJECT_DIR$/annotations/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/views.py" afterPath="$PROJECT_DIR$/annotations/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/test_fixtures/user.json" afterPath="$PROJECT_DIR$/extra/test_fixtures/user.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/test_fixtures/user_profile.json" afterPath="$PROJECT_DIR$/extra/test_fixtures/user_profile.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/models.py" afterPath="$PROJECT_DIR$/user/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/serializers.py" afterPath="$PROJECT_DIR$/user/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/tests.py" afterPath="$PROJECT_DIR$/user/tests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/urls.py" afterPath="$PROJECT_DIR$/user/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/views.py" afterPath="$PROJECT_DIR$/user/views.py" />
     </list>
@@ -152,6 +136,7 @@
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="Tinotenda Chemvura &lt;ttchemvura@gmail.com&gt;" />
+        <option value="tino" />
         <option value="tinio" />
       </list>
     </option>
@@ -562,27 +547,6 @@
       <option name="presentableId" value="Default" />
       <updated>1507019751117</updated>
     </task>
-    <task id="LOCAL-00001" summary="Finished modelling database">
-      <created>1507224415985</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1507224415985</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Created the user app">
-      <created>1507225519713</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1507225519713</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added all the models for the annotations">
-      <created>1507235623157</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1507235623157</updated>
-    </task>
     <task id="LOCAL-00004" summary="fixed reverse cursor conflicts and created database migrations">
       <created>1507236736091</created>
       <option name="number" value="00004" />
@@ -884,7 +848,49 @@
       <option name="project" value="LOCAL" />
       <updated>1507566867152</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="made test output more verbose in travis.&#10;created new user fixtures.">
+      <created>1507587068629</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1507587068639</updated>
+    </task>
+    <task id="LOCAL-00048" summary="made test output more verbose in travis.&#10;created new user fixtures.">
+      <created>1507587128441</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1507587128441</updated>
+    </task>
+    <task id="LOCAL-00049" summary="added auth middleware.&#10;created new migrations for tokens.">
+      <created>1507587268047</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1507587268047</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added auth middleware. created new migrations for tokens.">
+      <created>1507587305490</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1507587305504</updated>
+    </task>
+    <task id="LOCAL-00051" summary="changed tests to use authorized users">
+      <created>1507587463012</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1507587463012</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Created tests for user urls. updating and displaying user information.">
+      <created>1507587546413</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1507587546414</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1001,11 +1007,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added place holder responses to the User and UserRegistration geta nd post methods." />
-    <MESSAGE value="Deleted the lrms app (not being used)" />
-    <MESSAGE value="deleted lrms app (not being used)" />
-    <MESSAGE value="code formatting. commented code not being used" />
-    <MESSAGE value="Modified model for user profile&#10;Created migrations." />
     <MESSAGE value="changed status code for test.&#10;changed name of view to UserView to avoid naming conflicts with django.contrib.user" />
     <MESSAGE value="Partial implementation of user registration" />
     <MESSAGE value="deleted nasty migration.&#10;set second and third languages to blank-able" />
@@ -1026,7 +1027,12 @@
     <MESSAGE value="Allowed localhost.&#10;fixed bug in recordings serializer" />
     <MESSAGE value="Added URL for uploading files.&#10;Created test to upload a file.&#10;Added test wav file to upload.&#10;changed password in fixtures" />
     <MESSAGE value="Implemented view to upload a file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented view to upload a file" />
+    <MESSAGE value="made test output more verbose in travis.&#10;created new user fixtures." />
+    <MESSAGE value="added auth middleware.&#10;created new migrations for tokens." />
+    <MESSAGE value="added auth middleware. created new migrations for tokens." />
+    <MESSAGE value="changed tests to use authorized users" />
+    <MESSAGE value="Created tests for user urls. updating and displaying user information." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created tests for user urls. updating and displaying user information." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
