@@ -1,3 +1,5 @@
+import os
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.timezone import now
@@ -25,6 +27,7 @@ class Annotation(models.Model):
     text = models.TextField(blank=False)
     language = models.ForeignKey(Language, blank=False)
     number_of_recordings = models.IntegerField(default=0)
+
     # todo implement checks
 
     class Meta:
@@ -39,11 +42,25 @@ class AnnotationRecording(models.Model):
     """
     Model to store data about the recordings
     """
-    recording_url = models.TextField()
+
+    def update_filename(instance, filename):
+        path = 'recordings/'
+        fname = instance.user.username \
+            + '-' \
+            + str(instance.annotation.id) \
+            + '-' \
+            + str(instance.date) \
+            + str(filename[-4:])
+
+        return os.path.join(path, fname)
+
+    file_type = models.CharField(max_length=10, default='UNKNOWN')
+    file_url = models.FileField(upload_to=update_filename)
     annotation = models.ForeignKey(Annotation)
     quality = models.IntegerField(default=0)
     date = models.DateTimeField(default=now)
     user = models.ForeignKey(User, blank=False)
+
     # todo implement checks
 
     def __str__(self):
@@ -62,6 +79,7 @@ class AnnotationTranslation(models.Model):
     language = models.ForeignKey(Language, blank=False)
     user = models.ForeignKey(User, blank=False)
     date = models.DateTimeField(default=now)
+
     # todo implement checks
 
     def __str__(self):

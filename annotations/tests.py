@@ -1,9 +1,14 @@
-from django.test import TestCase
+import os
+import shutil
+
+from django.test import TestCase, override_settings
 from django.urls import reverse
+from rest_framework.test import APITestCase
+
+from LRMS_Thesis.settings import BASE_DIR
 
 
 class TestAnnotationsViews(TestCase):
-
     fixtures = [
         'annotations.json',
         'frequency.json',
@@ -73,3 +78,33 @@ class TestAnnotationsViews(TestCase):
         }
         response = self.client.post(reverse('annotations:annotations'), data)
         self.assertEquals(response.status_code, 201)
+
+
+class TestRecordingsViews(APITestCase):
+    fixtures = [
+        'annotations.json',
+        'frequency.json',
+        'language.json',
+        'user.json',
+        'user_profile.json',
+    ]
+
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_upload_recording(self):
+
+        url = reverse('annotations:upload_recording')
+        file = open('extra/tom.wav', 'rb')
+        if self.client.login(username='test1', password='password'):
+            data = {
+                'file': file,
+                'annotation': 1,
+            }
+            response = self.client.post(url, data)
+            file.close()
+            self.assertEqual(response.status_code, 201)
+        else:
+            self.fail('User could not login.')
+
+        # remove test files
+        shutil.rmtree('test_media')
