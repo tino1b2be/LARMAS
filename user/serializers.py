@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 from user.models import Language, UserProfile
 
@@ -12,13 +13,19 @@ class LanguageSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'code')
 
 
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email')
+
+
 class UserProfileSerializer(serializers.ModelSerializer):
     """
     Serializer class for the User Profile Model
     """
-    user = serializers.SlugRelatedField(
-        slug_field='username',
-        read_only=True)
+
+    user = UserSerializer()
     first_language = serializers.SlugRelatedField(
         slug_field='name',
         read_only=True)

@@ -1,7 +1,8 @@
 from django.core.exceptions import ObjectDoesNotExist, SuspiciousFileOperation
+from rest_framework.decorators import permission_classes
 from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView,\
     RetrieveAPIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
     HTTP_500_INTERNAL_SERVER_ERROR
@@ -16,12 +17,11 @@ class AnnotationsList(ListAPIView):
     """
     Response class to return all annotations or create a new annotation
     """
-    # todo only available to admin users
+
     queryset = Annotation.objects.all()
     serializer_class = AnnotationSerializer
 
-    # todo permission_classes = (IsAdminUser,)
-
+    @permission_classes((IsAdminUser,))
     def post(self, request):
         """
         create new annotation
