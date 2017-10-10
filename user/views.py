@@ -86,7 +86,7 @@ class UserRegistration(APIView):
         return Response({}, status=HTTP_403_FORBIDDEN)
 
     def post(self, request):
-        data = {'message': 'username field is required'}
+        data = {'detail': 'username field is required'}
 
         # check for username field
         if not request.data.__contains__('username'):
@@ -94,23 +94,23 @@ class UserRegistration(APIView):
 
         # check if username is unique
         if User.objects.filter(username=request.data['username']).exists():
-            data['message'] = 'That username already exists.'
+            data['detail'] = 'That username already exists.'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         # check for password field
         if not request.data.__contains__('password'):
-            data['message'] = 'password field is required'
+            data['detail'] = 'password field is required'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         # check for first language
         if not request.data.__contains__('first_language'):
-            data['message'] = 'first_language field is required'
+            data['detail'] = 'first_language field is required'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         # check if first language is valid
         code = request.data['first_language']
         if not Language.objects.filter(code=code).exists():
-            data['message'] = 'first_language entered does not exist'
+            data['detail'] = 'first_language entered does not exist'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         try:
@@ -158,16 +158,16 @@ class UserRegistration(APIView):
 
             except ObjectDoesNotExist:
                 new_user.delete()
-                data['message'] = code + ' language code is invalid.'
+                data['detail'] = code + ' language code is invalid.'
                 return Response(data, status=HTTP_400_BAD_REQUEST)
 
             except Exception as e:
                 # todo log
                 new_user.delete()
-                data['message'] = str(e) if DEBUG else 'Something went wrong'
+                data['detail'] = str(e) if DEBUG else 'Something went wrong'
                 return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
         except Exception as e2:
             # todo log
-            data['message'] = str(e2) if DEBUG else 'Something went wrong'
+            data['detail'] = str(e2) if DEBUG else 'Something went wrong'
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)

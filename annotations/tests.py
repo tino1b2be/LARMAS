@@ -106,6 +106,7 @@ class TestPromptViews(TestCase):
 
 
 class TestRecordingsViews(APITestCase):
+
     fixtures = [
         'prompts_test.json',
         'frequency_test.json',
@@ -181,14 +182,12 @@ class TestRecordingsViews(APITestCase):
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_recording_no_annotation(self):
-        annotation = str(uuid.uuid4())
         url = reverse('annotations:upload_recording')
         file = open('test_data/files/tom.wav', 'rb')
         if self.client.login(username='test1', password='password'):
             data = {
                 'file': file,
                 'prompt': 1,
-                # 'annotation': annotation,
             }
             response = self.client.post(url, data)
             file.close()
@@ -216,3 +215,10 @@ class TestRecordingsViews(APITestCase):
 
         else:
             self.fail('User could not login.')
+
+    def test_upload_unauthorized_prompt(self):
+        """
+        test to check if user uploads a prompt they were given
+        :return:
+        """
+        pass
