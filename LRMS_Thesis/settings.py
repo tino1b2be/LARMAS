@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 # Fixtures
 
 FIXTURE_DIRS = (
-    'extra/test_fixtures',
+    'test_data/test_fixtures',
 )
 
 REST_FRAMEWORK = {
