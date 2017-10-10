@@ -1,6 +1,6 @@
 [
   {
-    "model": "annotations.annotation",
+    "model": "annotations.prompt",
     "pk": 1,
     "fields": {
       "text": "This is a test",
@@ -9,7 +9,7 @@
     }
   },
   {
-    "model": "annotations.annotation",
+    "model": "annotations.prompt",
     "pk": 2,
     "fields": {
       "text": "Just another test",
@@ -18,7 +18,7 @@
     }
   },
   {
-    "model": "annotations.annotation",
+    "model": "annotations.prompt",
     "pk": 3,
     "fields": {
       "text": "Seems to be working fine",
@@ -27,7 +27,7 @@
     }
   },
   {
-    "model": "annotations.annotation",
+    "model": "annotations.prompt",
     "pk": 4,
     "fields": {
       "text": "Makadini",
@@ -36,7 +36,7 @@
     }
   },
   {
-    "model": "annotations.annotation",
+    "model": "annotations.prompt",
     "pk": 5,
     "fields": {
       "text": "Zita rako ndiyani?",
@@ -45,7 +45,7 @@
     }
   },
   {
-    "model": "annotations.annotation",
+    "model": "annotations.prompt",
     "pk": 6,
     "fields": {
       "text": "Wakazvarwa kupi?",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "model": "annotations.annotation",
+    "model": "annotations.prompt",
     "pk": 7,
     "fields": {
       "text": "Where do you live?",
@@ -63,7 +63,7 @@
     }
   },
   {
-    "model": "annotations.annotation",
+    "model": "annotations.prompt",
     "pk": 8,
     "fields": {
       "text": "How are you?",

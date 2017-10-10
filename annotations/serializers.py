@@ -1,34 +1,34 @@
 from rest_framework import serializers
-from annotations.models import Annotation, AnnotationRecording,\
-    AnnotationTranslation
+from annotations.models import Prompt, PromptRecording,\
+    PromptTranslation
 
 
-class AnnotationSerializer(serializers.ModelSerializer):
+class PromptSerializer(serializers.ModelSerializer):
     """
-    Serializer class for the Annotation model
+    Serializer class for the Prompt model
     """
     language = serializers.SlugRelatedField(slug_field='name', read_only=True)
 
     class Meta:
-        model = Annotation
+        model = Prompt
         fields = ('id', 'text', 'language')
 
 
-class AnnotationRecordingSerializer(serializers.ModelSerializer):
+class PromptRecordingSerializer(serializers.ModelSerializer):
     """
-    Serializer class for the AnnotationRecording model
+    Serializer class for the PromptRecording model
     """
     user = serializers.SlugRelatedField(slug_field='username', read_only=True)
 
     class Meta:
-        model = AnnotationRecording
-        fields = ('user', 'annotation', 'date', 'file_url')
+        model = PromptRecording
+        fields = ('user', 'prompt', 'date', 'file_url')
 
 
-class AnnotationTranslationSerializer(serializers.ModelSerializer):
+class PromptTranslationSerializer(serializers.ModelSerializer):
     """
-    Serializer class for the AnnotationTranslation model
+    Serializer class for the PromptTranslation model
     """
     class Meta:
-        model = AnnotationTranslation
+        model = PromptTranslation
         fields = '__all__'
