@@ -85,9 +85,12 @@ class PromptRecordingView(RetrieveAPIView):
     def post(self, request):
         data = {'message': 'prompt field is required.'}
 
+        # check if all the relevant data is there
         if not request.POST.__contains__('prompt'):
             return Response(data, status=HTTP_400_BAD_REQUEST)
-
+        if not request.POST.__contains__('annotation'):
+            data['message'] = 'annotation field is required.'
+            return Response(data, status=HTTP_400_BAD_REQUEST)
         if not request.FILES.__contains__('file'):
             data['message'] = 'No file attached.'
             return Response(data, status=HTTP_400_BAD_REQUEST)
@@ -95,6 +98,7 @@ class PromptRecordingView(RetrieveAPIView):
         try:
             user = request.user  # todo fix this
             pk = request.POST.get('prompt')
+            annotation = request.POST.get('annotation')
             prompt = Prompt.objects.get(pk=pk)
             file = request.FILES.get('file')
             if len(file.name) < 5:
@@ -107,7 +111,8 @@ class PromptRecordingView(RetrieveAPIView):
                 user=user,
                 prompt=prompt,
                 file_url=file,
-                file_type=file.name[-3:].upper()
+                file_type=file.name[-3:].upper(),
+                annotation=annotation,
             )
             recording.save()
             s = PromptRecordingSerializer(recording)
