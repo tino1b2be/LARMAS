@@ -8,64 +8,64 @@ from rest_framework.test import APITestCase
 from LRMS_Thesis.settings import BASE_DIR
 
 
-class TestAnnotationsViews(TestCase):
+class TestPromptViews(TestCase):
     fixtures = [
-        'annotations.json',
+        'prompts.json',
         'frequency.json',
         'language.json',
         'user.json',
         'user_profile.json',
     ]
 
-    def test_get_annotation_by_id(self):
+    def test_get_prompt_by_id(self):
         if self.client.login(username='test1', password='password'):
             response1 = self.client.get(
-                reverse('annotations:annotation', kwargs={'pk': 1})
+                reverse('annotations:prompt', kwargs={'pk': 1})
             )
             response2 = self.client.get(
-                reverse('annotations:annotation', kwargs={'pk': 3})
+                reverse('annotations:prompt', kwargs={'pk': 3})
             )
             self.assertEquals(response1.status_code, 200)
             self.assertEquals(response2.status_code, 200)
         else:
             return self.fail('User could not login.')
 
-    def test_get_annotation_by_id_not_exist(self):
+    def test_get_prompt_by_id_not_exist(self):
         if self.client.login(username='test1', password='password'):
             response1 = self.client.get(
-                reverse('annotations:annotation', kwargs={'pk': 999})
+                reverse('annotations:prompt', kwargs={'pk': 999})
             )
             response2 = self.client.get(
-                reverse('annotations:annotation', kwargs={'pk': 888})
+                reverse('annotations:prompt', kwargs={'pk': 888})
             )
             self.assertEquals(response1.status_code, 404)
             self.assertEquals(response2.status_code, 404)
         else:
             return self.fail('User could not login.')
 
-    def test_list_all_annotations(self):
+    def test_list_all_prompts(self):
         if self.client.login(username='test1', password='password'):
-            response = self.client.get(reverse('annotations:annotations'))
+            response = self.client.get(reverse('annotations:prompts'))
             self.assertEquals(response.status_code, 200)
         else:
             return self.fail('User could not login.')
 
-    def test_create_annotation_missing_language(self):
+    def test_create_prompt_missing_language(self):
         if self.client.login(username='admin', password='wellthen'):
             data = {
                 'text': 'This is a test',
             }
-            r = self.client.post(reverse('annotations:annotations'), data)
+            r = self.client.post(reverse('annotations:prompts'), data)
             self.assertEquals(r.status_code, 400)
         else:
             self.fail('User could not log in.')
 
-    def test_create_annotation_missing_text(self):
+    def test_create_prompt_missing_text(self):
         if self.client.login(username='admin', password='wellthen'):
             data = {
                 'language': 'ENG-ZA',
             }
-            r = self.client.post(reverse('annotations:annotations'), data)
+            r = self.client.post(reverse('annotations:prompts'), data)
             self.assertEquals(r.status_code, 400)
         else:
             self.fail('User could not log in.')
@@ -76,29 +76,29 @@ class TestAnnotationsViews(TestCase):
                 'text': 'This is a test',
                 'language': 'ENG-ZW'
             }
-            r = self.client.post(reverse('annotations:annotations'), data)
+            r = self.client.post(reverse('annotations:prompts'), data)
             self.assertEquals(r.status_code, 400)
         else:
             self.fail('User could not log in.')
 
-    def test_annotation_too_short(self):
+    def test_prompt_too_short(self):
         if self.client.login(username='admin', password='wellthen'):
             data = {
                 'text': 'T',
                 'language': 'ENG-ZA'
             }
-            r = self.client.post(reverse('annotations:annotations'), data)
+            r = self.client.post(reverse('annotations:prompts'), data)
             self.assertEquals(r.status_code, 400)
         else:
             self.fail('User could not log in.')
 
-    def test_create_annotation(self):
+    def test_create_prompt(self):
         if self.client.login(username='admin', password='wellthen'):
             data = {
                 'text': 'This is a test.',
                 'language': 'ENG-ZA',
             }
-            r = self.client.post(reverse('annotations:annotations'), data)
+            r = self.client.post(reverse('annotations:prompts'), data)
             self.assertEquals(r.status_code, 201)
         else:
             self.fail('User could not log in.')
@@ -106,7 +106,7 @@ class TestAnnotationsViews(TestCase):
 
 class TestRecordingsViews(APITestCase):
     fixtures = [
-        'annotations.json',
+        'prompts.json',
         'frequency.json',
         'language.json',
         'user.json',
@@ -122,7 +122,7 @@ class TestRecordingsViews(APITestCase):
         if self.client.login(username='test1', password='password'):
             data = {
                 'file': file,
-                'annotation': 1,
+                'prompt': 1,
             }
             response = self.client.post(url, data)
             file.close()

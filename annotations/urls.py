@@ -9,17 +9,17 @@ app_name = 'annotations'
 urlpatterns = [
     url(
         r'^$',
-        views.AnnotationsList.as_view(),
-        name='annotations'
+        views.PromptsList.as_view(),
+        name='prompts'
     ),
     url(
         r'^(?P<pk>\d+)/$',
         views.AnnotationDetail.as_view(),
-        name='annotation'
+        name='prompt'
     ),
     url(
         r'^upload/',
-        views.AnnotationRecordingView.as_view(),
+        views.PromptRecordingView.as_view(),
         name='upload_recording'
     )
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

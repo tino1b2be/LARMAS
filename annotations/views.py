@@ -7,25 +7,25 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
     HTTP_500_INTERNAL_SERVER_ERROR
 from LRMS_Thesis.settings import DEBUG
-from annotations.models import Annotation, AnnotationRecording
-from annotations.serializers import AnnotationSerializer,\
-    AnnotationRecordingSerializer
+from annotations.models import Prompt, PromptRecording
+from annotations.serializers import PromptSerializer,\
+    PromptRecordingSerializer
 from user.models import Language
 
 
-class AnnotationsList(ListAPIView):
+class PromptsList(ListAPIView):
     """
-    Response class to return all annotations or create a new annotation
+    Response class to return all prompts or create a new prompt
     """
 
-    queryset = Annotation.objects.all()
-    serializer_class = AnnotationSerializer
+    queryset = Prompt.objects.all()
+    serializer_class = PromptSerializer
 
     @permission_classes((IsAdminUser,))
     def post(self, request):
         """
-        create new annotation
-        :return: created annotation or error messages.
+        create new prompt
+        :return: created prompt or error messages.
         """
 
         # check if fields exist
@@ -43,18 +43,18 @@ class AnnotationsList(ListAPIView):
             }
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
-        # get the language code and create annotation
+        # get the language code and create prompt
         try:
             language = Language.objects.get(code=request.data['language'])
             text = request.data['text']
             if len(text) < 2:
                 data = {
-                    'message': 'Annotation is too short',
+                    'message': 'Prompt is too short',
                 }
                 return Response(data, status=HTTP_400_BAD_REQUEST)
-            annotation = Annotation(text=text, language=language)
-            annotation.save()
-            serializer = AnnotationSerializer(annotation)
+            prompt = Prompt(text=text, language=language)
+            prompt.save()
+            serializer = PromptSerializer(prompt)
             return Response(serializer.data, status=HTTP_201_CREATED)
         except ObjectDoesNotExist:
             data = {
@@ -72,20 +72,20 @@ class AnnotationsList(ListAPIView):
 
 class AnnotationDetail(RetrieveUpdateDestroyAPIView):
 
-    queryset = Annotation.objects.all()
-    serializer_class = AnnotationSerializer
+    queryset = Prompt.objects.all()
+    serializer_class = PromptSerializer
     # todo add admin permissions
 
 
-class AnnotationRecordingView(RetrieveAPIView):
-    queryset = AnnotationRecording.objects.all()
-    serializer_class = AnnotationRecordingSerializer
+class PromptRecordingView(RetrieveAPIView):
+    queryset = PromptRecording.objects.all()
+    serializer_class = PromptRecordingSerializer
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
-        data = {'message': 'annotation field is required.'}
+        data = {'message': 'prompt field is required.'}
 
-        if not request.POST.__contains__('annotation'):
+        if not request.POST.__contains__('prompt'):
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         if not request.FILES.__contains__('file'):
@@ -94,8 +94,8 @@ class AnnotationRecordingView(RetrieveAPIView):
 
         try:
             user = request.user  # todo fix this
-            pk = request.POST.get('annotation')
-            annotation = Annotation.objects.get(pk=pk)
+            pk = request.POST.get('prompt')
+            prompt = Prompt.objects.get(pk=pk)
             file = request.FILES.get('file')
             if len(file.name) < 5:
                 # filename too short
@@ -103,14 +103,14 @@ class AnnotationRecordingView(RetrieveAPIView):
 
             # todo validate file
 
-            recording = AnnotationRecording(
+            recording = PromptRecording(
                 user=user,
-                annotation=annotation,
+                prompt=prompt,
                 file_url=file,
                 file_type=file.name[-3:].upper()
             )
             recording.save()
-            s = AnnotationRecordingSerializer(recording)
+            s = PromptRecordingSerializer(recording)
             return Response(s.data, status=HTTP_201_CREATED)
 
         except SuspiciousFileOperation:
