@@ -4,11 +4,11 @@ from django.urls import reverse
 
 class UserRegistration(TransactionTestCase):
     fixtures = [
-        'prompts.json',
-        'frequency.json',
-        'language.json',
-        'user.json',
-        'user_profile.json',
+        'prompts_test.json',
+        'frequency_test.json',
+        'language_test.json',
+        'user_test.json',
+        'user_profile_test.json',
     ]
 
     def test_user_registration_get(self):
@@ -176,11 +176,11 @@ class UserRegistration(TransactionTestCase):
 
 class User(TestCase):
     fixtures = [
-        'prompts.json',
-        'frequency.json',
-        'language.json',
-        'user.json',
-        'user_profile.json',
+        'prompts_test.json',
+        'frequency_test.json',
+        'language_test.json',
+        'user_test.json',
+        'user_profile_test.json',
     ]
 
     def test_show_this_user_details(self):
@@ -408,11 +408,11 @@ class User(TestCase):
 
 class UserAuth(TestCase):
     fixtures = [
-        'prompts.json',
-        'frequency.json',
-        'language.json',
-        'user.json',
-        'user_profile.json',
+        'prompts_test.json',
+        'frequency_test.json',
+        'language_test.json',
+        'user_test.json',
+        'user_profile_test.json',
     ]
 
     def test_get_authentication_token(self):
