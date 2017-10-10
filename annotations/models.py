@@ -46,11 +46,11 @@ class PromptRecording(models.Model):
     def update_filename(instance, filename):
         path = 'recordings/'
         fname = instance.user.username \
-                + '-' \
-                + str(instance.prompt.id) \
-                + '-' \
-                + str(instance.date) \
-                + str(filename[-4:])
+            + '-' \
+            + str(instance.prompt.id) \
+            + '-' \
+            + str(instance.date) \
+            + str(filename[-4:])
 
         return os.path.join(path, fname)
 
