@@ -22,7 +22,7 @@ class PromptRecordingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PromptRecording
-        fields = ('user', 'prompt', 'date', 'file_url')
+        fields = ('user', 'prompt', 'date', 'file_url', 'annotation')
 
 
 class PromptTranslationSerializer(serializers.ModelSerializer):
