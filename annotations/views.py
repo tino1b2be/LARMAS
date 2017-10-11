@@ -1,16 +1,17 @@
 from django.core.exceptions import ObjectDoesNotExist, SuspiciousFileOperation
 from rest_framework.decorators import permission_classes
-from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView,\
-    RetrieveAPIView
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
-from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST,\
-    HTTP_500_INTERNAL_SERVER_ERROR
-from LRMS_Thesis.settings import DEBUG
-from annotations.models import Prompt, PromptRecording
-from annotations.serializers import PromptSerializer,\
+from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST, \
+    HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK, HTTP_406_NOT_ACCEPTABLE
+from rest_framework.views import APIView
+
+from LRMS_Thesis.settings import DEBUG, PROMPTS_PER_USER
+from annotations.models import Prompt, PromptRecording, DistributedPrompt
+from annotations.serializers import PromptSerializer, \
     PromptRecordingSerializer
-from user.models import Language
+from user.models import Language, UserProfile
 
 
 class PromptsList(ListAPIView):
@@ -31,10 +32,9 @@ class PromptsList(ListAPIView):
         # check if fields exist
 
         if not request.data.__contains__('language'):
-
             data = {
-                        'message': 'language field is required',
-                    }
+                'message': 'language field is required',
+            }
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         if not request.data.__contains__('text'):
@@ -70,31 +70,32 @@ class PromptsList(ListAPIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class AnnotationDetail(RetrieveUpdateDestroyAPIView):
-
+class PromptDetail(RetrieveUpdateDestroyAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
     # todo add admin permissions
 
 
-class PromptRecordingView(RetrieveAPIView):
-    queryset = PromptRecording.objects.all()
-    serializer_class = PromptRecordingSerializer
+class PromptRecordingView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
-        data = {'message': 'prompt field is required.'}
+        data = {'detail': 'prompt field is required.'}
 
+        # check if all the relevant data is there
         if not request.POST.__contains__('prompt'):
             return Response(data, status=HTTP_400_BAD_REQUEST)
-
+        if not request.POST.__contains__('annotation'):
+            data['detail'] = 'annotation field is required.'
+            return Response(data, status=HTTP_400_BAD_REQUEST)
         if not request.FILES.__contains__('file'):
-            data['message'] = 'No file attached.'
+            data['detail'] = 'No file attached.'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         try:
             user = request.user  # todo fix this
             pk = request.POST.get('prompt')
+            annotation = request.POST.get('annotation')
             prompt = Prompt.objects.get(pk=pk)
             file = request.FILES.get('file')
             if len(file.name) < 5:
@@ -107,16 +108,111 @@ class PromptRecordingView(RetrieveAPIView):
                 user=user,
                 prompt=prompt,
                 file_url=file,
-                file_type=file.name[-3:].upper()
+                file_type=file.name[-3:].upper(),
+                annotation=annotation,
             )
             recording.save()
             s = PromptRecordingSerializer(recording)
             return Response(s.data, status=HTTP_201_CREATED)
 
         except SuspiciousFileOperation:
-            data['message'] = 'filename too short'
+            data['detail'] = 'filename too short'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         except Exception as e:
-            data['message'] = str(e) if DEBUG else 'Something went wrong.'
+            data['detail'] = str(e) if DEBUG else 'Something went wrong.'
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class PromptDistribution(APIView):
+    permission_classes(IsAuthenticated, )
+
+    def get(self, request):
+        data = {'detail': ''}
+        try:
+            user = request.user
+            profile = UserProfile.objects.get(user=user)
+            lang_code = request.GET.get('language', 'X')
+
+            if lang_code == 'X':
+                language = profile.first_language
+            else:
+                try:
+                    language = Language.objects.get(code=lang_code)
+                    if not (profile.first_language == language or
+                            profile.second_language == language or
+                            profile.third_language == language):
+                        data['detail'] = "language in user's profile"
+                        return Response(data, status=HTTP_400_BAD_REQUEST)
+                except ObjectDoesNotExist:
+                    data['detail'] = 'language does not exist'
+                    return Response(data, status=HTTP_400_BAD_REQUEST)
+
+            # send all unrejected/unrecorded prompts
+            dist_prompts = DistributedPrompt \
+                .objects \
+                .filter(user=user, rejected=False, recorded=False)
+
+            id_list = []
+            for dist_prompt in dist_prompts:
+                id_list.append(dist_prompt.prompt.id)
+
+            ps = Prompt.objects.filter(id__in=id_list)
+            prompts = []
+            for p in ps:
+                prompts.append(p)
+
+            # if there are not enough distributed prompts, add more.
+            count = PROMPTS_PER_USER - len(prompts)
+            for prompt in Prompt.objects.all():
+                if count == 0:
+                    break
+                dist = DistributedPrompt \
+                    .objects \
+                    .filter(user=user, prompt=prompt)
+                if dist.count() == 0:
+                    # this prompt has not been distributed.
+                    if prompt.language == language:
+                        prompts.append(prompt)
+                        # add this prompt to the distributed prompts database
+                        DistributedPrompt(user=user, prompt=prompt).save()
+                        count -= 1
+                    else:
+                        # wrong language
+                        continue
+
+            # serialize all prompts and respond to request.
+            s = PromptSerializer(prompts, many=True)
+            return Response(s.data, status=HTTP_200_OK)
+
+        except Exception as e:
+            data['detail'] = str(e) if DEBUG else 'Something went wrong.'
+            return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class RejectPrompt(APIView):
+    permission_classes(IsAuthenticated, )
+
+    def get(self, request):
+        data = {'detail': ''}
+        try:
+            user = request.user
+            p_id = request.GET.get('id', 0)
+            if p_id == 0:
+                data['detail'] = 'id GET parameter is required.'
+            try:
+                prompt = Prompt.objects.get(id=p_id)
+                dp = DistributedPrompt.objects.get(user=user, prompt=prompt)
+                dp.rejected = True
+                dp.save()
+                data['detail'] = 'Prompt ID = %s has been rejected' % p_id
+                return Response(data, HTTP_200_OK)
+
+            except ObjectDoesNotExist:
+                data['detail'] = 'This annotation was not give to you'
+                return Response(data, status=HTTP_406_NOT_ACCEPTABLE)
+
+            pass
+        except Exception as e:
+            data['detail'] = str(e) if DEBUG else 'Something went wrong.'
+            pass

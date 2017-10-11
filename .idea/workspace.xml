@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5cc220-cddd-4429-8fd5-1190779044ee" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/extra/test_fixtures/annotations.json" afterPath="$PROJECT_DIR$/extra/test_fixtures/prompts.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/admin.py" afterPath="$PROJECT_DIR$/annotations/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/annotations/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/models.py" afterPath="$PROJECT_DIR$/annotations/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/serializers.py" afterPath="$PROJECT_DIR$/annotations/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/tests.py" afterPath="$PROJECT_DIR$/annotations/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/urls.py" afterPath="$PROJECT_DIR$/annotations/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/views.py" afterPath="$PROJECT_DIR$/annotations/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/tests.py" afterPath="$PROJECT_DIR$/user/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/LRMS_Thesis.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +21,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/LRMS_Thesis$Test__user_tests_UserRegistration_test_register_new_user.coverage" NAME="Test: user.tests.UserRegistration.test_register_new_user Coverage Results" MODIFIED="1507478480422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/LRMS_Thesis$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1507648498619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/LRMS_Thesis$Test__annotations_tests_TestPromptDistribution.coverage" NAME="Test: annotations.tests.TestPromptDistribution Coverage Results" MODIFIED="1507674710133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/LRMS_Thesis$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1507682016393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/LRMS_Thesis$Test__annotations_tests_TestAnnotationsViews_test_create_annotation_missing_language.coverage" NAME="Test: annotations.tests.TestAnnotationsViews.test_create_annotation_missing_language Coverage Results" MODIFIED="1507387216201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/LRMS_Thesis$Test__user_tests_UserRegistration_test_user_registration_get.coverage" NAME="Test: user.tests.UserRegistration.test_user_registration_get Coverage Results" MODIFIED="1507392629085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
@@ -35,24 +32,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/annotations/views.py">
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/annotations/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1556">
-              <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="180">
+              <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/annotations/tests.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/annotations/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="100" column="53" lean-forward="false" selection-start-line="100" selection-start-column="53" selection-end-line="100" selection-end-column="53" />
+            <state relative-caret-position="171">
+              <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#3756#4577#0" expanded="false" />
+                <element signature="e#193#483#0" expanded="false" />
+                <element signature="e#1897#2448#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -61,26 +61,33 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/annotations/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/annotations/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-846">
+              <caret line="144" column="43" lean-forward="false" selection-start-line="144" selection-start-column="43" selection-end-line="144" selection-end-column="43" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#78#0" expanded="true" />
+                <element signature="e#2687#2791#0" expanded="false" />
+                <element signature="e#2834#4584#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prompts.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/extra/test_fixtures/prompts.json">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-              <folding>
-                <marker date="1507648531448" expanded="true" signature="0:1329" ph="[...]" />
-                <marker date="1507648531448" expanded="true" signature="4:32" ph="{&quot;model&quot;: &quot;annotations.annotation&quot;...}" />
-                <marker date="1507648531448" expanded="true" signature="1203:1327" ph="{&quot;model&quot;: &quot;annotations.annotation&quot;...}" />
-                <marker date="1507648531448" expanded="true" signature="1233:1323" ph="{&quot;text&quot;: &quot;How are you?&quot;...}" />
-              </folding>
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,10 +116,12 @@
       <find>zulu</find>
       <find>annotations</find>
       <find>annotation</find>
+      <find>message</find>
     </findStrings>
     <replaceStrings>
       <replace>LRMS_Thesis</replace>
       <replace>prompt</replace>
+      <replace>detail</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -153,21 +162,24 @@
         <option value="$PROJECT_DIR$/extra/test_fixtures/user_profile.json" />
         <option value="$PROJECT_DIR$/usersss2.json" />
         <option value="$PROJECT_DIR$/tokens.json" />
-        <option value="$PROJECT_DIR$/LRMS_Thesis/settings.py" />
-        <option value="$PROJECT_DIR$/LRMS_Thesis/settings.py" />
         <option value="$PROJECT_DIR$/user/serializers.py" />
         <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/LRMS_Thesis/urls.py" />
         <option value="$PROJECT_DIR$/user/urls.py" />
         <option value="$PROJECT_DIR$/user/tests.py" />
         <option value="$PROJECT_DIR$/user/models.py" />
-        <option value="$PROJECT_DIR$/user/views.py" />
-        <option value="$PROJECT_DIR$/annotations/serializers.py" />
-        <option value="$PROJECT_DIR$/annotations/models.py" />
-        <option value="$PROJECT_DIR$/annotations/tests.py" />
-        <option value="$PROJECT_DIR$/annotations/urls.py" />
-        <option value="$PROJECT_DIR$/annotations/views.py" />
         <option value="$PROJECT_DIR$/extra/test_fixtures/annotations.json" />
+        <option value="$PROJECT_DIR$/annotations/serializers.py" />
+        <option value="$PROJECT_DIR$/user/views.py" />
+        <option value="$PROJECT_DIR$/LRMS_Thesis/urls.py" />
+        <option value="$PROJECT_DIR$/LRMS_Thesis/settings.py" />
+        <option value="$PROJECT_DIR$/LRMS_Thesis/settings.py" />
+        <option value="$PROJECT_DIR$/annotations/models.py" />
+        <option value="$PROJECT_DIR$/a.json" />
+        <option value="$PROJECT_DIR$/test_data/test_fixtures/prompts_test.json" />
+        <option value="$PROJECT_DIR$/annotations/urls.py" />
+        <option value="$PROJECT_DIR$/annotations/tests.py" />
+        <option value="$PROJECT_DIR$/annotations/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -224,9 +236,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test_data" />
+      <recent name="$PROJECT_DIR$/extra" />
       <recent name="$PROJECT_DIR$/annotations/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test_data/files" />
       <recent name="$PROJECT_DIR$/extra/test_fixtures" />
       <recent name="$PROJECT_DIR$/annotations" />
     </key>
@@ -265,10 +280,11 @@
       <option name="OPTIONS" value="" />
       <method />
     </configuration>
-    <configuration default="false" name="Test: user.tests.UserRegistration.test_register_new_user" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
+    <configuration default="false" name="Test: annotations.tests.TestPromptDistribution" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="DJANGO_SETTINGS_MODULE" value="LRMS_Thesis.settings" />
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
@@ -278,7 +294,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LRMS_Thesis" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="user.tests.UserRegistration.test_register_new_user" />
+      <option name="TARGET" value="annotations.tests.TestPromptDistribution" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -483,12 +499,12 @@
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Django server.LRMS_Thesis" />
       <item index="1" class="java.lang.String" itemvalue="Django tests.Test: " />
-      <item index="2" class="java.lang.String" itemvalue="Django tests.Test: user.tests.UserRegistration.test_register_new_user" />
+      <item index="2" class="java.lang.String" itemvalue="Django tests.Test: annotations.tests.TestPromptDistribution" />
     </list>
     <recent_temporary>
       <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Django tests.Test: " />
-        <item index="1" class="java.lang.String" itemvalue="Django tests.Test: user.tests.UserRegistration.test_register_new_user" />
+        <item index="1" class="java.lang.String" itemvalue="Django tests.Test: annotations.tests.TestPromptDistribution" />
       </list>
     </recent_temporary>
   </component>
@@ -502,97 +518,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507019751117</updated>
-    </task>
-    <task id="LOCAL-00004" summary="fixed reverse cursor conflicts and created database migrations">
-      <created>1507236736091</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1507236736091</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Created the Travis YML file">
-      <created>1507236763181</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1507236763181</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Create Requirements file. Modified Travis YML file">
-      <created>1507242773587</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1507242773587</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Changed the default time to Django.utils.timezone instead of using pythons datetime class.&#10;Created new migrations.">
-      <created>1507248926905</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1507248926905</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added the annotations app to the settings.&#10;added swift library to pip requirements&#10;created config file for flake">
-      <created>1507249053641</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1507249053641</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Updated the MySQL workbench database schema">
-      <created>1507301509880</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1507301509880</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Removed unused imports">
-      <created>1507385522251</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385522252</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Removed unused imports">
-      <created>1507385609431</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385609431</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Created new URLS for REST end-points.&#10;Created views for User (not implemented)">
-      <created>1507385712993</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385712993</updated>
-    </task>
-    <task id="LOCAL-00013" summary="added ordering constraint in annotations.&#10;added a new language code field to language&#10;Created migrations">
-      <created>1507385809773</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385809773</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Added databases to the admin panel">
-      <created>1507385839598</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385839598</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Created serializer classes for Annotations and User">
-      <created>1507385900023</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385900023</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Updated Travis Build config.&#10;Created API endpoints to list and create annotations.">
-      <created>1507385972026</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385972026</updated>
     </task>
     <task id="LOCAL-00017" summary="Corrected status code.">
       <created>1507386180694</created>
@@ -846,38 +771,129 @@
       <option name="project" value="LOCAL" />
       <updated>1507587546414</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Changed Annotation to Prompt. Was using the term annotation incorrectly.">
+      <created>1507648671694</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1507648671704</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Added new model to keep track of distributed prompts. added date">
+      <created>1507666407481</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1507666407481</updated>
+    </task>
+    <task id="LOCAL-00055" summary="moved fixtures and test audio to a separate test_data folder.">
+      <created>1507668655749</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1507668655751</updated>
+    </task>
+    <task id="LOCAL-00056" summary="created migration to add new model. added annotation field to serializer">
+      <created>1507668736292</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1507668736295</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fixed paths to test fixtures">
+      <created>1507668792287</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1507668792288</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Added tests for error upload error conditions. Fixed bugs indes the upload view">
+      <created>1507668837132</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1507668837135</updated>
+    </task>
+    <task id="LOCAL-00059" summary="fixed PEP8 error">
+      <created>1507670115113</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1507670115113</updated>
+    </task>
+    <task id="LOCAL-00060" summary="fixed PEP8 error, added new test stub.&#10;Changed 'message&quot; key to 'detail' for consistency with Djang-Rest">
+      <created>1507670237964</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1507670237964</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Added Basic Authentication">
+      <created>1507670257757</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1507670257757</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Added more test data for promts (english and shona)">
+      <created>1507682564184</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1507682564184</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Added URLs to retrieve and reject prompts.&#10;Changed old urls for clarity.&#10;Moved media urls to main URLs file">
+      <created>1507682642638</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1507682642638</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Implemented tests for prompt distribution and rejection.">
+      <created>1507682716626</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1507682716626</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Implemented view to distribute and reject prompts.">
+      <created>1507682757963</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1507682757964</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__ - 2017.10.09 at 23h 01m 50s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 01h 51m 20s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.09 at 23h 02m 53s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 01h 53m 19s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.09 at 23h 12m 13s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 02h 01m 40s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.09 at 23h 13m 26s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 02h 02m 25s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.09 at 23h 16m 28s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 02h 21m 41s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.09 at 23h 17m 33s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 02h 22m 39s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.09 at 23h 23m 03s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 02h 23m 48s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.09 at 23h 26m 06s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 02h 26m 03s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.09 at 23h 32m 07s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 02h 30m 09s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__ - 2017.10.10 at 17h 15m 01s.xml">
+    <history-entry file="Test__ - 2017.10.11 at 02h 34m 21s.xml">
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
   </component>
@@ -895,15 +911,15 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33774835" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.50342464" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34" sideWeight="0.53020835" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3288889" sideWeight="0.51458335" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34" sideWeight="0.5239583" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34" sideWeight="0.471875" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.48541668" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15208334" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3401507" sideWeight="0.46770832" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.47291666" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15208334" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34" sideWeight="0.47604167" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -949,19 +965,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed status code for test.&#10;changed name of view to UserView to avoid naming conflicts with django.contrib.user" />
-    <MESSAGE value="Partial implementation of user registration" />
-    <MESSAGE value="deleted nasty migration.&#10;set second and third languages to blank-able" />
-    <MESSAGE value="Added a slug field for UserProfileSerializer.user" />
-    <MESSAGE value="finished implementing the user registration method" />
-    <MESSAGE value="Fixed bug to delete user if user profile creation fails." />
-    <MESSAGE value="Created test stubs for registration post method" />
-    <MESSAGE value="Updated the workbench database model" />
-    <MESSAGE value="Deleted old migrations" />
-    <MESSAGE value="Added fixtures for testing." />
-    <MESSAGE value="Added language slug fields to user profile serializer.&#10;added null=true to foreign keys inside user profile model" />
-    <MESSAGE value="Implemented tests for user registration,&#10;Fixed bugs inside user registratino fields." />
-    <MESSAGE value="Changed views to generic list and detail views&#10;added new URL to retrieve a specific annoatation" />
     <MESSAGE value="Added new tests for get specific annotation.&#10;Updated testing URLs&#10;added 'v1' to the URLs&#10;added pagination class in settings" />
     <MESSAGE value="Removed migrations from the travis build&#10;changed the view class for annotations detail to allow modifying permissions" />
     <MESSAGE value="Fixed pagination" />
@@ -974,7 +977,20 @@
     <MESSAGE value="added auth middleware. created new migrations for tokens." />
     <MESSAGE value="changed tests to use authorized users" />
     <MESSAGE value="Created tests for user urls. updating and displaying user information." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created tests for user urls. updating and displaying user information." />
+    <MESSAGE value="Changed Annotation to Prompt. Was using the term annotation incorrectly." />
+    <MESSAGE value="Added new model to keep track of distributed prompts. added date" />
+    <MESSAGE value="moved fixtures and test audio to a separate test_data folder." />
+    <MESSAGE value="created migration to add new model. added annotation field to serializer" />
+    <MESSAGE value="fixed paths to test fixtures" />
+    <MESSAGE value="Added tests for error upload error conditions. Fixed bugs indes the upload view" />
+    <MESSAGE value="fixed PEP8 error" />
+    <MESSAGE value="fixed PEP8 error, added new test stub.&#10;Changed 'message&quot; key to 'detail' for consistency with Djang-Rest" />
+    <MESSAGE value="Added Basic Authentication" />
+    <MESSAGE value="Added more test data for promts (english and shona)" />
+    <MESSAGE value="Added URLs to retrieve and reject prompts.&#10;Changed old urls for clarity.&#10;Moved media urls to main URLs file" />
+    <MESSAGE value="Implemented tests for prompt distribution and rejection." />
+    <MESSAGE value="Implemented view to distribute and reject prompts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented view to distribute and reject prompts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -984,13 +1000,8 @@
           <line>442</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/user/views.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="65" />
+      <option name="time" value="92" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="DjangoTestsConfigurationType">
@@ -999,51 +1010,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/annotations/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LRMS_Thesis/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/annotations/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.5/dist-packages/django/contrib/auth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="390" column="23" lean-forward="true" selection-start-line="390" selection-start-column="23" selection-end-line="390" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/migrations/0006_auto_20171007_2033.py" />
-    <entry file="file://$PROJECT_DIR$/annotations/migrations/0002_auto_20171005_2306.py" />
     <entry file="file://$PROJECT_DIR$/annotations/migrations/0005_auto_20171007_1058.py" />
     <entry file="file://$PROJECT_DIR$/annotations/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1156,6 +1122,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,13 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="530" column="8" lean-forward="false" selection-start-line="530" selection-start-column="8" selection-end-line="530" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.5/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="599" column="0" lean-forward="false" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1186,6 +1146,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1207,6 +1170,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="1596" column="0" lean-forward="true" selection-start-line="1596" selection-start-column="0" selection-end-line="1596" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,6 +1186,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,87 +1199,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extra/test_fixtures/tokens.json" />
-    <entry file="file://$PROJECT_DIR$/LRMS_Thesis/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="138" column="21" lean-forward="false" selection-start-line="138" selection-start-column="21" selection-end-line="138" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7650">
-          <caret line="426" column="0" lean-forward="false" selection-start-line="426" selection-start-column="0" selection-end-line="426" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LRMS_Thesis/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-            <element signature="e#3205#6992#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/annotations/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/annotations/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/annotations/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="100" column="53" lean-forward="false" selection-start-line="100" selection-start-column="53" selection-end-line="100" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#3756#4577#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/annotations/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1556">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1329,26 +1220,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/annotations/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/extra/test_fixtures/prompts.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/django/test/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="383" column="0" lean-forward="false" selection-start-line="383" selection-start-column="0" selection-end-line="383" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="155" column="39" lean-forward="false" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
           <folding>
-            <marker date="1507648531448" expanded="true" signature="0:1329" ph="[...]" />
-            <marker date="1507648531448" expanded="true" signature="4:32" ph="{&quot;model&quot;: &quot;annotations.annotation&quot;...}" />
-            <marker date="1507648531448" expanded="true" signature="1203:1327" ph="{&quot;model&quot;: &quot;annotations.annotation&quot;...}" />
-            <marker date="1507648531448" expanded="true" signature="1233:1323" ph="{&quot;text&quot;: &quot;How are you?&quot;...}" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="444" column="0" lean-forward="true" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
+          <folding>
+            <element signature="e#137#5945#0" expanded="false" />
+            <element signature="e#5974#15385#0" expanded="false" />
+            <element signature="e#14777#15385#0" expanded="false" />
+            <element signature="e#15418#16510#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LRMS_Thesis/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#79#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/django/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LRMS_Thesis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="599" column="0" lean-forward="false" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/annotations/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#193#483#0" expanded="false" />
+            <element signature="e#1897#2448#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="307" column="1" lean-forward="true" selection-start-line="307" selection-start-column="1" selection-end-line="307" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/annotations/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/annotations/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_data/test_fixtures/prompts_test.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_data/test_fixtures/user_test.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_data/test_fixtures/user_profile_test.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_data/test_fixtures/language_test.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/annotations/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#3398#3757#0" expanded="false" />
+            <element signature="e#3805#7993#0" expanded="false" />
+            <element signature="e#5217#5759#0" expanded="false" />
+            <element signature="e#5937#6475#0" expanded="false" />
+            <element signature="e#6657#7112#0" expanded="false" />
+            <element signature="e#7295#7828#0" expanded="false" />
+            <element signature="e#7885#7993#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/annotations/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-846">
+          <caret line="144" column="43" lean-forward="false" selection-start-line="144" selection-start-column="43" selection-end-line="144" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#78#0" expanded="true" />
+            <element signature="e#2687#2791#0" expanded="false" />
+            <element signature="e#2834#4584#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

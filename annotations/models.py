@@ -31,7 +31,7 @@ class Prompt(models.Model):
     # todo implement checks
 
     class Meta:
-        # this ordering will affect inserts.
+        # ascending order of number of recordings
         ordering = ('number_of_recordings',)
 
     def __str__(self):
@@ -60,8 +60,7 @@ class PromptRecording(models.Model):
     quality = models.IntegerField(default=0)
     date = models.DateTimeField(default=now)
     user = models.ForeignKey(User, blank=False)
-
-    # todo implement checks
+    annotation = models.TextField(blank=False)
 
     def __str__(self):
         # <language_name> - <prompt_text>
@@ -86,3 +85,22 @@ class PromptTranslation(models.Model):
         # <old_language> to <new_language>
         return self.original_prompt.language.name \
                + ' to ' + self.language.name
+
+
+class DistributedPrompt(models.Model):
+    """
+    Model for distributed prompts
+    """
+
+    user = models.ForeignKey(User, blank=False)
+    prompt = models.ForeignKey(Prompt, blank=False)
+    rejected = models.BooleanField(default=False)
+    recorded = models.BooleanField(default=False)
+    date = models.DateTimeField(default=now)
+
+    def __str__(self):
+        return self.user.username + ' - ' + \
+               str(self.prompt.id) + ' - ' + \
+               str(self.rejected) + ' - ' + \
+               str(self.recorded) + ' - ' + \
+               str(self.date)
