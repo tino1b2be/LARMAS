@@ -31,7 +31,7 @@ class Prompt(models.Model):
     # todo implement checks
 
     class Meta:
-        # this ordering will affect inserts.
+        # ascending order of number of recordings
         ordering = ('number_of_recordings',)
 
     def __str__(self):

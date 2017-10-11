@@ -70,5 +70,239 @@
       "language": 1,
       "number_of_recordings": 0
     }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 9,
+    "fields": {
+      "text": "Zita raAmai vako ndiyani?",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 10,
+    "fields": {
+      "text": "What is your mother's name?",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 11,
+    "fields": {
+      "text": "Which country were you born in?",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 12,
+    "fields": {
+      "text": "I am hungry",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 13,
+    "fields": {
+      "text": "I am a university graduate.",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 14,
+    "fields": {
+      "text": "I grew up in Mutare.",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 15,
+    "fields": {
+      "text": "My home country is Zimbabwe.",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 16,
+    "fields": {
+      "text": "Africa is a beautiful continent.",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 17,
+    "fields": {
+      "text": "There are twelve official languages in South Africa.",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 18,
+    "fields": {
+      "text": "There are 16 official languages in Zimbabwe.",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 19,
+    "fields": {
+      "text": "The capital city of Zimbabwe is Harare.",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 20,
+    "fields": {
+      "text": "I wish I could fly for free",
+      "language": 1,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 21,
+    "fields": {
+      "text": "Ini ndine nzara",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 22,
+    "fields": {
+      "text": "Ndinemakore makumi maviri nembiri",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 23,
+    "fields": {
+      "text": "Baba vangu vanobva kuHonde Valley.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 24,
+    "fields": {
+      "text": "Ndakangwanwa zita raBaba vako.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 25,
+    "fields": {
+      "text": "Shamwari yangu yepamoyo inonzi Kombo.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 26,
+    "fields": {
+      "text": "Ndine makokre mana ndichigara muCape Town",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 27,
+    "fields": {
+      "text": "Dai ndana ndine mapapiro.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 28,
+    "fields": {
+      "text": "Makumbo angu akazvimba.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 29,
+    "fields": {
+      "text": "Mazino angu akachena.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 30,
+    "fields": {
+      "text": "Musikana uyo akareba.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 31,
+    "fields": {
+      "text": "Sekuru vakaenda kumusha",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 32,
+    "fields": {
+      "text": "Mbuya vaenda kumunda",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 33,
+    "fields": {
+      "text": "Handei kunorima fodya.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
+  },
+  {
+    "model": "annotations.prompt",
+    "pk": 34,
+    "fields": {
+      "text": "Handigoni kutaura zvakanaka.",
+      "language": 2,
+      "number_of_recordings": 0
+    }
   }
 ]
