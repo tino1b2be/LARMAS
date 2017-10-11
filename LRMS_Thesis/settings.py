@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 # Fixtures
 
 FIXTURE_DIRS = (
-    'extra/test_fixtures',
+    'test_data/test_fixtures',
 )
 
 REST_FRAMEWORK = {
@@ -132,6 +132,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
@@ -141,3 +142,7 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# LARMA paramters
+
+PROMPTS_PER_USER = 10  # number of unrecorded prompts a user can have at a time
