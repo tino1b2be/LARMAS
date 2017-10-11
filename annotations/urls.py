@@ -1,25 +1,33 @@
 from django.conf.urls import url
-from django.conf.urls.static import static
 
-from LRMS_Thesis import settings
 from annotations import views
 
 app_name = 'annotations'
 
 urlpatterns = [
     url(
-        r'^$',
+        r'^prompts/$',
         views.PromptsList.as_view(),
         name='prompts'
     ),
     url(
-        r'^(?P<pk>\d+)/$',
-        views.AnnotationDetail.as_view(),
+        r'^prompt/(?P<pk>\d+)/$',
+        views.PromptDetail.as_view(),
         name='prompt'
     ),
     url(
-        r'^upload/',
+        r'^upload/$',
         views.PromptRecordingView.as_view(),
         name='upload_recording'
+    ),
+    url(
+        r'^retrieve_prompts/$',
+        views.PromptDistribution.as_view(),
+        name='distribute_prompts'
+    ),
+    url(
+        r'^reject_prompt/$',
+        views.RejectPrompt.as_view(),
+        name='reject_prompt'
     )
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
