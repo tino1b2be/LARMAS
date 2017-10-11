@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5cc220-cddd-4429-8fd5-1190779044ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LRMS_Thesis/settings.py" afterPath="$PROJECT_DIR$/LRMS_Thesis/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/tests.py" afterPath="$PROJECT_DIR$/annotations/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/annotations/views.py" afterPath="$PROJECT_DIR$/annotations/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/LRMS_Thesis.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,20 +82,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/annotations/tests.py">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-              <folding>
-                <element signature="e#3398#3757#0" expanded="false" />
-                <element signature="e#3805#7993#0" expanded="false" />
-                <element signature="e#5217#5759#0" expanded="false" />
-                <element signature="e#5937#6475#0" expanded="false" />
-                <element signature="e#6657#7112#0" expanded="false" />
-                <element signature="e#7295#7828#0" expanded="false" />
-                <element signature="e#7885#7993#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,6 +179,7 @@
         <option value="$PROJECT_DIR$/annotations/urls.py" />
         <option value="$PROJECT_DIR$/annotations/tests.py" />
         <option value="$PROJECT_DIR$/annotations/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -223,66 +220,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_fixtures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LRMS_Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="annotations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -581,20 +518,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507019751117</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Created serializer classes for Annotations and User">
-      <created>1507385900023</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385900023</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Updated Travis Build config.&#10;Created API endpoints to list and create annotations.">
-      <created>1507385972026</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1507385972026</updated>
     </task>
     <task id="LOCAL-00017" summary="Corrected status code.">
       <created>1507386180694</created>
@@ -925,7 +848,21 @@
       <option name="project" value="LOCAL" />
       <updated>1507682642638</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Implemented tests for prompt distribution and rejection.">
+      <created>1507682716626</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1507682716626</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Implemented view to distribute and reject prompts.">
+      <created>1507682757963</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1507682757964</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1028,8 +965,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented tests for user registration,&#10;Fixed bugs inside user registratino fields." />
-    <MESSAGE value="Changed views to generic list and detail views&#10;added new URL to retrieve a specific annoatation" />
     <MESSAGE value="Added new tests for get specific annotation.&#10;Updated testing URLs&#10;added 'v1' to the URLs&#10;added pagination class in settings" />
     <MESSAGE value="Removed migrations from the travis build&#10;changed the view class for annotations detail to allow modifying permissions" />
     <MESSAGE value="Fixed pagination" />
@@ -1053,7 +988,9 @@
     <MESSAGE value="Added Basic Authentication" />
     <MESSAGE value="Added more test data for promts (english and shona)" />
     <MESSAGE value="Added URLs to retrieve and reject prompts.&#10;Changed old urls for clarity.&#10;Moved media urls to main URLs file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added URLs to retrieve and reject prompts.&#10;Changed old urls for clarity.&#10;Moved media urls to main URLs file" />
+    <MESSAGE value="Implemented tests for prompt distribution and rejection." />
+    <MESSAGE value="Implemented view to distribute and reject prompts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented view to distribute and reject prompts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1073,7 +1010,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/annotations/migrations/0002_auto_20171005_2306.py" />
     <entry file="file://$PROJECT_DIR$/annotations/migrations/0005_auto_20171007_1058.py" />
     <entry file="file://$PROJECT_DIR$/annotations/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1427,6 +1363,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/annotations/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#3398#3757#0" expanded="false" />
+            <element signature="e#3805#7993#0" expanded="false" />
+            <element signature="e#5217#5759#0" expanded="false" />
+            <element signature="e#5937#6475#0" expanded="false" />
+            <element signature="e#6657#7112#0" expanded="false" />
+            <element signature="e#7295#7828#0" expanded="false" />
+            <element signature="e#7885#7993#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/annotations/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-846">
@@ -1439,19 +1392,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/annotations/tests.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding>
-            <element signature="e#3398#3757#0" expanded="false" />
-            <element signature="e#3805#7993#0" expanded="false" />
-            <element signature="e#5217#5759#0" expanded="false" />
-            <element signature="e#5937#6475#0" expanded="false" />
-            <element signature="e#6657#7112#0" expanded="false" />
-            <element signature="e#7295#7828#0" expanded="false" />
-            <element signature="e#7885#7993#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
