@@ -146,3 +146,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # LARMA paramters
 
 PROMPTS_PER_USER = 10  # number of unrecorded prompts a user can have at a time
+
+# swift stuff
+
+# DEFAULT_FILE_STORAGE='swift.storage.SwiftStorage'
+# STATICFILES_STORAGE ='swift.storage.StaticSwiftStorage'
+# SWIFT_AUTH_URL='http://localhost:8080/auth/v1.0'
+# SWIFT_USERNAME='swift:swift'
+# SWIFT_KEY='swift'
+# SWIFT_CONTAINER_NAME='django'
+# SWIFT_STATIC_CONTAINER_NAME='django-static'
