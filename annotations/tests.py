@@ -6,7 +6,7 @@ from django.test import override_settings
 from django.urls import reverse
 from rest_framework.test import APITestCase
 
-from LRMS_Thesis.settings import BASE_DIR, PROMPTS_PER_USER
+from LARMAS.settings import BASE_DIR, PROMPTS_PER_USER
 
 
 class TestPromptViews(APITestCase):
@@ -113,6 +113,7 @@ class TestRecordingsViews(APITestCase):
         'language_test.json',
         'user_test.json',
         'user_profile_test.json',
+        'distributed_prompts.json',
     ]
 
     @override_settings(MEDIA_URL='/test_media/',

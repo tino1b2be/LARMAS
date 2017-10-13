@@ -7,7 +7,7 @@ from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST, \
     HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK, HTTP_406_NOT_ACCEPTABLE
 from rest_framework.views import APIView
 
-from LRMS_Thesis.settings import DEBUG, PROMPTS_PER_USER
+from LARMAS.settings import DEBUG, PROMPTS_PER_USER
 from annotations.models import Prompt, PromptRecording, DistributedPrompt
 from annotations.serializers import PromptSerializer, \
     PromptRecordingSerializer
@@ -110,9 +110,12 @@ class PromptRecordingView(APIView):
                 file_type=file.name[-3:].upper(),
                 annotation=annotation,
             )
-            d = DistributedPrompt.objects.get(prompt=prompt, user=user)
-            d.recorded = True
-            d.save()
+            d1 = DistributedPrompt.objects.get(prompt=prompt, user=user)
+            d2 = Prompt.objects.get(id=prompt.id)
+            d2.number_of_recordings += 1
+            d1.recorded = True
+            d1.save()
+            d2.save()
             recording.save()
             s = PromptRecordingSerializer(recording)
             return Response(s.data, status=HTTP_201_CREATED)

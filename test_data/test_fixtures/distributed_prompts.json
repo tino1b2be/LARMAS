@@ -1,0 +1,222 @@
+[
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "prompt": 1,
+      "rejected": false,
+      "recorded": true,
+      "date": "2017-10-12T00:28:31.012Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "prompt": 2,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.041Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "prompt": 3,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.071Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "prompt": 7,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.129Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 5,
+    "fields": {
+      "user": 2,
+      "prompt": 8,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.154Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 6,
+    "fields": {
+      "user": 2,
+      "prompt": 10,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.194Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 7,
+    "fields": {
+      "user": 2,
+      "prompt": 11,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.222Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 8,
+    "fields": {
+      "user": 2,
+      "prompt": 12,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.249Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 9,
+    "fields": {
+      "user": 2,
+      "prompt": 13,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.278Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 10,
+    "fields": {
+      "user": 2,
+      "prompt": 14,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-12T00:28:31.309Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 11,
+    "fields": {
+      "user": 3,
+      "prompt": 1,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.069Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 12,
+    "fields": {
+      "user": 3,
+      "prompt": 2,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.132Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 13,
+    "fields": {
+      "user": 3,
+      "prompt": 3,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.153Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 14,
+    "fields": {
+      "user": 3,
+      "prompt": 7,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.183Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 15,
+    "fields": {
+      "user": 3,
+      "prompt": 8,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.205Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 16,
+    "fields": {
+      "user": 3,
+      "prompt": 10,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.227Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 17,
+    "fields": {
+      "user": 3,
+      "prompt": 11,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.247Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 18,
+    "fields": {
+      "user": 3,
+      "prompt": 12,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.268Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 19,
+    "fields": {
+      "user": 3,
+      "prompt": 13,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.287Z"
+    }
+  },
+  {
+    "model": "annotations.distributedprompt",
+    "pk": 20,
+    "fields": {
+      "user": 3,
+      "prompt": 14,
+      "rejected": false,
+      "recorded": false,
+      "date": "2017-10-13T11:29:55.307Z"
+    }
+  }
+]

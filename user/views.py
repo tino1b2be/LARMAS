@@ -7,7 +7,7 @@ from rest_framework.status import HTTP_403_FORBIDDEN,\
     HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_500_INTERNAL_SERVER_ERROR,\
     HTTP_200_OK
 
-from LRMS_Thesis.settings import DEBUG
+from LARMAS.settings import DEBUG
 from user.models import Language, UserProfile
 from user.serializers import UserProfileSerializer
 
