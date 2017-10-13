@@ -150,7 +150,7 @@ class PromptRejection(APIView):
         data = {'detail': ''}
         try:
             user = request.user
-            p_id = request.GET.get('id', 0)
+            p_id = self.kwargs.get('pk', 0)
             if p_id == 0:
                 data['detail'] = 'id GET parameter is required.'
             try:

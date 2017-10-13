@@ -4,8 +4,8 @@ from prompts.views import PromptsView, PromptDistribution, PromptRejection, Prom
 app_name = 'prompts'
 
 urlpatterns = [
-    url(r'^$', PromptDetail.as_view(), name='prompt'),
-    url(r'^all/$', PromptsView.as_view(), name='all'),
+    url(r'^(?P<pk>\d+)$', PromptDetail.as_view(), name='prompt'),
+    url(r'^all/$', PromptsView.as_view(), name='prompts'),
     url(r'^retrieve/$', PromptDistribution.as_view(), name='retrieve'),
-    url(r'^reject/(?P<pk>\d+)/$', PromptRejection.as_view(), name='reject'),
+    url(r'^reject/(?P<pk>\d+)$', PromptRejection.as_view(), name='reject'),
 ]

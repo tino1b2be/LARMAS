@@ -14,6 +14,7 @@ class TestPromptViews(APITestCase):
 
     def test_get_prompt_by_id(self):
         if self.client.login(username='admin', password='wellthen'):
+            u = reverse('prompts:prompt', kwargs={'pk': 1})
             response1 = self.client.get(
                 reverse('prompts:prompt', kwargs={'pk': 1})
             )
@@ -188,8 +189,8 @@ class TestPromptDistribution(APITestCase):
             p_2_text = response1.data[4]['text']
 
             # send request to reject
-            url1 = '%s?id=%d' % (reverse('prompts:reject'), p_1)
-            url2 = '%s?id=%d' % (reverse('prompts:reject'), p_2)
+            url1 = reverse('prompts:reject', kwargs={'pk': p_1})
+            url2 = reverse('prompts:reject', kwargs={'pk': p_2})
 
             response2 = self.client.get(url1)
             response3 = self.client.get(url2)
@@ -214,7 +215,7 @@ class TestPromptDistribution(APITestCase):
             self.assertEqual(response1.status_code, 200)
             self.assertEqual(len(response1.data), PROMPTS_PER_USER)
 
-            url = '%s?id=%d' % (reverse('prompts:reject'), 9999)
+            url = reverse('prompts:reject', kwargs={'pk': 999})
             response2 = self.client.get(url)
 
             self.assertEqual(response2.status_code, 406)
