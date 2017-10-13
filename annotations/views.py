@@ -81,7 +81,6 @@ class PromptRecordingView(APIView):
 
     def post(self, request):
         data = {'detail': 'prompt field is required.'}
-
         # check if all the relevant data is there
         if not request.POST.__contains__('prompt'):
             return Response(data, status=HTTP_400_BAD_REQUEST)
@@ -111,6 +110,9 @@ class PromptRecordingView(APIView):
                 file_type=file.name[-3:].upper(),
                 annotation=annotation,
             )
+            d = DistributedPrompt.objects.get(prompt=prompt, user=user)
+            d.recorded = True
+            d.save()
             recording.save()
             s = PromptRecordingSerializer(recording)
             return Response(s.data, status=HTTP_201_CREATED)
