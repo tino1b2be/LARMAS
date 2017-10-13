@@ -1,6 +1,6 @@
 [
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 1,
     "fields": {
       "text": "This is a test",
@@ -9,7 +9,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 2,
     "fields": {
       "text": "Just another test",
@@ -18,7 +18,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 3,
     "fields": {
       "text": "Seems to be working fine",
@@ -27,7 +27,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 4,
     "fields": {
       "text": "Makadini",
@@ -36,7 +36,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 5,
     "fields": {
       "text": "Zita rako ndiyani?",
@@ -45,7 +45,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 6,
     "fields": {
       "text": "Wakazvarwa kupi?",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 7,
     "fields": {
       "text": "Where do you live?",
@@ -63,7 +63,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 8,
     "fields": {
       "text": "How are you?",
@@ -72,7 +72,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 9,
     "fields": {
       "text": "Zita raAmai vako ndiyani?",
@@ -81,7 +81,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 10,
     "fields": {
       "text": "What is your mother's name?",
@@ -90,7 +90,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 11,
     "fields": {
       "text": "Which country were you born in?",
@@ -99,7 +99,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 12,
     "fields": {
       "text": "I am hungry",
@@ -108,7 +108,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 13,
     "fields": {
       "text": "I am a university graduate.",
@@ -117,7 +117,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 14,
     "fields": {
       "text": "I grew up in Mutare.",
@@ -126,7 +126,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 15,
     "fields": {
       "text": "My home country is Zimbabwe.",
@@ -135,7 +135,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 16,
     "fields": {
       "text": "Africa is a beautiful continent.",
@@ -144,7 +144,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 17,
     "fields": {
       "text": "There are twelve official languages in South Africa.",
@@ -153,7 +153,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 18,
     "fields": {
       "text": "There are 16 official languages in Zimbabwe.",
@@ -162,7 +162,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 19,
     "fields": {
       "text": "The capital city of Zimbabwe is Harare.",
@@ -171,7 +171,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 20,
     "fields": {
       "text": "I wish I could fly for free",
@@ -180,7 +180,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 21,
     "fields": {
       "text": "Ini ndine nzara",
@@ -189,7 +189,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 22,
     "fields": {
       "text": "Ndinemakore makumi maviri nembiri",
@@ -198,7 +198,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 23,
     "fields": {
       "text": "Baba vangu vanobva kuHonde Valley.",
@@ -207,7 +207,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 24,
     "fields": {
       "text": "Ndakangwanwa zita raBaba vako.",
@@ -216,7 +216,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 25,
     "fields": {
       "text": "Shamwari yangu yepamoyo inonzi Kombo.",
@@ -225,7 +225,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 26,
     "fields": {
       "text": "Ndine makokre mana ndichigara muCape Town",
@@ -234,7 +234,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 27,
     "fields": {
       "text": "Dai ndana ndine mapapiro.",
@@ -243,7 +243,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 28,
     "fields": {
       "text": "Makumbo angu akazvimba.",
@@ -252,7 +252,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 29,
     "fields": {
       "text": "Mazino angu akachena.",
@@ -261,7 +261,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 30,
     "fields": {
       "text": "Musikana uyo akareba.",
@@ -270,7 +270,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 31,
     "fields": {
       "text": "Sekuru vakaenda kumusha",
@@ -279,7 +279,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 32,
     "fields": {
       "text": "Mbuya vaenda kumunda",
@@ -288,7 +288,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 33,
     "fields": {
       "text": "Handei kunorima fodya.",
@@ -297,7 +297,7 @@
     }
   },
   {
-    "model": "annotations.prompt",
+    "model": "prompts.prompt",
     "pk": 34,
     "fields": {
       "text": "Handigoni kutaura zvakanaka.",

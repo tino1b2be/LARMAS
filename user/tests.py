@@ -5,7 +5,6 @@ from django.urls import reverse
 class UserRegistration(TransactionTestCase):
     fixtures = [
         'prompts_test.json',
-        'frequency_test.json',
         'language_test.json',
         'user_test.json',
         'user_profile_test.json',
@@ -177,7 +176,6 @@ class UserRegistration(TransactionTestCase):
 class User(TestCase):
     fixtures = [
         'prompts_test.json',
-        'frequency_test.json',
         'language_test.json',
         'user_test.json',
         'user_profile_test.json',
@@ -409,7 +407,6 @@ class User(TestCase):
 class UserAuth(TestCase):
     fixtures = [
         'prompts_test.json',
-        'frequency_test.json',
         'language_test.json',
         'user_test.json',
         'user_profile_test.json',

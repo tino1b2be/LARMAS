@@ -1,6 +1,6 @@
 [
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 1,
     "fields": {
       "user": 2,
@@ -11,7 +11,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 2,
     "fields": {
       "user": 2,
@@ -22,7 +22,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 3,
     "fields": {
       "user": 2,
@@ -33,7 +33,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 4,
     "fields": {
       "user": 2,
@@ -44,7 +44,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 5,
     "fields": {
       "user": 2,
@@ -55,7 +55,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 6,
     "fields": {
       "user": 2,
@@ -66,7 +66,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 7,
     "fields": {
       "user": 2,
@@ -77,7 +77,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 8,
     "fields": {
       "user": 2,
@@ -88,7 +88,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 9,
     "fields": {
       "user": 2,
@@ -99,7 +99,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 10,
     "fields": {
       "user": 2,
@@ -110,7 +110,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 11,
     "fields": {
       "user": 3,
@@ -121,7 +121,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 12,
     "fields": {
       "user": 3,
@@ -132,7 +132,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 13,
     "fields": {
       "user": 3,
@@ -143,7 +143,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 14,
     "fields": {
       "user": 3,
@@ -154,7 +154,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 15,
     "fields": {
       "user": 3,
@@ -165,7 +165,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 16,
     "fields": {
       "user": 3,
@@ -176,7 +176,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 17,
     "fields": {
       "user": 3,
@@ -187,7 +187,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 18,
     "fields": {
       "user": 3,
@@ -198,7 +198,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 19,
     "fields": {
       "user": 3,
@@ -209,7 +209,7 @@
     }
   },
   {
-    "model": "annotations.distributedprompt",
+    "model": "prompts.distributedprompt",
     "pk": 20,
     "fields": {
       "user": 3,
