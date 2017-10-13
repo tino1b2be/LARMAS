@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from translations.models import PromptTranslation
+
+admin.site.register(PromptTranslation)
