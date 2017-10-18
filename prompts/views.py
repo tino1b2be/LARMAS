@@ -146,19 +146,18 @@ class PromptDistribution(APIView):
 class PromptRejection(APIView):
     permission_classes(IsAuthenticated, )
 
-    def get(self, request):
+    def get(self, request, pk):
         data = {'detail': ''}
         try:
             user = request.user
-            p_id = self.kwargs.get('pk', 0)
-            if p_id == 0:
+            if pk == 0:
                 data['detail'] = 'id GET parameter is required.'
             try:
-                prompt = Prompt.objects.get(id=p_id)
+                prompt = Prompt.objects.get(id=pk)
                 dp = DistributedPrompt.objects.get(user=user, prompt=prompt)
                 dp.rejected = True
                 dp.save()
-                data['detail'] = 'Prompt ID = %s has been rejected' % p_id
+                data['detail'] = 'Prompt ID = %s has been rejected' % pk
                 return Response(data, HTTP_200_OK)
 
             except ObjectDoesNotExist:
