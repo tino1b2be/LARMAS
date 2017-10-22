@@ -195,19 +195,6 @@ class TestListRecordings(APITestCase):
     def test_get_recordings_not_admin(self):
 
         if self.client.login(username='test1', password='password'):
-            #upload file
-            annotation = str(uuid.uuid4())
-            url = reverse('annotations:upload')
-            file = open('test_data/files/tom.wav', 'rb')
-            data = {
-                'file': file,
-                'prompt': 1,
-                'annotation': annotation,
-            }
-            responsex = self.client.post(url, data)
-            file.close()
-
-            # fetch file
             url1 = reverse('annotations:list')
             url2 = reverse('annotations:recording', kwargs={'pk': 1})
             response1 = self.client.get(url1)
