@@ -10,6 +10,7 @@ class TestPromptViews(APITestCase):
         'language_test.json',
         'user_test.json',
         'user_profile_test.json',
+        'distributed_prompts.json',
     ]
 
     def test_get_prompt_by_id(self):

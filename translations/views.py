@@ -1,5 +1,6 @@
 from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework.permissions import IsAdminUser
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from translations.models import PromptTranslation
@@ -23,4 +24,13 @@ class TranslationUploadView(APIView):
 
 
 class ParallelView(ListAPIView):
-    pass
+    serializer_class = PromptTranslationSerializer
+    permission_classes = (IsAdminUser,)
+
+    def get_queryset(self):
+        first = self.kwargs.get('first', 0)
+        second = self.kwargs.get('second', 0)
+        queryset = PromptTranslation.objects.filter(
+            language__code=second,
+            original_prompt__language__code=first)
+        return queryset
