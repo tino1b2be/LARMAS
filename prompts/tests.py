@@ -141,6 +141,28 @@ class TestPromptDistribution(APITestCase):
         else:
             self.fail('User could not log in.')
 
+    def test_get_prompts_language_does_not_exist(self):
+
+        if self.client.login(username='test1', password='password'):
+            url = "%s?language=SHO-ZA" \
+                  % reverse('prompts:retrieve')
+            response = self.client.get(url)
+
+            self.assertEqual(response.status_code, 400)
+        else:
+            self.fail('User could not log in.')
+
+    def test_get_prompts_language_not_in_users_profile(self):
+
+        if self.client.login(username='test1', password='password'):
+            url = "%s?language=NSO-ZA" \
+                  % reverse('prompts:retrieve')
+            response = self.client.get(url)
+
+            self.assertEqual(response.status_code, 400)
+        else:
+            self.fail('User could not log in.')
+
     def test_get_prompts_third_language(self):
         # todo add Xhosa data for third language
         pass
