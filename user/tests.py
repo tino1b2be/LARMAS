@@ -211,6 +211,13 @@ class User(TestCase):
         else:
             self.fail('User could not login.')
 
+    def test_show_this_user_details_by_id_not_exist(self):
+        if self.client.login(username='test2', password='password'):
+            response = self.client.get("%s?id=999" % reverse('user:user'))
+            self.assertEquals(response.status_code, 400)
+        else:
+            self.fail('User could not login.')
+
     def test_show_get_user_details_not_admin(self):
         if self.client.login(username='test1', password='password'):
             response = self.client.get("%s?id=3" % reverse('user:user'))
@@ -231,6 +238,23 @@ class User(TestCase):
             # "last_name": "last3",
             # "email": "test3@test.com",
             "first_language": "NSO-ZA",
+            # "second_language": "SHO-ZW",
+            # "third_language": "XHO-ZA",
+        }
+        if self.client.login(username='test1', password='password'):
+            response = self.client.post(reverse('user:user'), data)
+            self.assertEquals(response.status_code, 200)
+            lang1 = response.data['first_language'].upper()
+            self.assertEqual(lang1, 'SESOTHO_SA_LEBOA')
+        else:
+            self.fail('User could not login.')
+
+    def test_change_this_user_first_language_does_not_exists(self):
+        data = {
+            # "first_name": "first3",
+            # "last_name": "last3",
+            # "email": "test3@test.com",
+            "first_language": "NSO-ZW",
             # "second_language": "SHO-ZW",
             # "third_language": "XHO-ZA",
         }
