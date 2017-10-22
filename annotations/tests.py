@@ -129,12 +129,36 @@ class TestUploadRecordings(APITestCase):
         """
         annotation = str(uuid.uuid4())
         url = reverse('annotations:upload')
-        file = open('test_data/files/wav', 'rb')
+        file = open('test_data/files/tom.wav', 'rb')
 
         if self.client.login(username='test1', password='password'):
             data = {
                 'file': file,
                 'prompt': 15,
+                'annotation': annotation,
+            }
+            response = self.client.post(url, data)
+            file.close()
+            self.assertEqual(response.status_code, 400)
+
+        else:
+            self.fail('User could not login.')
+
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_upload_prompt_does_not_exist(self):
+        """
+        test to check if user uploads a prompt they were not given
+        :return:
+        """
+        annotation = str(uuid.uuid4())
+        url = reverse('annotations:upload')
+        file = open('test_data/files/tom.wav', 'rb')
+
+        if self.client.login(username='test1', password='password'):
+            data = {
+                'file': file,
+                'prompt': 999,
                 'annotation': annotation,
             }
             response = self.client.post(url, data)
