@@ -6,7 +6,7 @@ app_name = 'annotations'
 
 urlpatterns = [
     url(
-        r'^$',
+        r'^(?P<pk>\d+)/$',
         views.PromptRecordingDetailView.as_view(),
         name='recording'
     ),

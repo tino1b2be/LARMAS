@@ -59,9 +59,9 @@ class PromptUploadView(APIView):
 
             prompt.number_of_recordings += 1
             d1.recorded = True
-            d1.save()
-            prompt.save()
-            recording.save()
+            d1.save()  # save distributed prompt object
+            prompt.save()  # save prompt object
+            recording.save()  # save recording
             s = PromptRecordingSerializer(recording)
             return Response(s.data, status=HTTP_201_CREATED)
 
