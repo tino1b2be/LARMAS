@@ -55,11 +55,25 @@ class TestTranslationUpload(APITestCase):
         else:
             self.fail("Could not login.")
 
-    def test_upload_translation_unknown_original_prompt(self):
+    def test_upload_translation_original_prompt_not_given_to_user(self):
         if self.client.login(username='test1', password='password'):
             data = {
                 'text': 'Unogara kupi?',
                 'original_prompt': 15,
+                'language': 'SHO-ZW',
+            }
+            url = reverse('translations:upload')
+            response = self.client.post(url, data)
+            self.assertEqual(response.status_code, 400)
+
+        else:
+            self.fail("Could not login.")
+
+    def test_upload_translation_original_prompt_does_not_exist(self):
+        if self.client.login(username='test1', password='password'):
+            data = {
+                'text': 'Unogara kupi?',
+                'original_prompt': 999,
                 'language': 'SHO-ZW',
             }
             url = reverse('translations:upload')
