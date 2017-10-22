@@ -30,6 +30,7 @@ class DistributedPrompt(models.Model):
     prompt = models.ForeignKey(Prompt, blank=False)
     rejected = models.BooleanField(default=False)
     recorded = models.BooleanField(default=False)
+    translated = models.BooleanField(default=False)
     date = models.DateTimeField(default=now)
 
     def __str__(self):
