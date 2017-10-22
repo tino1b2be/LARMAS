@@ -3,11 +3,11 @@ from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.status import HTTP_403_FORBIDDEN,\
-    HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_500_INTERNAL_SERVER_ERROR,\
+from rest_framework.status import HTTP_403_FORBIDDEN, \
+    HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_500_INTERNAL_SERVER_ERROR, \
     HTTP_200_OK
 
-from LRMS_Thesis.settings import DEBUG
+from LARMAS.settings import DEBUG
 from user.models import Language, UserProfile
 from user.serializers import UserProfileSerializer
 
@@ -16,9 +16,14 @@ class UserView(APIView):
     """
     View class to display or change user details
     """
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request):
+        """
+        Show user details
+        :param request:
+        :return:
+        """
         try:
             id = int(request.query_params.get('id', 0))
             if request.user.is_staff:
@@ -42,10 +47,19 @@ class UserView(APIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
     def post(self, request):
+        """
+        View to update user's details
+        :param request:
+        :return:
+        """
         try:
+            if request.user.is_staff:
+                note = 'Admin users cannot modify their details via API'
+                data = {'detail': note}
+                return Response(data, status=HTTP_400_BAD_REQUEST)
             d = request.POST
-            user = User.objects.get(username=request.user.username)
-            user_profile = UserProfile.objects.get(user=request.user)
+            user = request.user
+            user_profile = UserProfile.objects.get(user=user)
             user.email = d.get('email', user.email)
             user.first_name = d.get('first_name', user.first_name)
             user.last_name = d.get('last_name', user.last_name)
@@ -69,7 +83,7 @@ class UserView(APIView):
             s = UserProfileSerializer(user_profile)
             return Response(s.data, status=HTTP_200_OK)
         except ObjectDoesNotExist:
-            data = {'detail': 'User and/or Language does not exist.'}
+            data = {'detail': 'Language does not exist.'}
             return Response(data, status=HTTP_400_BAD_REQUEST)
         except Exception as e2:
             data = {'detail': str(e2) if DEBUG else 'Something went wrong'}
@@ -82,8 +96,8 @@ class UserRegistration(APIView):
     """
     permission_classes = (AllowAny,)
 
-    def get(self, request):
-        return Response({}, status=HTTP_403_FORBIDDEN)
+    # def get(self, request):
+    #     return Response({}, status=HTTP_403_FORBIDDEN)
 
     def post(self, request):
         data = {'detail': 'username field is required'}
@@ -160,12 +174,6 @@ class UserRegistration(APIView):
                 new_user.delete()
                 data['detail'] = code + ' language code is invalid.'
                 return Response(data, status=HTTP_400_BAD_REQUEST)
-
-            except Exception as e:
-                # todo log
-                new_user.delete()
-                data['detail'] = str(e) if DEBUG else 'Something went wrong'
-                return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
         except Exception as e2:
             # todo log

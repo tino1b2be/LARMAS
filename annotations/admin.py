@@ -1,8 +1,5 @@
 from django.contrib import admin
 
-from annotations.models import \
-    Prompt, PromptRecording, PromptTranslation
+from annotations.models import PromptRecording
 
-admin.site.register(Prompt)
 admin.site.register(PromptRecording)
-admin.site.register(PromptTranslation)

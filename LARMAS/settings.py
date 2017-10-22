@@ -27,6 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '197.239.149.167',
     'localhost',
+    '197.239.149.176',
 ]
 
 # Application definition
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'user',
     'annotations',
+    'translations',
+    'prompts',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'LRMS_Thesis.urls'
+ROOT_URLCONF = 'LARMAS.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'LRMS_Thesis.wsgi.application'
+WSGI_APPLICATION = 'LARMAS.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases

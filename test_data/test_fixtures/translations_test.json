@@ -1,0 +1,50 @@
+[
+  {
+    "model": "translations.prompttranslation",
+    "pk": 1,
+    "fields": {
+      "original_prompt": 8,
+      "text": "Makadini?",
+      "verified": true,
+      "language": 2,
+      "user": 2,
+      "date": "2017-10-22T21:56:16Z"
+    }
+  },
+  {
+    "model": "translations.prompttranslation",
+    "pk": 2,
+    "fields": {
+      "original_prompt": 14,
+      "text": "Ndakakurira maMutare.",
+      "verified": true,
+      "language": 2,
+      "user": 2,
+      "date": "2017-10-22T21:56:59Z"
+    }
+  },
+  {
+    "model": "translations.prompttranslation",
+    "pk": 3,
+    "fields": {
+      "original_prompt": 9,
+      "text": "What is your mother's name?",
+      "verified": true,
+      "language": 1,
+      "user": 2,
+      "date": "2017-10-22T21:59:22Z"
+    }
+  },
+  {
+    "model": "translations.prompttranslation",
+    "pk": 4,
+    "fields": {
+      "original_prompt": 5,
+      "text": "What is your name?",
+      "verified": true,
+      "language": 1,
+      "user": 2,
+      "date": "2017-10-22T22:00:05Z"
+    }
+  }
+]

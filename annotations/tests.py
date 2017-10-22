@@ -6,122 +6,26 @@ from django.test import override_settings
 from django.urls import reverse
 from rest_framework.test import APITestCase
 
-from LRMS_Thesis.settings import BASE_DIR, PROMPTS_PER_USER
+from LARMAS.settings import BASE_DIR
 
 
-class TestPromptViews(APITestCase):
+class TestUploadRecordings(APITestCase):
     fixtures = [
         'prompts_test.json',
-        'frequency_test.json',
         'language_test.json',
         'user_test.json',
         'user_profile_test.json',
-    ]
-
-    def test_get_prompt_by_id(self):
-        if self.client.login(username='test1', password='password'):
-            response1 = self.client.get(
-                reverse('annotations:prompt', kwargs={'pk': 1})
-            )
-            response2 = self.client.get(
-                reverse('annotations:prompt', kwargs={'pk': 3})
-            )
-            self.assertEquals(response1.status_code, 200)
-            self.assertEquals(response2.status_code, 200)
-        else:
-            return self.fail('User could not login.')
-
-    def test_get_prompt_by_id_not_exist(self):
-        if self.client.login(username='test1', password='password'):
-            response1 = self.client.get(
-                reverse('annotations:prompt', kwargs={'pk': 999})
-            )
-            response2 = self.client.get(
-                reverse('annotations:prompt', kwargs={'pk': 888})
-            )
-            self.assertEquals(response1.status_code, 404)
-            self.assertEquals(response2.status_code, 404)
-        else:
-            return self.fail('User could not login.')
-
-    def test_list_all_prompts(self):
-        if self.client.login(username='test1', password='password'):
-            response = self.client.get(reverse('annotations:prompts'))
-            self.assertEquals(response.status_code, 200)
-        else:
-            return self.fail('User could not login.')
-
-    def test_create_prompt_missing_language(self):
-        if self.client.login(username='admin', password='wellthen'):
-            data = {
-                'text': 'This is a test',
-            }
-            r = self.client.post(reverse('annotations:prompts'), data)
-            self.assertEquals(r.status_code, 400)
-        else:
-            self.fail('User could not log in.')
-
-    def test_create_prompt_missing_text(self):
-        if self.client.login(username='admin', password='wellthen'):
-            data = {
-                'language': 'ENG-ZA',
-            }
-            r = self.client.post(reverse('annotations:prompts'), data)
-            self.assertEquals(r.status_code, 400)
-        else:
-            self.fail('User could not log in.')
-
-    def test_unsupported_language(self):
-        if self.client.login(username='admin', password='wellthen'):
-            data = {
-                'text': 'This is a test',
-                'language': 'ENG-ZW'
-            }
-            r = self.client.post(reverse('annotations:prompts'), data)
-            self.assertEquals(r.status_code, 400)
-        else:
-            self.fail('User could not log in.')
-
-    def test_prompt_too_short(self):
-        if self.client.login(username='admin', password='wellthen'):
-            data = {
-                'text': 'T',
-                'language': 'ENG-ZA'
-            }
-            r = self.client.post(reverse('annotations:prompts'), data)
-            self.assertEquals(r.status_code, 400)
-        else:
-            self.fail('User could not log in.')
-
-    def test_create_prompt(self):
-        if self.client.login(username='admin', password='wellthen'):
-            data = {
-                'text': 'This is a test.',
-                'language': 'ENG-ZA',
-            }
-            r = self.client.post(reverse('annotations:prompts'), data)
-            self.assertEquals(r.status_code, 201)
-        else:
-            self.fail('User could not log in.')
-
-
-class TestRecordingsViews(APITestCase):
-
-    fixtures = [
-        'prompts_test.json',
-        'frequency_test.json',
-        'language_test.json',
-        'user_test.json',
-        'user_profile_test.json',
+        'distributed_prompts.json',
     ]
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_recording(self):
-        annotation = str(uuid.uuid4())
-        url = reverse('annotations:upload_recording')
-        file = open('test_data/files/tom.wav', 'rb')
+
         if self.client.login(username='test1', password='password'):
+            annotation = str(uuid.uuid4())
+            url = reverse('annotations:upload')
+            file = open('test_data/files/tom.wav', 'rb')
             data = {
                 'file': file,
                 'prompt': 1,
@@ -145,7 +49,7 @@ class TestRecordingsViews(APITestCase):
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_recording_no_file(self):
         annotation = str(uuid.uuid4())
-        url = reverse('annotations:upload_recording')
+        url = reverse('annotations:upload')
         # file = open('test_data/files/tom.wav', 'rb')
         if self.client.login(username='test1', password='password'):
             data = {
@@ -164,7 +68,7 @@ class TestRecordingsViews(APITestCase):
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_recording_no_prompt(self):
         annotation = str(uuid.uuid4())
-        url = reverse('annotations:upload_recording')
+        url = reverse('annotations:upload')
         file = open('test_data/files/tom.wav', 'rb')
         if self.client.login(username='test1', password='password'):
             data = {
@@ -182,7 +86,7 @@ class TestRecordingsViews(APITestCase):
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_recording_no_annotation(self):
-        url = reverse('annotations:upload_recording')
+        url = reverse('annotations:upload')
         file = open('test_data/files/tom.wav', 'rb')
         if self.client.login(username='test1', password='password'):
             data = {
@@ -200,7 +104,7 @@ class TestRecordingsViews(APITestCase):
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_recording_short_filename(self):
         annotation = str(uuid.uuid4())
-        url = reverse('annotations:upload_recording')
+        url = reverse('annotations:upload')
         file = open('test_data/files/wav', 'rb')
 
         if self.client.login(username='test1', password='password'):
@@ -216,131 +120,110 @@ class TestRecordingsViews(APITestCase):
         else:
             self.fail('User could not login.')
 
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_unauthorized_prompt(self):
         """
-        test to check if user uploads a prompt they were given
+        test to check if user uploads a prompt they were not given
         :return:
         """
-        pass
+        annotation = str(uuid.uuid4())
+        url = reverse('annotations:upload')
+        file = open('test_data/files/tom.wav', 'rb')
+
+        if self.client.login(username='test1', password='password'):
+            data = {
+                'file': file,
+                'prompt': 15,
+                'annotation': annotation,
+            }
+            response = self.client.post(url, data)
+            file.close()
+            self.assertEqual(response.status_code, 400)
+
+        else:
+            self.fail('User could not login.')
+
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_upload_prompt_does_not_exist(self):
+        """
+        test to check if user uploads a prompt they were not given
+        :return:
+        """
+        annotation = str(uuid.uuid4())
+        url = reverse('annotations:upload')
+        file = open('test_data/files/tom.wav', 'rb')
+
+        if self.client.login(username='test1', password='password'):
+            data = {
+                'file': file,
+                'prompt': 999,
+                'annotation': annotation,
+            }
+            response = self.client.post(url, data)
+            file.close()
+            self.assertEqual(response.status_code, 400)
+
+        else:
+            self.fail('User could not login.')
 
 
-class TestPromptDistribution(APITestCase):
+class TestListRecordings(APITestCase):
     fixtures = [
         'prompts_test.json',
-        'frequency_test.json',
         'language_test.json',
         'user_test.json',
         'user_profile_test.json',
+        'distributed_prompts.json',
     ]
 
-    def test_get_prompts_first_language(self):
-
-        if self.client.login(username='test2', password='password'):
-            # get prompts
-            url = reverse('annotations:distribute_prompts')
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_get_all_recordings(self):
+        if self.client.login(username='admin', password='wellthen'):
+            url = reverse('annotations:list')
             response = self.client.get(url)
-
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(len(response.data), PROMPTS_PER_USER)
-
-            # test the languages
-            for prompt in response.data:
-                self.assertEqual(prompt['language'].upper(), 'ENGLISH')
-
         else:
-            self.fail('User could not log in.')
+            self.fail("User could not login.")
 
-    def test_get_prompt_second_language(self):
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_get_one_recording(self):
 
         if self.client.login(username='test1', password='password'):
-            url = "%s?language=SHO-ZW" \
-                  % reverse('annotations:distribute_prompts')
-            response = self.client.get(url)
-
-            self.assertEqual(response.status_code, 200)
-            self.assertEqual(len(response.data), PROMPTS_PER_USER)
-
-            # test the languages
-            for prompt in response.data:
-                self.assertEqual(prompt['language'].upper(), 'CHISHONA')
+            annotation = str(uuid.uuid4())
+            url = reverse('annotations:upload')
+            file = open('test_data/files/tom.wav', 'rb')
+            data = {
+                'file': file,
+                'prompt': 1,
+                'annotation': annotation,
+            }
+            responsex = self.client.post(url, data)
+            file.close()
+            self.client.logout()
+            if responsex.status_code == 201 and \
+                    self.client.login(username='admin', password='wellthen'):
+                url = reverse('annotations:recording', kwargs={'pk': 1})
+                response = self.client.get(url)
+                self.assertEqual(response.status_code, 200)
+            else:
+                self.fail('Could not upload recording.')
         else:
-            self.fail('User could not log in.')
+            self.fail("User could not login.")
 
-    def test_get_prompt_third_language(self):
-        # todo add Xhosa data for third language
-        pass
-
-    def test_get_prompts_twice_no_rejection(self):
-
-        if self.client.login(username='test2', password='password'):
-            # get prompts
-            url = reverse('annotations:distribute_prompts')
-            response1 = self.client.get(url)
-
-            self.assertEqual(response1.status_code, 200)
-            self.assertEqual(len(response1.data), PROMPTS_PER_USER)
-
-            prompts = []
-            # save all the prompts temporarily
-            for prompt in response1.data:
-                prompts.append(prompt['text'])
-
-            # request for prompts again
-            response2 = self.client.get(url)
-
-            self.assertEqual(response1.status_code, 200)
-            self.assertEqual(len(response1.data), PROMPTS_PER_USER)
-
-            # check if the same prompts were returned
-            for prompt in response2.data:
-                self.assertTrue(prompt['text'] in prompts)
-
-        else:
-            self.fail('User could not log in.')
-
-    def test_prompt_rejection(self):
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_get_recordings_not_admin(self):
 
         if self.client.login(username='test1', password='password'):
-            get_prompts = reverse('annotations:distribute_prompts')
-            response1 = self.client.get(get_prompts)
-
-            self.assertEqual(response1.status_code, 200)
-            self.assertEqual(len(response1.data), PROMPTS_PER_USER)
-
-            # reject the first and fifth prompts
-            p_1 = response1.data[0]['id']
-            p_1_text = response1.data[0]['text']
-            p_2 = response1.data[4]['id']
-            p_2_text = response1.data[4]['text']
-
-            # send request to reject
-            url1 = '%s?id=%d' % (reverse('annotations:reject_prompt'), p_1)
-            url2 = '%s?id=%d' % (reverse('annotations:reject_prompt'), p_2)
-
-            response2 = self.client.get(url1)
-            response3 = self.client.get(url2)
-            response4 = self.client.get(get_prompts)
-
-            self.assertEqual(response2.status_code, 200)
-            self.assertEqual(response3.status_code, 200)
-            # check if the old prompts are in the new prompts list
-            prompts = []
-            for prompt in response4.data:
-                prompts.append(prompt['text'])
-
-            self.assertFalse(p_1_text in prompts)
-            self.assertFalse(p_2_text in prompts)
-
-    def test_reject_wrong_prompt(self):
-
-        if self.client.login(username='test2', password='password'):
-            get_prompts = reverse('annotations:distribute_prompts')
-            response1 = self.client.get(get_prompts)
-
-            self.assertEqual(response1.status_code, 200)
-            self.assertEqual(len(response1.data), PROMPTS_PER_USER)
-
-            url = '%s?id=%d' % (reverse('annotations:reject_prompt'), 9999)
-            response2 = self.client.get(url)
-
-            self.assertEqual(response2.status_code, 406)
+            url1 = reverse('annotations:list')
+            url2 = reverse('annotations:recording', kwargs={'pk': 1})
+            response1 = self.client.get(url1)
+            response2 = self.client.get(url2)
+            self.assertEqual(response1.status_code, 403)
+            self.assertEqual(response2.status_code, 403)
+        else:
+            self.fail('User could not login.')

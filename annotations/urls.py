@@ -6,28 +6,18 @@ app_name = 'annotations'
 
 urlpatterns = [
     url(
-        r'^prompts/$',
-        views.PromptsList.as_view(),
-        name='prompts'
-    ),
-    url(
-        r'^prompt/(?P<pk>\d+)/$',
-        views.PromptDetail.as_view(),
-        name='prompt'
+        r'^(?P<pk>\d+)/$',
+        views.PromptRecordingDetailView.as_view(),
+        name='recording'
     ),
     url(
         r'^upload/$',
-        views.PromptRecordingView.as_view(),
-        name='upload_recording'
+        views.PromptUploadView.as_view(),
+        name='upload'
     ),
     url(
-        r'^retrieve_prompts/$',
-        views.PromptDistribution.as_view(),
-        name='distribute_prompts'
-    ),
-    url(
-        r'^reject_prompt/$',
-        views.RejectPrompt.as_view(),
-        name='reject_prompt'
+        r'^list/$',
+        views.PromptRecordingsListView.as_view(),
+        name='list'
     )
 ]
