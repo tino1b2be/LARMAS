@@ -7,6 +7,7 @@
       "prompt": 1,
       "rejected": false,
       "recorded": true,
+      "translated": false,
       "date": "2017-10-12T00:28:31.012Z"
     }
   },
@@ -18,6 +19,7 @@
       "prompt": 2,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.041Z"
     }
   },
@@ -29,6 +31,7 @@
       "prompt": 3,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.071Z"
     }
   },
@@ -40,6 +43,7 @@
       "prompt": 7,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.129Z"
     }
   },
@@ -51,6 +55,7 @@
       "prompt": 8,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.154Z"
     }
   },
@@ -62,6 +67,7 @@
       "prompt": 10,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.194Z"
     }
   },
@@ -73,6 +79,7 @@
       "prompt": 11,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.222Z"
     }
   },
@@ -84,6 +91,7 @@
       "prompt": 12,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.249Z"
     }
   },
@@ -95,6 +103,7 @@
       "prompt": 13,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.278Z"
     }
   },
@@ -106,6 +115,7 @@
       "prompt": 14,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-12T00:28:31.309Z"
     }
   },
@@ -117,6 +127,7 @@
       "prompt": 1,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.069Z"
     }
   },
@@ -128,6 +139,7 @@
       "prompt": 2,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.132Z"
     }
   },
@@ -139,6 +151,7 @@
       "prompt": 3,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.153Z"
     }
   },
@@ -150,6 +163,7 @@
       "prompt": 7,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.183Z"
     }
   },
@@ -161,6 +175,7 @@
       "prompt": 8,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.205Z"
     }
   },
@@ -172,6 +187,7 @@
       "prompt": 10,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.227Z"
     }
   },
@@ -183,6 +199,7 @@
       "prompt": 11,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.247Z"
     }
   },
@@ -194,6 +211,7 @@
       "prompt": 12,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.268Z"
     }
   },
@@ -205,6 +223,7 @@
       "prompt": 13,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.287Z"
     }
   },
@@ -216,9 +235,8 @@
       "prompt": 14,
       "rejected": false,
       "recorded": false,
+      "translated": false,
       "date": "2017-10-13T11:29:55.307Z"
     }
   }
 ]
-
-

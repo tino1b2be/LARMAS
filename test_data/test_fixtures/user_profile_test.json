@@ -20,5 +20,16 @@
       "second_language": 6,
       "third_language": 13
     }
+  },
+  {
+    "model": "user.userprofile",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "age": 0,
+      "first_language": 1,
+      "second_language": 2,
+      "third_language": 3
+    }
   }
 ]

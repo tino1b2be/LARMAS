@@ -63,10 +63,7 @@ class PromptsView(ListAPIView):
             return Response(data, status=HTTP_400_BAD_REQUEST)
         except Exception as e:
             message = str(e) if DEBUG else 'An error has occurred'
-            data = {
-                'message': message,
-            }
-            # todo log error
+            data = {'message': message}
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
