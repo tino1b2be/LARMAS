@@ -5,7 +5,6 @@ from django.db import models
 from django.utils.timezone import now
 
 from prompts.models import Prompt
-from user.models import Language
 
 
 class PromptRecording(models.Model):

@@ -1,10 +1,10 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render
 from rest_framework.decorators import permission_classes
-from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK, \
+from rest_framework.status import HTTP_400_BAD_REQUEST,\
+    HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK, \
     HTTP_406_NOT_ACCEPTABLE, HTTP_201_CREATED
 from rest_framework.views import APIView
 
@@ -70,11 +70,10 @@ class PromptsView(ListAPIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class PromptDetail(RetrieveUpdateDestroyAPIView):
+class PromptDetail(RetrieveAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
     permission_classes = (IsAdminUser,)
-    # todo add admin permissions
 
 
 class PromptDistribution(APIView):
@@ -150,8 +149,6 @@ class PromptRejection(APIView):
         data = {'detail': ''}
         try:
             user = request.user
-            if pk == 0:
-                data['detail'] = 'id GET parameter is required.'
             try:
                 prompt = Prompt.objects.get(id=pk)
                 dp = DistributedPrompt.objects.get(user=user, prompt=prompt)

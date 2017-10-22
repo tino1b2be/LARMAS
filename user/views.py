@@ -19,6 +19,11 @@ class UserView(APIView):
     permission_classes = (IsAuthenticated, )
 
     def get(self, request):
+        """
+        Show user details
+        :param request:
+        :return:
+        """
         try:
             id = int(request.query_params.get('id', 0))
             if request.user.is_staff:
@@ -42,6 +47,11 @@ class UserView(APIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
     def post(self, request):
+        """
+        View to update user's details
+        :param request:
+        :return:
+        """
         try:
             d = request.POST
             user = User.objects.get(username=request.user.username)
@@ -82,8 +92,8 @@ class UserRegistration(APIView):
     """
     permission_classes = (AllowAny,)
 
-    def get(self, request):
-        return Response({}, status=HTTP_403_FORBIDDEN)
+    # def get(self, request):
+    #     return Response({}, status=HTTP_403_FORBIDDEN)
 
     def post(self, request):
         data = {'detail': 'username field is required'}

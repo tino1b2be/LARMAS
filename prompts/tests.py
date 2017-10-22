@@ -14,7 +14,6 @@ class TestPromptViews(APITestCase):
 
     def test_get_prompt_by_id(self):
         if self.client.login(username='admin', password='wellthen'):
-            u = reverse('prompts:prompt', kwargs={'pk': 1})
             response1 = self.client.get(
                 reverse('prompts:prompt', kwargs={'pk': 1})
             )
