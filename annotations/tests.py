@@ -126,7 +126,7 @@ class TestUploadRecordings(APITestCase):
         :return:
         """
         # todo
-        pass
+        self.fail("Not yet implemented")
 
     def test_upload_wrong_prompt(self):
         """
@@ -134,7 +134,7 @@ class TestUploadRecordings(APITestCase):
         :return:
         """
         # todo
-        pass
+        self.fail("Not yet implemented")
 
 
 class TestListRecordings(APITestCase):
@@ -142,9 +142,9 @@ class TestListRecordings(APITestCase):
     def test_get_all_recordings(self):
 
         # todo
-        pass
+        self.fail("Not yet implemented")
 
     def test_get_one_recording(self):
 
         # todo
-        pass
+        self.fail("Not yet implemented")

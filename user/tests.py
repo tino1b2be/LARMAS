@@ -10,14 +10,6 @@ class UserRegistration(TransactionTestCase):
         'user_profile_test.json',
     ]
 
-    def test_user_registration_get(self):
-        """
-        Test the user registration get method
-        :return: pass if 403 error
-        """
-        response = self.client.get(reverse('user:create_user'))
-        self.assertEquals(response.status_code, 403)
-
     def test_register_new_user(self):
         data = {
             "username": "test3",
