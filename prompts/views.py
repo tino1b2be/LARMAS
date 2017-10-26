@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST,\
     HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK, \
-    HTTP_406_NOT_ACCEPTABLE, HTTP_201_CREATED
+    HTTP_406_NOT_ACCEPTABLE, HTTP_201_CREATED, HTTP_401_UNAUTHORIZED
 from rest_framework.views import APIView
 
 from LARMAS.settings import DEBUG, PROMPTS_PER_USER
@@ -21,8 +21,8 @@ class PromptsView(ListAPIView):
 
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
+    permission_classes = (IsAuthenticated, )
 
-    @permission_classes((IsAdminUser,))
     def post(self, request):
         """
         create new prompt
@@ -30,6 +30,12 @@ class PromptsView(ListAPIView):
         """
 
         # check if fields exist
+
+        if not request.user.is_staff:
+            data = {
+                'detail': 'Only admin users are allowed to add new prompts.',
+            }
+            return Response(data, status=HTTP_401_UNAUTHORIZED)
 
         if not request.data.__contains__('language'):
             data = {
