@@ -16,6 +16,7 @@ class UserRegistration(TransactionTestCase):
             "password": "password",
             "first_name": "first3",
             "last_name": "last3",
+            "age" : 18,
             "email": "test3@test.com",
             "first_language": "ENG-ZA",
             "second_language": "SHO-ZW",

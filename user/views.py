@@ -142,8 +142,10 @@ class UserRegistration(APIView):
             new_profile = UserProfile(
                 user=new_user,
                 first_language=Language.objects.get(code=code),
+                age=request.data.get('age', 0),
             )
             try:
+
                 code = request.data.get('second_language', 'X')
                 if code == 'X':
                     # second language not entered.
