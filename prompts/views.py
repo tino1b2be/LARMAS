@@ -1,4 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
+from django.templatetags.i18n import language
 from rest_framework.decorators import permission_classes
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
@@ -106,7 +107,7 @@ class PromptDistribution(APIView):
             # send all unrejected/unrecorded prompts
             dist_prompts = DistributedPrompt \
                 .objects \
-                .filter(user=user, rejected=False, recorded=False)
+                .filter(user=user, rejected=False, recorded=False, prompt__language=language)
 
             id_list = []
             for dist_prompt in dist_prompts:
@@ -119,7 +120,8 @@ class PromptDistribution(APIView):
 
             # if there are not enough distributed prompts, add more.
             count = PROMPTS_PER_USER - len(prompts)
-            for prompt in Prompt.objects.all():
+            queryset = Prompt.objects.all() # todo update this
+            for prompt in queryset:
                 if count == 0:
                     break
                 dist = DistributedPrompt \
