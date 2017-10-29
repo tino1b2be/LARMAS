@@ -6,6 +6,11 @@ app_name = 'annotations'
 
 urlpatterns = [
     url(
+        r'^$',
+        views.PromptRecordingsListView.as_view(),
+        name='list'
+    ),
+    url(
         r'^(?P<pk>\d+)/$',
         views.PromptRecordingDetailView.as_view(),
         name='recording'
@@ -15,9 +20,4 @@ urlpatterns = [
         views.PromptUploadView.as_view(),
         name='upload'
     ),
-    url(
-        r'^list/$',
-        views.PromptRecordingsListView.as_view(),
-        name='list'
-    )
 ]
