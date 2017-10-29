@@ -10,6 +10,7 @@ from rest_framework.status import HTTP_400_BAD_REQUEST, \
     HTTP_406_NOT_ACCEPTABLE, HTTP_201_CREATED, HTTP_401_UNAUTHORIZED
 from rest_framework.views import APIView
 from constance import config
+from rest_framework_tracking.mixins import LoggingMixin
 
 from LARMAS.settings import DEBUG
 from user.models import UserProfile, Language
@@ -17,7 +18,7 @@ from prompts.models import Prompt, DistributedPrompt
 from prompts.serializers import PromptSerializer
 
 
-class PromptsView(ListAPIView):
+class PromptsView(LoggingMixin, ListAPIView):
     """
     Response class to return all prompts or create a new prompt
     """
@@ -76,13 +77,13 @@ class PromptsView(ListAPIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class PromptDetail(RetrieveAPIView):
+class PromptDetail(LoggingMixin, RetrieveAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
     permission_classes = (IsAdminUser,)
 
 
-class PromptDistribution(APIView):
+class PromptDistribution(LoggingMixin, APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request):
@@ -196,7 +197,7 @@ class PromptDistribution(APIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class PromptRejection(APIView):
+class PromptRejection(LoggingMixin, APIView):
     permission_classes(IsAuthenticated, )
 
     def get(self, request, pk):
