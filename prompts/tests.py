@@ -119,6 +119,29 @@ class TestPromptDistribution(APITestCase):
         'user_profile_test.json',
     ]
 
+    def test_get_random_prompt(self):
+        url = '%s?language=SHO-ZW' % reverse('prompts:retrieve')
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.data.__contains__('id'))
+        self.assertTrue(response.data.__contains__('language'))
+        self.assertTrue(response.data.__contains__('text'))
+
+    def test_get_random_prompt_wrong_language(self):
+        url = '%s?language=SHO-ZA' % reverse('prompts:retrieve')
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertTrue(response.data.__contains__('detail'))
+
+    def test_get_random_prompt_no_language(self):
+        url = reverse('prompts:retrieve')
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertTrue(response.data.__contains__('detail'))
+
     def test_get_prompts_first_language(self):
 
         if self.client.login(username='test2', password='password'):

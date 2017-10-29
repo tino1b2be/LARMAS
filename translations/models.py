@@ -17,8 +17,6 @@ class PromptTranslation(models.Model):
     user = models.ForeignKey(User, blank=False)
     date = models.DateTimeField(default=now)
 
-    # todo implement checks
-
     def __str__(self):
         # <old_language> to <new_language>
         return self.original_prompt.language.name \

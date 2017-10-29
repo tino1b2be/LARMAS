@@ -83,7 +83,7 @@ class PromptDetail(RetrieveAPIView):
 
 
 class PromptDistribution(APIView):
-    permission_classes(AllowAny, )
+    permission_classes = (AllowAny,)
 
     def get(self, request):
         """
@@ -94,6 +94,21 @@ class PromptDistribution(APIView):
         data = {'detail': ''}
         try:
             user = request.user
+            if not user.is_authenticated:
+                # just respond with a random prompt
+                try:
+                    language = request.query_params.get('language', 'x')
+                    prompts = Prompt.objects.filter(language__code=language)
+                    if prompts.count() == 0:
+                        raise ObjectDoesNotExist()
+                    prompt = random.choice(prompts)
+                    s = PromptSerializer(prompt)
+                    return Response(s.data, status=HTTP_200_OK)
+                except ObjectDoesNotExist:
+                    data['detail'] = 'No prompts found. Please ' \
+                                     'verify the language GET parameter.'
+                    return Response(data, HTTP_400_BAD_REQUEST)
+
             profile = UserProfile.objects.get(user=user)
             lang_code = request.GET.get('language', 'X')
 
@@ -132,7 +147,7 @@ class PromptDistribution(APIView):
 
             # if there are not enough distributed prompts, add more.
 
-            queryset = Prompt.objects.all()  # todo update this
+            queryset = Prompt.objects.all()
             if not config.RANDOM_DISTRIBUTION:
                 queryset.order_by('number_of_recordings')
             i = 0
