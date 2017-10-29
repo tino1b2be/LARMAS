@@ -137,9 +137,9 @@ class PromptDistribution(APIView):
                         # add this prompt to the distributed prompts database
                         DistributedPrompt(user=user, prompt=prompt).save()
                         count -= 1
-                    else:
-                        # wrong language
-                        continue
+                    # else:
+                    #     # wrong language
+                    #     continue
 
             # serialize all prompts and respond to request.
             s = PromptSerializer(prompts, many=True)
@@ -169,7 +169,6 @@ class PromptRejection(APIView):
                 data['detail'] = 'This annotation was not give to you'
                 return Response(data, status=HTTP_406_NOT_ACCEPTABLE)
 
-            pass
         except Exception as e:
             data['detail'] = str(e) if DEBUG else 'Something went wrong.'
             pass

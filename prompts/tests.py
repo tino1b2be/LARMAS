@@ -88,6 +88,17 @@ class TestPromptViews(APITestCase):
         else:
             self.fail('User could not log in.')
 
+    def test_create_prompt_not_admin(self):
+        if self.client.login(username='test1', password='password'):
+            data = {
+                'text': 'Just a test.',
+                'language': 'ENG-ZA'
+            }
+            r = self.client.post(reverse('prompts:prompts'), data)
+            self.assertEquals(r.status_code, 401)
+        else:
+            self.fail('User could not log in.')
+
     def test_create_prompt(self):
         if self.client.login(username='admin', password='wellthen'):
             data = {
