@@ -102,9 +102,10 @@ class PromptDistribution(APIView):
             else:
                 try:
                     language = Language.objects.get(code=lang_code)
-                    if not (profile.first_language == language or
-                                    profile.second_language == language or
-                                    profile.third_language == language):
+                    if not (
+                            profile.first_language == language or
+                            profile.second_language == language or
+                            profile.third_language == language):
                         data['detail'] = "language in user's profile"
                         return Response(data, status=HTTP_400_BAD_REQUEST)
                 except ObjectDoesNotExist:
