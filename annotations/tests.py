@@ -168,6 +168,77 @@ class TestUploadRecordings(APITestCase):
         else:
             self.fail('User could not login.')
 
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_upload_recording_one_time_user(self):
+
+        annotation = str(uuid.uuid4())
+        url = reverse('annotations:upload')
+        file = open('test_data/files/tom.wav', 'rb')
+        data = {
+            'file': file,
+            'prompt': 1,
+            'annotation': annotation,
+            'first_language': "ENG-ZA",
+            "age": 23,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.data['annotation'], annotation)
+        self.assertTrue(response.data.__contains__('user'))
+        self.assertEqual(response.data['prompt'], 1)
+        self.assertTrue(response.data.__contains__('file_url'))
+
+        # remove test files
+        if os.path.isdir('test_media'):
+            shutil.rmtree('test_media')
+
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_upload_recording_one_time_user_no_language(self):
+
+        annotation = str(uuid.uuid4())
+        url = reverse('annotations:upload')
+        file = open('test_data/files/tom.wav', 'rb')
+        data = {
+            'file': file,
+            'prompt': 1,
+            'annotation': annotation,
+            # 'first_language': "ENG-ZA",
+            "age": 23,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 400)
+        self.assertTrue(response.data.__contains__('detail'))
+
+    @override_settings(MEDIA_URL='/test_media/',
+                       MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
+    def test_upload_recording_one_time_user_no_age(self):
+
+        annotation = str(uuid.uuid4())
+        url = reverse('annotations:upload')
+        file = open('test_data/files/tom.wav', 'rb')
+        data = {
+            'file': file,
+            'prompt': 1,
+            'annotation': annotation,
+            'first_language': "ENG-ZA",
+            # "age": 23,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.data['annotation'], annotation)
+        self.assertTrue(response.data.__contains__('user'))
+        self.assertEqual(response.data['prompt'], 1)
+        self.assertTrue(response.data.__contains__('file_url'))
+
+        # remove test files
+        if os.path.isdir('test_media'):
+            shutil.rmtree('test_media')
+
 
 class TestListRecordings(APITestCase):
     fixtures = [
