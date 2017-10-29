@@ -1,14 +1,17 @@
+import random
+
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.decorators import permission_classes
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
 from rest_framework.response import Response
-from rest_framework.status import HTTP_400_BAD_REQUEST,\
+from rest_framework.status import HTTP_400_BAD_REQUEST, \
     HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK, \
     HTTP_406_NOT_ACCEPTABLE, HTTP_201_CREATED, HTTP_401_UNAUTHORIZED
 from rest_framework.views import APIView
+from constance import config
 
-from LARMAS.settings import DEBUG, PROMPTS_PER_USER
+from LARMAS.settings import DEBUG
 from user.models import UserProfile, Language
 from prompts.models import Prompt, DistributedPrompt
 from prompts.serializers import PromptSerializer
@@ -21,7 +24,7 @@ class PromptsView(ListAPIView):
 
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
         """
@@ -80,9 +83,14 @@ class PromptDetail(RetrieveAPIView):
 
 
 class PromptDistribution(APIView):
-    permission_classes(IsAuthenticated, )
+    permission_classes(AllowAny, )
 
     def get(self, request):
+        """
+        Get request to distribute prompts
+        :param request:
+        :return:
+        """
         data = {'detail': ''}
         try:
             user = request.user
@@ -95,8 +103,8 @@ class PromptDistribution(APIView):
                 try:
                     language = Language.objects.get(code=lang_code)
                     if not (profile.first_language == language or
-                            profile.second_language == language or
-                            profile.third_language == language):
+                                    profile.second_language == language or
+                                    profile.third_language == language):
                         data['detail'] = "language in user's profile"
                         return Response(data, status=HTTP_400_BAD_REQUEST)
                 except ObjectDoesNotExist:
@@ -122,11 +130,32 @@ class PromptDistribution(APIView):
                 prompts.append(p)
 
             # if there are not enough distributed prompts, add more.
-            count = PROMPTS_PER_USER - len(prompts)
+
             queryset = Prompt.objects.all()  # todo update this
-            for prompt in queryset:
-                if count == 0:
-                    break
+            if not config.RANDOM_DISTRIBUTION:
+                queryset.order_by('number_of_recordings')
+            i = 0
+            size = len(queryset)
+            cache = []  # cache tp keep track of checked prompts
+
+            # add prompts until
+            # 1) user has enough prompts
+            # 2) user rejected all prompts
+            while len(prompts) < config.PROMPTS_PER_USER \
+                    and (i < size) \
+                    and len(cache) > len(prompts) - 1:
+
+                # get a random prompt if random parameter is set
+                if config.RANDOM_DISTRIBUTION:
+                    prompt = random.choice(queryset)
+                    if prompts.__contains__(prompt):
+                        continue
+                    # add to cache
+                    cache.append(prompt)
+                else:
+                    # get prompt with least number of recordings
+                    prompt = queryset[i]
+
                 dist = DistributedPrompt \
                     .objects \
                     .filter(user=user, prompt=prompt)
@@ -136,10 +165,11 @@ class PromptDistribution(APIView):
                         prompts.append(prompt)
                         # add this prompt to the distributed prompts database
                         DistributedPrompt(user=user, prompt=prompt).save()
-                        count -= 1
-                    # else:
-                    #     # wrong language
-                    #     continue
+                        # next prompt
+                        i += 1
+                        # else:
+                        #     # wrong language
+                        #     continue
 
             # serialize all prompts and respond to request.
             s = PromptSerializer(prompts, many=True)

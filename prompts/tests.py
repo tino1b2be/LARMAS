@@ -1,7 +1,7 @@
 from django.urls import reverse
 from rest_framework.test import APITestCase
 
-from LARMAS.settings import PROMPTS_PER_USER
+from constance import config
 
 
 class TestPromptViews(APITestCase):
@@ -127,7 +127,7 @@ class TestPromptDistribution(APITestCase):
             response = self.client.get(url)
 
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(len(response.data), PROMPTS_PER_USER)
+            self.assertEqual(len(response.data), config.PROMPTS_PER_USER)
 
             # test the languages
             for prompt in response.data:
@@ -144,7 +144,7 @@ class TestPromptDistribution(APITestCase):
             response = self.client.get(url)
 
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(len(response.data), PROMPTS_PER_USER)
+            self.assertEqual(len(response.data), config.PROMPTS_PER_USER)
 
             # test the languages
             for prompt in response.data:
@@ -186,7 +186,7 @@ class TestPromptDistribution(APITestCase):
             response1 = self.client.get(url)
 
             self.assertEqual(response1.status_code, 200)
-            self.assertEqual(len(response1.data), PROMPTS_PER_USER)
+            self.assertEqual(len(response1.data), config.PROMPTS_PER_USER)
 
             prompts = []
             # save all the prompts temporarily
@@ -197,7 +197,7 @@ class TestPromptDistribution(APITestCase):
             response2 = self.client.get(url)
 
             self.assertEqual(response1.status_code, 200)
-            self.assertEqual(len(response1.data), PROMPTS_PER_USER)
+            self.assertEqual(len(response1.data), config.PROMPTS_PER_USER)
 
             # check if the same prompts were returned
             for prompt in response2.data:
@@ -213,7 +213,7 @@ class TestPromptDistribution(APITestCase):
             response1 = self.client.get(get_prompts)
 
             self.assertEqual(response1.status_code, 200)
-            self.assertEqual(len(response1.data), PROMPTS_PER_USER)
+            self.assertEqual(len(response1.data), config.PROMPTS_PER_USER)
 
             # reject the first and fifth prompts
             p_1 = response1.data[0]['id']
@@ -246,7 +246,7 @@ class TestPromptDistribution(APITestCase):
             response1 = self.client.get(get_prompts)
 
             self.assertEqual(response1.status_code, 200)
-            self.assertEqual(len(response1.data), PROMPTS_PER_USER)
+            self.assertEqual(len(response1.data), config.PROMPTS_PER_USER)
 
             url = reverse('prompts:reject', kwargs={'pk': 999})
             response2 = self.client.get(url)
