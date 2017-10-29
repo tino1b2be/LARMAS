@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'constance',
+    'constance.backends.database',
     'user',
     'annotations',
     'translations',
@@ -148,8 +150,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # LARMA paramters
 
-PROMPTS_PER_USER = 10  # number of unrecorded prompts a user can have at a time
-
 # swift stuff
 
 # DEFAULT_FILE_STORAGE='swift.storage.SwiftStorage'
@@ -159,3 +159,12 @@ PROMPTS_PER_USER = 10  # number of unrecorded prompts a user can have at a time
 # SWIFT_KEY='swift'
 # SWIFT_CONTAINER_NAME='django'
 # SWIFT_STATIC_CONTAINER_NAME='django-static'
+
+# constance configs
+
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+CONSTANCE_DATABASE_PREFIX = 'constance:larmas:'
+CONSTANCE_CONFIG = {
+    'PROMPTS_PER_USER': (10, 'Number of unrecorded prompts a user can have at a time', int),
+    'RANDOM_DISTRIBUTION': (True, 'Parameter to toggle between random distribution of prompts and sorted distribution.', bool),
+}
