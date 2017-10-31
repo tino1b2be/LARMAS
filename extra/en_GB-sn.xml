@@ -1,0 +1,1305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tmx version="1.4">
+<header creationdate="Fri Aug 15 11:18:22 2014"
+          srclang="en_GB"
+          adminlang="en_GB"
+          o-tmf="unknown"
+          segtype="sentence"
+          creationtool="Uplug"
+          creationtoolversion="unknown"
+          datatype="PlainText" />
+  <body>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>OK</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hongu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cancel</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kanzura</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Restart</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadzazve</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Continue</seg></tuv>
+      <tuv xml:lang="sn"><seg>Enderera</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Boot Options</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sarudzo yekuGadza</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Exiting...</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kubuda...</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>You are leaving the graphical boot menu and starting the text mode interface.</seg></tuv>
+      <tuv xml:lang="sn"><seg>Iwe wakusiya girafikau menyu yekugadza nekutanga mashandiro anemavara emeso.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Help</seg></tuv>
+      <tuv xml:lang="sn"><seg>Rubatsiro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Boot loader</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadza mutoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>I/O error</seg></tuv>
+      <tuv xml:lang="sn"><seg>I/O kanganiso</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Change Boot Disk</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sandura Disiki yekuGadza</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Insert boot disk %u.</seg></tuv>
+      <tuv xml:lang="sn"><seg>Isa disiki yekugadza %u.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>This is boot disk %u. Insert boot disk %u.</seg></tuv>
+      <tuv xml:lang="sn"><seg>ino i disiki yeku gadza %u. Isa disiki yekugadza %u.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>This is not a suitable boot disk. Please insert boot disk %u.</seg></tuv>
+      <tuv xml:lang="sn"><seg>ino idisiki yekugadza isina kufanira. Isa disiki yekugadza %u.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Password</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chihori</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Enter your password:</seg></tuv>
+      <tuv xml:lang="sn"><seg>Pinza chihori chako:</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>DVD Error</seg></tuv>
+      <tuv xml:lang="sn"><seg>DVD kanganiso</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>This is a two-sided DVD. You have booted from the second side. Turn the DVD over then continue.</seg></tuv>
+      <tuv xml:lang="sn"><seg>ino i DVD inemativi maviri. Iwe wagadza kubva kudivi rechipiri. Tendeudza DVD wobva waenderera.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Power Off</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzima</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Halt the system now?</seg></tuv>
+      <tuv xml:lang="sn"><seg>Misa sisitemu zvino?</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Other Options</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzimwe Sarudzo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Language</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mutauro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Keymap</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kimepu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Modes</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mishandiro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Normal</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kwazvo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Expert mode</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mashandiro nyanzvi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Accessibility</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kureuka</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>None</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hapana</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>High Contrast</seg></tuv>
+      <tuv xml:lang="sn"><seg>Musiyaniso wePamusoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Magnifier</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hudzo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Screen Reader</seg></tuv>
+      <tuv xml:lang="sn"><seg>Verengo Sikirini</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Braille Terminal</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mukova weburei</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Keyboard Modifiers</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chinjo yekibhodhi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>On-Screen Keyboard</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kibhodhi yepaSikirini</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Motor Difficulties - switch devices</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mota yapiringidzwa - chinja madhivhaisi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Everything</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvinhuzvose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Ubuntu without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^ Yedza Ubuntu pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Kubuntu without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^ Yedza Kubuntu pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Edubuntu without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^ Yedza Edubuntu pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Xubuntu without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^ Yedza Xubuntu pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Ubuntu MID without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^ Yedza Ubuntu MID pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Ubuntu Netbook without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^ Yedza Ubuntu Netbook pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Kubuntu Netbook without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^ Yedza Kubuntu Netbook pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Lubuntu without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Yedza Lubuntu pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Start Kubuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Tanga Kubuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Use driver update disc</seg></tuv>
+      <tuv xml:lang="sn"><seg>Shandisa dhisiki rekuzivisa mutyairi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Ubuntu in text mode</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Ubuntu mumashandiro emavara</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Kubuntu in text mode</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Kubuntu mumashandiro emavara</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Edubuntu in text mode</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Edubuntu mumashandiro emavara</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Xubuntu in text mode</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Xubuntu mumashandiro emavara</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Ubuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Ubuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Kubuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Kubuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Edubuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Edubuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Xubuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Xubuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Ubuntu Server</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Ubuntu Server</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Ubuntu Studio</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Ubuntu Studio</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Ubuntu MID</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Ubuntu MID</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Ubuntu Netbook</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Ubuntu Netbook</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Kubuntu Netbook</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Kubuntu Netbook</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Lubuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Lubuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Install a workstation</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vakirira chiteshi chekushandira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Install a server</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vakirira pfimbi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>OEM install (for manufacturers)</seg></tuv>
+      <tuv xml:lang="sn"><seg>OEM vakiriro (kuitira mamanufekityara)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Install a LAMP server</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vakirira pfimbi ye LAMP</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Install an LTSP server</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vakirira pfimbi ye LTSP</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Install a Diskless Image Server</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vakirira pfimbi ye mufananidzo isina dhisiki</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Install a command-line system</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vakirira sisitemu rayira-mutsetse</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Install a minimal system</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vakirira sisitemu yaka yananika</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Install a minimal virtual machine</seg></tuv>
+      <tuv xml:lang="sn"><seg>vakirira mushina waka yananika wehuvarairwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Check disc for defects</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Cheka dhisiki kuitira hushatwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Rescue a broken system</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Nunura sisitemu yakavhunika</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Test ^memory</seg></tuv>
+      <tuv xml:lang="sn"><seg>Yedza ^rangariro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Boot from first hard disk</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Gadza kubva disiki rakagozha rokutanga</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Free software only</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chirongwa chakareruka chete</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Dell Automatic Reinstall</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Kuvakirirazve kuri otomatiki kwe Dell</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Install Mythbuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Vakirira Mythbuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>^Try Mythbuntu without installing</seg></tuv>
+      <tuv xml:lang="sn"><seg>^Yedza Mythbuntu pasina kuvakirira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Examples</seg></tuv>
+      <tuv xml:lang="sn"><seg>Miyenzaniso</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Example content for Ubuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>Muyenzaniso wehuiswa kuitira Ubuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Try to make free space</seg></tuv>
+      <tuv xml:lang="sn"><seg>Yedza kurerutsa nzvimbo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Finished, please press ENTER</seg></tuv>
+      <tuv xml:lang="sn"><seg>Pedza, rukumbiro tinya ENTER</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Repair broken packages</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadzira mapakedyi akavhunika</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Run in failsafe graphic mode</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mhanya mu tadzadekara mashandiro girafiki</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Update grub bootloader</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zivisa grub gadzamutoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Drop to root shell prompt</seg></tuv>
+      <tuv xml:lang="sn"><seg>Koromoka ku mudzi demhe zvidza</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Resume normal boot</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tangidza kugadza kwazvo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>About GNOME</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mayererano neGNOME</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Learn more about GNOME</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzidza zvimwe pamusoro peGNOME</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>News</seg></tuv>
+      <tuv xml:lang="sn"><seg>Nhau</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>GNOME Library</seg></tuv>
+      <tuv xml:lang="sn"><seg>Ruzivo rweGNOME</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Friends of GNOME</seg></tuv>
+      <tuv xml:lang="sn"><seg>Shamwari dzeGNOME</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Contact</seg></tuv>
+      <tuv xml:lang="sn"><seg>Taura Nesu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>The Mysterious GEGL</seg></tuv>
+      <tuv xml:lang="sn"><seg>GEGL yakahwanda</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>The Squeaky Rubber GNOME</seg></tuv>
+      <tuv xml:lang="sn"><seg>GNOME inorira serabha</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Wanda The GNOME Fish</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hwanda hove yeGNOME</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>_Open URL</seg></tuv>
+      <tuv xml:lang="sn"><seg>_Vhura URL</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>_Copy URL</seg></tuv>
+      <tuv xml:lang="sn"><seg>_Kopa URL</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>About the GNOME Desktop</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mayererano neDesktop reGNOME</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>%(name)s: %(value)s</seg></tuv>
+      <tuv xml:lang="sn"><seg>%(name)s: %(value)s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Welcome to the GNOME Desktop</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tinokugamuchirai muGNOME Desktop</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Brought to you by:</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvirikubva</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Version</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vhezheni</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Distributor</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mugadziri</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Build Date</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zuva rekugadzirwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Display information on this GNOME version</seg></tuv>
+      <tuv xml:lang="sn"><seg>Ratidza ruzivo rwevhezheni ino yeGNOME</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>GNOME is a Free, usable, stable, accessible desktop environment for the Unix-like family of operating systems.</seg></tuv>
+      <tuv xml:lang="sn"><seg>GNOME yavakwa nenyanzvi dzinozvigona uye inovanikwa pachena.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>GNOME includes most of what you see on your computer, including the file manager, web browser, menus, and many applications.</seg></tuv>
+      <tuv xml:lang="sn"><seg>GNOME ndiyo inezvese zvioonekwa nemaziso paDesktop kusanganisira browser.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>GNOME also includes a complete development platform for applications programmers, allowing the creation of powerful and complex applications.</seg></tuv>
+      <tuv xml:lang="sn"><seg>GNOME zvekushandisa pakugadzira manwe mapurogiramu zvakakwana.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>GNOME's focus on usability and accessibility, regular release cycle, and strong corporate backing make it unique among Free Software desktops.</seg></tuv>
+      <tuv xml:lang="sn"><seg>GNOME yakagadzirwa kuti ishandisike zviri nyore ichibatsirwa nevemabhizimisi zvinoitsaura paruzhinji.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>GNOME's greatest strength is our strong community. Virtually anyone, with or without coding skills, can contribute to making GNOME better.</seg></tuv>
+      <tuv xml:lang="sn"><seg>GNOME inosimbiswa neruzhinji nokuti ani naani zvake anogona kubatsira pakugadzirwa kwayo.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Hundreds of people have contributed code to GNOME since it was started in 1997; many more have contributed in other important ways, including translations, documentation, and quality assurance.UnknownMonitor vendor</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chaunga chabatsira mukugadzirwa kweGNOME kubvira payakatanga 1997; kubudikidza nekuturikira kuenda kune mimwe mitauro uye kuona nezvekushandisika kwayo nyore.UnknownMonitor vendor</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Unknown</seg></tuv>
+      <tuv xml:lang="sn"><seg>Haizivikanwe</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Error reading file '%s': %s</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tatadza kuvhura faira iri '%s': %s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Error rewinding file '%s': %snamename</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tatadza kurewinda faira iri '%s': %snamename</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>No name</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hapana zita</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>File '%s' is not a regular file or directory.</seg></tuv>
+      <tuv xml:lang="sn"><seg>Faira inonzi '%s' rakasiyana nemamwe.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cannot find file '%s'</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tatadza kuona faira inonzi '%s'</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>No filename to save to</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tipe zita raunoda kupa faira iri tisati tairisevha</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Starting %s</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tavakuvhura %s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>No URL to launch</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hapana URL yekuvhura</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Not a launchable item</seg></tuv>
+      <tuv xml:lang="sn"><seg>Haisi puroguramu yaungavhura</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>No command (Exec) to launch</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hapana komandi yekuvhura</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Bad command (Exec) to launch</seg></tuv>
+      <tuv xml:lang="sn"><seg>Komandi yavatipa haina musoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Unknown encoding of: %s</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hatizive kuti enconding yakashandiswa pana: %s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cannot find a terminal; using xterm, even if it may not work</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tatadza kuvana teminari tavakushandisa xterm kunyangwe zvikabondera</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>could not get the screen resources (CRTCs, outputs, modes)</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tatadza kuvana screen yekushandisa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>unhandled X error while getting the range of screen sizes</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hameno zvaitika mupurogiramu inonzi X patange tichida kuona upamhi hwescreen yako</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>could not get the range of screen sizes</seg></tuv>
+      <tuv xml:lang="sn"><seg>tatadza kuona hupamhi hwescreen yako</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>RandR extension is not present</seg></tuv>
+      <tuv xml:lang="sn"><seg>RANDR yashayikwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>could not get information about output %dposition", "size", and "maximum</seg></tuv>
+      <tuv xml:lang="sn"><seg>tatadza kuvana zvizere pamusoro pa %dposition", "size", and "maximum</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>requested position/size for CRTC %d is outside the allowed limit: position=(%d, %d), size=(%d, %d), maximum=(%d, %d)</seg></tuv>
+      <tuv xml:lang="sn"><seg>requested position/size for CRTC %d is outside the allowed limit: position=(%d, %d), size=(%d, %d), maximum=(%d, %d)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>could not set the configuration for CRTC %d</seg></tuv>
+      <tuv xml:lang="sn"><seg>tatadza kugadzira %d</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>could not get information about CRTC %d</seg></tuv>
+      <tuv xml:lang="sn"><seg>tatadza kuvana zvizere pamusoro pescreen %d</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Laptop</seg></tuv>
+      <tuv xml:lang="sn"><seg>Laptop</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>none of the saved display configurations matched the active configuration</seg></tuv>
+      <tuv xml:lang="sn"><seg>zvakasevhiwa pamusoro pescreen zvatadza kufanana nezvirikushandiswa iye zvino</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>none of the selected modes were compatible with the possible modes: %srequested", "minimummaximum</seg></tuv>
+      <tuv xml:lang="sn"><seg>requested", "minimummaximum</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>required virtual size does not fit available size: requested=(%d, %d), minimum=(%d, %d), maximum=(%d, %d)MirrorPantallas en Espejo", *not* "Espejar Pantallas</seg></tuv>
+      <tuv xml:lang="sn"><seg>MirrorPantallas en Espejo", *not* "Espejar Pantallas</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Sound &amp; Video</seg></tuv>
+      <tuv xml:lang="sn"><seg>Ruzha &amp; vhidiyo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Multimedia menu</seg></tuv>
+      <tuv xml:lang="sn"><seg>Menyu yematimidiya</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Programming</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hurongwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Tools for software development</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mbesa dzekuumba zvirongwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Education</seg></tuv>
+      <tuv xml:lang="sn"><seg>Fundo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Games and amusements</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo ne zvivaraidzo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Graphics</seg></tuv>
+      <tuv xml:lang="sn"><seg>Magirafiki</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Graphics applications</seg></tuv>
+      <tuv xml:lang="sn"><seg>Maapulikesheni arigirafiki</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Internet</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dandemutande</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Programs for Internet access such as web and e-mail</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvirongwa zvehupindwa hwedande se webhu ne tsambambozha</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Office</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hofisi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Office Applications</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvirongwa zveHofisi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>System Tools</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mbesa dzesisitemu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>System configuration and monitoring</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kugadziridza ne kumonita kwesisitemu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Universal Access</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hupindwa pasirose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Universal Access Settings</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadziro dzeHupindwa Pasirose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Accessories</seg></tuv>
+      <tuv xml:lang="sn"><seg>Midziyo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Desktop accessories</seg></tuv>
+      <tuv xml:lang="sn"><seg>Midziyo yedhesikitopu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Applications</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mapulikesheni</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Other</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvimwe</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Applications that did not fit in other categories</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mapulikesheni asinga kwani muzvimwe zvipoka</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Action</seg></tuv>
+      <tuv xml:lang="sn"><seg>Danho</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Action games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo inematanho</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Adventure</seg></tuv>
+      <tuv xml:lang="sn"><seg>Adhivhetya</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Adventure style games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo inesitaira ye adhivhetya</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Arcade</seg></tuv>
+      <tuv xml:lang="sn"><seg>Akedi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Arcade style games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo inesitaira ye akedi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Falling blocks</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvitinha zvinodonha</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Falling blocks games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo yezvitinha zvinodonha</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Board</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tsoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Board games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo yetsoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cards</seg></tuv>
+      <tuv xml:lang="sn"><seg>Makasa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Card games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo yemakasa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Debian</seg></tuv>
+      <tuv xml:lang="sn"><seg>Debian</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>The Debian menu</seg></tuv>
+      <tuv xml:lang="sn"><seg>Menyu yeDebian</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Science</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sayenitsi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Scientific applications</seg></tuv>
+      <tuv xml:lang="sn"><seg>mapulikesheni arisaendifiki</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Kids</seg></tuv>
+      <tuv xml:lang="sn"><seg>Pwere</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Games for kids</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo ye pwere</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Logic</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hufungwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Logic and puzzle games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo yehufungwa ne pazuru</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Role playing</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kutamba chimiro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Role playing games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo yechimiro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Administration</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hurongwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Change system-wide settings (affects all users)</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sandura gadziro dzakafara sisitemu yose( zvinobata bata vashandisi vose)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Preferences</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvido</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Personal preferences</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvido Zvako</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Simulation</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chiratidzo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Simulation games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitembo yechiratidzo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Sports</seg></tuv>
+      <tuv xml:lang="sn"><seg>Nhabvu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Sports games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo yenhabvu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Strategy</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sitarateji</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Strategy games</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mitambo yesitarateji</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Hardware</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvuma</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Settings for several hardware devicesPersonal settings</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadziro kuitira zvuma zvemadhivhaisi anoenderaPersonal settings</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Personal</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvako</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Personal settings</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadziro dzako</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>System</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sisitemu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>System settings</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadziro dzesisitemu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Default Ubuntu theme</seg></tuv>
+      <tuv xml:lang="sn"><seg>Thimu yakarongwa yeUbuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Human-Clearlooks</seg></tuv>
+      <tuv xml:lang="sn"><seg>Munhu-Matarisirojeka</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>DarkRoom</seg></tuv>
+      <tuv xml:lang="sn"><seg>Rumurima</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Untitled application</seg></tuv>
+      <tuv xml:lang="sn"><seg>Application isina zita</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Workspace Switcher</seg></tuv>
+      <tuv xml:lang="sn"><seg>chinjo yepekushandira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Tool to switch between workspaces</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mbezo yeku tendeudza Pekushandira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Click this to switch to workspace %s</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tinya pano kuti shandure Pekushandira %s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Click to start dragging "%s"</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tinya utange kuzvuva "%s"</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Current workspace: "%s"</seg></tuv>
+      <tuv xml:lang="sn"><seg>Pekushandira parikushandiswa "%s"</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Click to switch to "%s"</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tinya chandure "%s"</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>No Windows Open</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hapana maWindow akavhurika</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Window Selector</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chisarura cheWindow</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Tool to switch between windows</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mbezo yekushandura pakati pemaWindow</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Window List</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chitarwa cheWindow</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Tool to switch between visible windows</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mbezo yekushandura pakati pemaWindow arikuoneka</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Mi_nimise All</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzikamisa ose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Un_minimise All</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kurudzira ose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Ma_ximise All</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kurudzira ose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>_Unmaximise All</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzikamisa ose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>_Close All</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vhara zvose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Unmi_nimise</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kurudzira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Mi_nimise</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzikamisa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Unma_ximise</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzikamisa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Ma_ximise</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kurudzira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Workspace %d</seg></tuv>
+      <tuv xml:lang="sn"><seg>Pekushandira %d</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Workspace 1_0</seg></tuv>
+      <tuv xml:lang="sn"><seg>Pekushandira 1_0</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Workspace %s%d</seg></tuv>
+      <tuv xml:lang="sn"><seg>Pekushandira %s%d</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>_Resize</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadzirisa hukuro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Always On _Top</seg></tuv>
+      <tuv xml:lang="sn"><seg>Nguvadzose pamusoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>_Always on Visible Workspace</seg></tuv>
+      <tuv xml:lang="sn"><seg>_Nguvadzose panepekushandira parikuoneka</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>_Only on This Workspace</seg></tuv>
+      <tuv xml:lang="sn"><seg>panepekushandira apa chete</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Move to Workspace _Left</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sudurudza pekushandira kuruboshwe</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Move to Workspace R_ight</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sudurudza pekushandira kurudyi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Move to Workspace _Up</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sudurudza pekushandira kumusoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Move to Workspace _Down</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sudurudza pekushandira kurupasi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Move to Another _Workspace</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sudurudza pekushandira kumwe</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>_Close</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vhara</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Untitled window</seg></tuv>
+      <tuv xml:lang="sn"><seg>Whindo risina zita</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>XIDowner</seg></tuv>
+      <tuv xml:lang="sn"><seg>owner</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>X window ID of the group leader of an application to examinefamily</seg></tuv>
+      <tuv xml:lang="sn"><seg>family</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Class resource of the class group to examine</seg></tuv>
+      <tuv xml:lang="sn"><seg>Bato rezvishandiso zvemhando yekutsoropodza</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>CLASS</seg></tuv>
+      <tuv xml:lang="sn"><seg>MHANDO</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>NUMBER of the workspace to examine or modify</seg></tuv>
+      <tuv xml:lang="sn"><seg>NHAMBA ye kutsoropodza kana kuchinjirudza pekushandira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>NUMBER</seg></tuv>
+      <tuv xml:lang="sn"><seg>NHAMBA</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Alias of --windowfamily</seg></tuv>
+      <tuv xml:lang="sn"><seg>family</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Minimise the window</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzikamisa whindo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Unminimise the window</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kurudzira whindo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Maximise the window</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kurudzira whindo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Unmaximise the window</seg></tuv>
+      <tuv xml:lang="sn"><seg>Dzikamisa whindo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Close the window</seg></tuv>
+      <tuv xml:lang="sn"><seg>Vhara whindo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Make the window appear in pagerstasklist</seg></tuv>
+      <tuv xml:lang="sn"><seg>tasklist</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Make the window not appear in taskliststasklist</seg></tuv>
+      <tuv xml:lang="sn"><seg>tasklist</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>HEIGHTnormal, desktop, dock...</seg></tuv>
+      <tuv xml:lang="sn"><seg>normal, desktop, dock...</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Conflicting options are present: windows of an application should be listed, but --%s has been used family</seg></tuv>
+      <tuv xml:lang="sn"><seg>family</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Conflicting options are present: class group "%s" should be interacted with, but --%s has been used family</seg></tuv>
+      <tuv xml:lang="sn"><seg>family</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Window cannot be moved to workspace %d: the workspace does not exist something has not been set</seg></tuv>
+      <tuv xml:lang="sn"><seg>something has not been set</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>%d ("%s")none" here means "no workspaceworkspace</seg></tuv>
+      <tuv xml:lang="sn"><seg>none" here means "no workspaceworkspace</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>%lu (%s)none" here means "no windowwindow</seg></tuv>
+      <tuv xml:lang="sn"><seg>none" here means "no windowwindow</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Group Name: %s something has been set</seg></tuv>
+      <tuv xml:lang="sn"><seg>something has been set</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>setsomething has not been set</seg></tuv>
+      <tuv xml:lang="sn"><seg>something has not been set</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Name: %s Icon</seg></tuv>
+      <tuv xml:lang="sn"><seg>Icon</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Icon Name: %s</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zita reIcon: %s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>PID: %s none" here means "no startup IDstartupID</seg></tuv>
+      <tuv xml:lang="sn"><seg>none" here means "no startup IDstartupID</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>all workspaces</seg></tuv>
+      <tuv xml:lang="sn"><seg>mapekushandira ose</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>On Workspace: %s</seg></tuv>
+      <tuv xml:lang="sn"><seg>Papekushandira: %s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Geometry (x, y, width, height): %d, %d, %d, %d family</seg></tuv>
+      <tuv xml:lang="sn"><seg>family</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Class Group: %s</seg></tuv>
+      <tuv xml:lang="sn"><seg>Mhuri : %s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Session ID: %s owner</seg></tuv>
+      <tuv xml:lang="sn"><seg>owner</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Transient for: %lu a, b". * In this case, the first string is "a", the second * string is ", " and the third string is "b". * We can then use this information here to also * recursively build longer lists, like "a, b, c, da, b, c" * In this case, the first string is "a, b", the second * string is ", " and the third string is "c</seg></tuv>
+      <tuv xml:lang="sn"><seg>a, b". * In this case, the first string is "a", the second * string is ", " and the third string is "b". * We can then use this information here to also * recursively build longer lists, like "a, b, c, da, b, c" * In this case, the first string is "a, b", the second * string is ", " and the third string is "c</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>%1$s%2$s%3$s%1$s%2$s%3$s</seg></tuv>
+      <tuv xml:lang="sn"><seg>%1$s%2$s%3$s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>below</seg></tuv>
+      <tuv xml:lang="sn"><seg>pasi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>skip pagertasklist</seg></tuv>
+      <tuv xml:lang="sn"><seg>tasklist</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>move</seg></tuv>
+      <tuv xml:lang="sn"><seg>endesa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>resize</seg></tuv>
+      <tuv xml:lang="sn"><seg>Gadzirisa hukuro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>change workspace</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chinja pekushandira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>minimise</seg></tuv>
+      <tuv xml:lang="sn"><seg>dzikamisa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>unminimise</seg></tuv>
+      <tuv xml:lang="sn"><seg>kurudzira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>maximise</seg></tuv>
+      <tuv xml:lang="sn"><seg>kurudzira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>unmaximise</seg></tuv>
+      <tuv xml:lang="sn"><seg>dzikamisa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>close</seg></tuv>
+      <tuv xml:lang="sn"><seg>vhara</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>make above</seg></tuv>
+      <tuv xml:lang="sn"><seg>Umba pamusoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>unmake above</seg></tuv>
+      <tuv xml:lang="sn"><seg>Paza pamusoro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>make below</seg></tuv>
+      <tuv xml:lang="sn"><seg>Umba pasi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>unmake below</seg></tuv>
+      <tuv xml:lang="sn"><seg>paza pasi</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Show options to modify properties of a window</seg></tuv>
+      <tuv xml:lang="sn"><seg>Taridza sarudzo yekugarisisa maProperties eWindow</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Options to modify properties of a workspace</seg></tuv>
+      <tuv xml:lang="sn"><seg>Sarudzo yeku gadzirisa maProperties ePekushandira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Show options to modify properties of a workspace</seg></tuv>
+      <tuv xml:lang="sn"><seg>Taridza sarudzo yeku gadzirisa maProperties ePekushandira</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Options to modify properties of a screen</seg></tuv>
+      <tuv xml:lang="sn"><seg>Saridzo yekugadzirisa maProperties eScreen</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Show options to modify properties of a screen</seg></tuv>
+      <tuv xml:lang="sn"><seg>Taridza sarudzo yekugadzirisa maProperties eScreen</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Error while parsing arguments: %s</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chikanganiso tichi isa makarakatanwa: %s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cannot interact with screen %d: the screen does not exist</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hatikwanisi kutaura neScreen %d: Screen haipo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cannot interact with workspace %d: the workspace cannot be found family</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hatikwanisi kutaura nePekushandira %d: Pekushandira pashaikwa family</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cannot interact with class group "%s": the class group cannot be found</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tatadza kutaura neMhuri "%s": Mhuri yashaikwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cannot interact with application having its group leader with XID %lu: the application cannot be found</seg></tuv>
+      <tuv xml:lang="sn"><seg>Tatadza kutaura neApplication ine mutungamiriri webato XID %lu: Application yashaikwa</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Cannot interact with window with XID %lu: the window cannot be found</seg></tuv>
+      <tuv xml:lang="sn"><seg>Hatikwanisi kutaura neWindow ne XID %lu: Window rashaikwa.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>If you want to unmount the volume, please use Unmount Volume in the popup menu of the volume.hostname (uri-scheme)</seg></tuv>
+      <tuv xml:lang="sn"><seg>hostname (uri-scheme)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Unable to rename desktop file%aAbBcdHIjmMpSUwWxXyYZ-%_</seg></tuv>
+      <tuv xml:lang="sn"><seg>%aAbBcdHIjmMpSUwWxXyYZ-%_</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Specified group '%s' doesn't existMe</seg></tuv>
+      <tuv xml:lang="sn"><seg>Me</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Linkfolder", "plain textlink to folder</seg></tuv>
+      <tuv xml:lang="sn"><seg>folder", "plain textlink to folder</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Another link to %sst</seg></tuv>
+      <tuv xml:lang="sn"><seg>st</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>%s (%'dth copy)%s%s (copy %'d)%s</seg></tuv>
+      <tuv xml:lang="sn"><seg>%s (copy %'d)%s</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>%s (%'drd copy)%sth copy)</seg></tuv>
+      <tuv xml:lang="sn"><seg>th copy)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>(th copy)</seg></tuv>
+      <tuv xml:lang="sn"><seg>th copy)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Deleting files2 minutes</seg></tuv>
+      <tuv xml:lang="sn"><seg>2 minutes</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Duplicating file %'d of %'d2 bytes" or "3 MB", so something like "4 kb of 4 MB</seg></tuv>
+      <tuv xml:lang="sn"><seg>2 bytes" or "3 MB", so something like "4 kb of 4 MB</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>%S of %S2 bytes" or "3 MB2 minutes". So the whole thing will be something like "2 kb of 4 MB -- 2 hours left (4kb/sec)</seg></tuv>
+      <tuv xml:lang="sn"><seg>2 bytes" or "3 MB2 minutes". So the whole thing will be something like "2 kb of 4 MB -- 2 hours left (4kb/sec)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>This doesn't look like an address.smb://foo.example.com</seg></tuv>
+      <tuv xml:lang="sn"><seg>smb://foo.example.com</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>CommandDesktop</seg></tuv>
+      <tuv xml:lang="sn"><seg>Desktop</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>%s PropertiesMIME type description (MIME type)</seg></tuv>
+      <tuv xml:lang="sn"><seg>MIME type description (MIME type)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>(some contents unreadable)Contents:</seg></tuv>
+      <tuv xml:lang="sn"><seg>Contents:</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Contents:used</seg></tuv>
+      <tuv xml:lang="sn"><seg>used</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>usedfree</seg></tuv>
+      <tuv xml:lang="sn"><seg>free</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Free space:no readno access</seg></tuv>
+      <tuv xml:lang="sn"><seg>no readno access</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Restore selected items to their original positionEmpty</seg></tuv>
+      <tuv xml:lang="sn"><seg>Empty</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>(%s),</seg></tuv>
+      <tuv xml:lang="sn"><seg>,</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Redo the last undone actionReset to DefaultsShow hidden files</seg></tuv>
+      <tuv xml:lang="sn"><seg>Reset to DefaultsShow hidden files</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Don't have permission to access the requested location.foo/</seg></tuv>
+      <tuv xml:lang="sn"><seg>foo/</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Snippet {}Snippet n, unassigned</seg></tuv>
+      <tuv xml:lang="sn"><seg>Snippet n, unassigned</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Getting help with Kubuntu</seg></tuv>
+      <tuv xml:lang="sn"><seg>Kuwana rubatsiro ne Kubuntu</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Assistive technologies</seg></tuv>
+      <tuv xml:lang="sn"><seg>Zvekubatsira vakaremara</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Language support</seg></tuv>
+      <tuv xml:lang="sn"><seg>Rubatsiro rwezvemutauro</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Included software</seg></tuv>
+      <tuv xml:lang="sn"><seg>Software iripo</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Firefox web browser</seg></tuv>
+      <tuv xml:lang="sn"><seg>Browser reFirefox</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Supported software</seg></tuv>
+      <tuv xml:lang="sn"><seg>Software inogona kushandisika pano</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Flash</seg></tuv>
+      <tuv xml:lang="sn"><seg>Flash</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en_GB"><seg>Chromium</seg></tuv>
+      <tuv xml:lang="sn"><seg>Chromium</seg></tuv>
+    </tu>
+  </body>
+</tmx>
