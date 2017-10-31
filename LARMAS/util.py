@@ -1,8 +1,7 @@
 import uuid
 
 from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist
-
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from user.models import Language, UserProfile
 
 
@@ -58,3 +57,19 @@ def create_one_time_profile(post, temp_user=User()):
     temp_user.set_password(str(uuid.uuid4()))
     temp_user.save()
     return temp_user
+
+
+def upload_is_valid(file, source):
+    """
+    Function to check if the uploaded WAV file is valid
+    :param file: uploaded WAV file
+    :return: True if file is valid
+    """
+    if source == 'UPLOAD':
+        if not file.content_type.startswith('audio'):
+            raise ValidationError("Wrong file format")
+    else:
+        # perform more strict file validation
+        pass
+
+    return True

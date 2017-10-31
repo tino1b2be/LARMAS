@@ -13,10 +13,6 @@ class Prompt(models.Model):
     language = models.ForeignKey(Language, blank=False)
     number_of_recordings = models.IntegerField(default=0)
 
-    class Meta:
-        # ascending order of number of recordings
-        ordering = ('number_of_recordings',)
-
     def __str__(self):
         return self.language.name + ' - "' + self.text + '"'
 
