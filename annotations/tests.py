@@ -22,24 +22,23 @@ class TestUploadRecordings(APITestCase):
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_recording(self):
 
-        if self.client.login(username='test1', password='password'):
-            annotation = str(uuid.uuid4())
-            url = reverse('annotations:upload')
-            file = open('test_data/files/tom.wav', 'rb')
-            data = {
-                'file': file,
-                'prompt': 1,
-                'annotation': annotation,
-            }
-            response = self.client.post(url, data)
-            file.close()
-            self.assertEqual(response.status_code, 201)
-            self.assertEqual(response.data['annotation'], annotation)
-            self.assertEqual(response.data['user'], 'test1')
-            self.assertEqual(response.data['prompt'], 1)
-            self.assertTrue(response.data.__contains__('file_url'))
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        annotation = str(uuid.uuid4())
+        url = reverse('annotations:upload')
+        file = open('test_data/files/tom.wav', 'rb')
+        data = {
+            'file': file,
+            'prompt': 1,
+            'annotation': annotation,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.data['annotation'], annotation)
+        self.assertEqual(response.data['user'], 'test1')
+        self.assertEqual(response.data['prompt'], 1)
+        self.assertTrue(response.data.__contains__('file_url'))
 
         # remove test files
         if os.path.isdir('test_media'):
@@ -51,18 +50,16 @@ class TestUploadRecordings(APITestCase):
         annotation = str(uuid.uuid4())
         url = reverse('annotations:upload')
         # file = open('test_data/files/tom.wav', 'rb')
-        if self.client.login(username='test1', password='password'):
-            data = {
-                # 'file': file,
-                'prompt': 1,
-                'annotation': annotation,
-            }
-            response = self.client.post(url, data)
-            # file.close()
-            self.assertEqual(response.status_code, 400)
-
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        data = {
+            # 'file': file,
+            'prompt': 1,
+            'annotation': annotation,
+        }
+        response = self.client.post(url, data)
+        # file.close()
+        self.assertEqual(response.status_code, 400)
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
@@ -70,35 +67,31 @@ class TestUploadRecordings(APITestCase):
         annotation = str(uuid.uuid4())
         url = reverse('annotations:upload')
         file = open('test_data/files/tom.wav', 'rb')
-        if self.client.login(username='test1', password='password'):
-            data = {
-                'file': file,
-                # 'prompt': 1,
-                'annotation': annotation,
-            }
-            response = self.client.post(url, data)
-            file.close()
-            self.assertEqual(response.status_code, 400)
-
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        data = {
+            'file': file,
+            # 'prompt': 1,
+            'annotation': annotation,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 400)
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_upload_recording_no_annotation(self):
         url = reverse('annotations:upload')
         file = open('test_data/files/tom.wav', 'rb')
-        if self.client.login(username='test1', password='password'):
-            data = {
-                'file': file,
-                'prompt': 1,
-            }
-            response = self.client.post(url, data)
-            file.close()
-            self.assertEqual(response.status_code, 400)
-
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        data = {
+            'file': file,
+            'prompt': 1,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 400)
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
@@ -107,18 +100,16 @@ class TestUploadRecordings(APITestCase):
         url = reverse('annotations:upload')
         file = open('test_data/files/wav', 'rb')
 
-        if self.client.login(username='test1', password='password'):
-            data = {
-                'file': file,
-                'prompt': 1,
-                'annotation': annotation,
-            }
-            response = self.client.post(url, data)
-            file.close()
-            self.assertEqual(response.status_code, 400)
-
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        data = {
+            'file': file,
+            'prompt': 1,
+            'annotation': annotation,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 400)
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
@@ -131,18 +122,16 @@ class TestUploadRecordings(APITestCase):
         url = reverse('annotations:upload')
         file = open('test_data/files/tom.wav', 'rb')
 
-        if self.client.login(username='test1', password='password'):
-            data = {
-                'file': file,
-                'prompt': 15,
-                'annotation': annotation,
-            }
-            response = self.client.post(url, data)
-            file.close()
-            self.assertEqual(response.status_code, 400)
-
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        data = {
+            'file': file,
+            'prompt': 15,
+            'annotation': annotation,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 400)
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
@@ -155,18 +144,16 @@ class TestUploadRecordings(APITestCase):
         url = reverse('annotations:upload')
         file = open('test_data/files/tom.wav', 'rb')
 
-        if self.client.login(username='test1', password='password'):
-            data = {
-                'file': file,
-                'prompt': 999,
-                'annotation': annotation,
-            }
-            response = self.client.post(url, data)
-            file.close()
-            self.assertEqual(response.status_code, 400)
-
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        data = {
+            'file': file,
+            'prompt': 999,
+            'annotation': annotation,
+        }
+        response = self.client.post(url, data)
+        file.close()
+        self.assertEqual(response.status_code, 400)
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
@@ -252,49 +239,46 @@ class TestListRecordings(APITestCase):
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_get_all_recordings(self):
-        if self.client.login(username='admin', password='wellthen'):
-            url = reverse('annotations:list')
-            response = self.client.get(url)
-            self.assertEqual(response.status_code, 200)
-        else:
-            self.fail("User could not login.")
+        if not self.client.login(username='admin', password='wellthen'):
+            self.fail('User could not login.')
+        url = reverse('annotations:list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_get_one_recording(self):
 
-        if self.client.login(username='test1', password='password'):
-            annotation = str(uuid.uuid4())
-            url = reverse('annotations:upload')
-            file = open('test_data/files/tom.wav', 'rb')
-            data = {
-                'file': file,
-                'prompt': 1,
-                'annotation': annotation,
-            }
-            responsex = self.client.post(url, data)
-            file.close()
-            self.client.logout()
-            if responsex.status_code == 201 and \
-                    self.client.login(username='admin', password='wellthen'):
-                url = reverse('annotations:recording', kwargs={'pk': 1})
-                response = self.client.get(url)
-                self.assertEqual(response.status_code, 200)
-            else:
-                self.fail('Could not upload recording.')
+        if not self.client.login(username='test1', password='password'):
+            self.fail('User could not login.')
+        annotation = str(uuid.uuid4())
+        url = reverse('annotations:upload')
+        file = open('test_data/files/tom.wav', 'rb')
+        data = {
+            'file': file,
+            'prompt': 1,
+            'annotation': annotation,
+        }
+        responsex = self.client.post(url, data)
+        file.close()
+        self.client.logout()
+        if responsex.status_code == 201 and \
+                self.client.login(username='admin', password='wellthen'):
+            url = reverse('annotations:recording', kwargs={'pk': 1})
+            response = self.client.get(url)
+            self.assertEqual(response.status_code, 200)
         else:
-            self.fail("User could not login.")
+            self.fail('Could not upload recording.')
 
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_get_recordings_not_admin(self):
 
-        if self.client.login(username='test1', password='password'):
-            url1 = reverse('annotations:list')
-            url2 = reverse('annotations:recording', kwargs={'pk': 1})
-            response1 = self.client.get(url1)
-            response2 = self.client.get(url2)
-            self.assertEqual(response1.status_code, 403)
-            self.assertEqual(response2.status_code, 403)
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        url1 = reverse('annotations:list')
+        url2 = reverse('annotations:recording', kwargs={'pk': 1})
+        response1 = self.client.get(url1)
+        response2 = self.client.get(url2)
+        self.assertEqual(response1.status_code, 403)
+        self.assertEqual(response2.status_code, 403)

@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.core.exceptions import SuspiciousFileOperation, ObjectDoesNotExist
+from django.core.exceptions import SuspiciousFileOperation, ObjectDoesNotExist, ValidationError
 from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework.permissions import IsAdminUser, AllowAny
 from rest_framework.response import Response
@@ -9,17 +9,22 @@ from rest_framework.views import APIView
 from rest_framework_tracking.mixins import LoggingMixin
 
 from LARMAS.settings import DEBUG
+from LARMAS.util import create_one_time_profile, upload_is_valid
 from annotations.models import PromptRecording
-from prompts.models import Prompt, DistributedPrompt
 from annotations.serializers import \
     PromptRecordingSerializer
-from user.util import create_one_time_profile
+from prompts.models import Prompt, DistributedPrompt
 
 
 class PromptUploadView(LoggingMixin, APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request):
+        """
+        Upload a prompt recording along with the raw audio recording
+        :param request: Request object
+        :return: 200 if file upload was successful
+        """
         data = {'detail': 'prompt field is required.'}
         try:
             # check if all the relevant data is there
@@ -61,7 +66,14 @@ class PromptUploadView(LoggingMixin, APIView):
                     temp_user.delete()
                 raise SuspiciousFileOperation
 
-            # todo validate file
+
+            # verify the uploaded file before saving
+            try:
+                upload_is_valid(file, 'UPLOAD')
+
+            except ValidationError:
+                data['detail'] = 'invalid file upload'
+                return Response(data, status=HTTP_400_BAD_REQUEST)
 
             recording = PromptRecording(
                 user=user,

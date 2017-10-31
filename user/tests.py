@@ -175,63 +175,58 @@ class User(TestCase):
     ]
 
     def test_show_this_user_details(self):
-        if self.client.login(username='test2', password='password'):
-            response = self.client.get(reverse('user:user'))
-            self.assertEquals(response.status_code, 200)
-            f = response.data['user']['first_name']
-            l = response.data['user']['last_name']
-            e = response.data['user']['email']
-            lang1 = response.data['first_language'].upper()
-            lang2 = response.data['second_language'].upper()
-            lang3 = response.data['third_language'].upper()
-            self.assertEqual(lang1, 'ENGLISH')
-            self.assertEqual(lang2, 'ISIZULU')
-            self.assertEqual(lang3, 'SOUTH_AFRICAN_SIGN_LANGUAGE')
-            self.assertEqual(f, 'first2')
-            self.assertEqual(l, 'last2')
-            self.assertEqual(e, 'test2@test.com')
-        else:
+        if not self.client.login(username='test2', password='password'):
             self.fail('User could not login.')
+        response = self.client.get(reverse('user:user'))
+        self.assertEquals(response.status_code, 200)
+        f = response.data['user']['first_name']
+        l = response.data['user']['last_name']
+        e = response.data['user']['email']
+        lang1 = response.data['first_language'].upper()
+        lang2 = response.data['second_language'].upper()
+        lang3 = response.data['third_language'].upper()
+        self.assertEqual(lang1, 'ENGLISH')
+        self.assertEqual(lang2, 'ISIZULU')
+        self.assertEqual(lang3, 'SOUTH_AFRICAN_SIGN_LANGUAGE')
+        self.assertEqual(f, 'first2')
+        self.assertEqual(l, 'last2')
+        self.assertEqual(e, 'test2@test.com')
 
     def test_show_this_user_details_by_id(self):
-        if self.client.login(username='test2', password='password'):
-            response = self.client.get("%s?id=3" % reverse('user:user'))
-            self.assertEquals(response.status_code, 200)
-            f = response.data['user']['first_name']
-            l = response.data['user']['last_name']
-            e = response.data['user']['email']
-            lang1 = response.data['first_language'].upper()
-            lang2 = response.data['second_language'].upper()
-            lang3 = response.data['third_language'].upper()
-            self.assertEqual(lang1, 'ENGLISH')
-            self.assertEqual(lang2, 'ISIZULU')
-            self.assertEqual(lang3, 'SOUTH_AFRICAN_SIGN_LANGUAGE')
-            self.assertEqual(f, 'first2')
-            self.assertEqual(l, 'last2')
-            self.assertEqual(e, 'test2@test.com')
-        else:
+        if not self.client.login(username='test2', password='password'):
             self.fail('User could not login.')
+        response = self.client.get("%s?id=3" % reverse('user:user'))
+        self.assertEquals(response.status_code, 200)
+        f = response.data['user']['first_name']
+        l = response.data['user']['last_name']
+        e = response.data['user']['email']
+        lang1 = response.data['first_language'].upper()
+        lang2 = response.data['second_language'].upper()
+        lang3 = response.data['third_language'].upper()
+        self.assertEqual(lang1, 'ENGLISH')
+        self.assertEqual(lang2, 'ISIZULU')
+        self.assertEqual(lang3, 'SOUTH_AFRICAN_SIGN_LANGUAGE')
+        self.assertEqual(f, 'first2')
+        self.assertEqual(l, 'last2')
+        self.assertEqual(e, 'test2@test.com')
 
     def test_show_this_user_details_by_id_not_exist(self):
-        if self.client.login(username='admin', password='wellthen'):
-            response = self.client.get("%s?id=999" % reverse('user:user'))
-            self.assertEquals(response.status_code, 400)
-        else:
+        if not self.client.login(username='admin', password='wellthen'):
             self.fail('User could not login.')
+        response = self.client.get("%s?id=999" % reverse('user:user'))
+        self.assertEquals(response.status_code, 400)
 
     def test_show_get_user_details_not_admin(self):
-        if self.client.login(username='test1', password='password'):
-            response = self.client.get("%s?id=3" % reverse('user:user'))
-            self.assertEquals(response.status_code, 403)
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.get("%s?id=3" % reverse('user:user'))
+        self.assertEquals(response.status_code, 403)
 
     def test_show_get_user_details_admin(self):
-        if self.client.login(username='admin', password='wellthen'):
-            response = self.client.get("%s?id=3" % reverse('user:user'))
-            self.assertEquals(response.status_code, 200)
-        else:
+        if not self.client.login(username='admin', password='wellthen'):
             self.fail('User could not login.')
+        response = self.client.get("%s?id=3" % reverse('user:user'))
+        self.assertEquals(response.status_code, 200)
 
     def test_change_this_user_first_language(self):
         data = {
@@ -242,13 +237,12 @@ class User(TestCase):
             # "second_language": "SHO-ZW",
             # "third_language": "XHO-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 200)
-            lang1 = response.data['first_language'].upper()
-            self.assertEqual(lang1, 'SESOTHO_SA_LEBOA')
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 200)
+        lang1 = response.data['first_language'].upper()
+        self.assertEqual(lang1, 'SESOTHO_SA_LEBOA')
 
     def test_change_this_user_first_language_does_not_exists(self):
         data = {
@@ -259,11 +253,10 @@ class User(TestCase):
             # "second_language": "SHO-ZW",
             # "third_language": "XHO-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 400)
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 400)
 
     def test_change_this_user_second_language(self):
         data = {
@@ -274,13 +267,12 @@ class User(TestCase):
             "second_language": "SSO-ZA",
             # "third_language": "XHO-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 200)
-            lang2 = response.data['second_language'].upper()
-            self.assertEqual(lang2, 'SESOTHO')
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 200)
+        lang2 = response.data['second_language'].upper()
+        self.assertEqual(lang2, 'SESOTHO')
 
     def test_change_this_user_third_language(self):
         data = {
@@ -291,13 +283,12 @@ class User(TestCase):
             # "second_language": "SHO-ZW",
             "third_language": "AFR-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 200)
-            lang3 = response.data['third_language'].upper()
-            self.assertEqual(lang3, 'AFRIKAANS')
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 200)
+        lang3 = response.data['third_language'].upper()
+        self.assertEqual(lang3, 'AFRIKAANS')
 
     def test_change_this_user_all_languages(self):
         data = {
@@ -308,17 +299,16 @@ class User(TestCase):
             "second_language": "ZUL-ZA",
             "third_language": "SSO-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 200)
-            lang1 = response.data['first_language'].upper()
-            lang2 = response.data['second_language'].upper()
-            lang3 = response.data['third_language'].upper()
-            self.assertEqual(lang1, 'AFRIKAANS')
-            self.assertEqual(lang2, 'ISIZULU')
-            self.assertEqual(lang3, 'SESOTHO')
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 200)
+        lang1 = response.data['first_language'].upper()
+        lang2 = response.data['second_language'].upper()
+        lang3 = response.data['third_language'].upper()
+        self.assertEqual(lang1, 'AFRIKAANS')
+        self.assertEqual(lang2, 'ISIZULU')
+        self.assertEqual(lang3, 'SESOTHO')
 
     def test_change_this_first_name(self):
         data = {
@@ -329,13 +319,12 @@ class User(TestCase):
             # "second_language": "SHO-ZW",
             # "third_language": "XHO-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 200)
-            f = response.data['user']['first_name']
-            self.assertEqual(f, 'f1')
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 200)
+        f = response.data['user']['first_name']
+        self.assertEqual(f, 'f1')
 
     def test_change_this_last_name(self):
         data = {
@@ -346,13 +335,12 @@ class User(TestCase):
             # "second_language": "SHO-ZW",
             # "third_language": "XHO-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 200)
-            l = response.data['user']['last_name']
-            self.assertEqual(l, 'l1')
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 200)
+        l = response.data['user']['last_name']
+        self.assertEqual(l, 'l1')
 
     def test_change_this_email(self):
         data = {
@@ -363,13 +351,12 @@ class User(TestCase):
             # "second_language": "SHO-ZW",
             # "third_language": "XHO-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 200)
-            e = response.data['user']['email']
-            self.assertEqual(e, 'email@test.com')
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 200)
+        e = response.data['user']['email']
+        self.assertEqual(e, 'email@test.com')
 
     def test_change_all_details(self):
         data = {
@@ -380,23 +367,22 @@ class User(TestCase):
             "second_language": "NDE-ZA",
             "third_language": "ZUL-ZA",
         }
-        if self.client.login(username='test1', password='password'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 200)
-            f = response.data['user']['first_name']
-            l = response.data['user']['last_name']
-            e = response.data['user']['email']
-            lang1 = response.data['first_language'].upper()
-            lang2 = response.data['second_language'].upper()
-            lang3 = response.data['third_language'].upper()
-            self.assertEqual(lang1, 'SOUTH_AFRICAN_SIGN_LANGUAGE')
-            self.assertEqual(lang2, 'ISINDEBELE')
-            self.assertEqual(lang3, 'ISIZULU')
-            self.assertEqual(f, 'changed1')
-            self.assertEqual(l, 'changed2')
-            self.assertEqual(e, 'changed3@test.com')
-        else:
+        if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 200)
+        f = response.data['user']['first_name']
+        l = response.data['user']['last_name']
+        e = response.data['user']['email']
+        lang1 = response.data['first_language'].upper()
+        lang2 = response.data['second_language'].upper()
+        lang3 = response.data['third_language'].upper()
+        self.assertEqual(lang1, 'SOUTH_AFRICAN_SIGN_LANGUAGE')
+        self.assertEqual(lang2, 'ISINDEBELE')
+        self.assertEqual(lang3, 'ISIZULU')
+        self.assertEqual(f, 'changed1')
+        self.assertEqual(l, 'changed2')
+        self.assertEqual(e, 'changed3@test.com')
 
     def test_admin_change_details(self):
         """
@@ -411,12 +397,11 @@ class User(TestCase):
             "second_language": "NDE-ZA",
             "third_language": "ZUL-ZA",
         }
-        if self.client.login(username='admin', password='wellthen'):
-            response = self.client.post(reverse('user:user'), data)
-            self.assertEquals(response.status_code, 400)
 
-        else:
+        if not self.client.login(username='admin', password='wellthen'):
             self.fail('User could not login.')
+        response = self.client.post(reverse('user:user'), data)
+        self.assertEquals(response.status_code, 400)
 
 
 class UserAuth(TestCase):
@@ -436,21 +421,3 @@ class UserAuth(TestCase):
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.data.__contains__('token'))
-
-    # def test_use_auth_token(self):
-    #
-    #     # get the token
-    #     token_url = reverse('user:auth_token')
-    #     data = {
-    #         'username': 'test1',
-    #         'password': 'password'
-    #     }
-    #
-    #     token_response = self.client.post(token_url, data)
-    #     token = token_response.data['token']
-    #
-    #     # use token
-    #     token_head = {'Authorization': 'Token %s' % token}
-    #     test_url = reverse('user:user')
-    #     response = self.client.get(test_url, **token_head)
-    #     self.assertEqual(response.status_code, 200)

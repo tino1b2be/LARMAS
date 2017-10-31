@@ -179,6 +179,5 @@ class UserRegistration(LoggingMixin, APIView):
                 return Response(data, status=HTTP_400_BAD_REQUEST)
 
         except Exception as e2:
-            # todo log
             data['detail'] = str(e2) if DEBUG else 'Something went wrong'
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
