@@ -87,10 +87,21 @@ WSGI_APPLICATION = 'LARMAS.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
+
+    # Postgres
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'larmas',
+        'USER': 'larmas_admin',
+        'PASSWORD': 'AdminLarmas',
+        'HOST': 'larmas-db-postgres.cgr6ksprthsn.us-west-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 # Password validation
