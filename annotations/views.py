@@ -66,7 +66,6 @@ class PromptUploadView(LoggingMixin, APIView):
                     temp_user.delete()
                 raise SuspiciousFileOperation
 
-
             # verify the uploaded file before saving
             try:
                 upload_is_valid(file, 'UPLOAD')

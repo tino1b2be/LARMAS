@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,7 +47,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_tracking',
-    'request',
     'constance',
     'constance.backends.database',
     'user',
@@ -93,14 +93,14 @@ WSGI_APPLICATION = 'LARMAS.wsgi.application'
 DATABASES = {
 
     # Postgres
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'larmas',
-        'USER': 'larmas_admin',
-        'PASSWORD': 'AdminLarmas',
-        'HOST': 'larmas-db-postgres.cgr6ksprthsn.us-west-2.rds.amazonaws.com',
-        'PORT': '5432',
-    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'larmas',
+    #     'USER': 'larmas_admin',
+    #     'PASSWORD': 'AdminLarmas',
+    #     'HOST': 'larmas-db-postgres.cgr6ksprthsn.us-west-2.rds.amazonaws.com',
+    #     'PORT': '5432',
+    # },
 
     # MySQL
     # 'default': {
@@ -112,10 +112,10 @@ DATABASES = {
     #     'PORT': '3306',
     # },
 
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
 }
 
 # Password validation
@@ -196,4 +196,34 @@ CONSTANCE_DATABASE_PREFIX = 'constance:larmas:'
 CONSTANCE_CONFIG = {
     'PROMPTS_PER_USER': (10, 'Number of unrecorded prompts a user can have at a time', int),
     'RANDOM_DISTRIBUTION': (True, 'Parameter to toggle between random distribution of prompts and sorted distribution.', bool),
+}
+
+SUIT_CONFIG = {
+    # header
+    'ADMIN_NAME': 'LARMAS Administration',
+    'HEADER_DATE_FORMAT': 'l, j. F Y',
+    'HEADER_TIME_FORMAT': 'H:i',
+
+    # forms
+    'SHOW_REQUIRED_ASTERISK': True,  # Default True
+    'CONFIRM_UNSAVED_CHANGES': True, # Default True
+
+    # menu
+    # 'SEARCH_URL': '/admin/auth/user/',
+
+    # 'MENU_ICONS': {
+    #    'sites': 'icon-leaf',
+    #    'auth': 'icon-lock',
+    # },
+    # 'MENU_OPEN_FIRST_CHILD': True, # Default True
+    'MENU_EXCLUDE': ('auth.group',),
+    # 'MENU': (
+    #     'sites',
+    #     {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
+    #     {'label': 'Settings', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group')},
+    #     {'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'},
+    # ),
+
+    # misc
+    'LIST_PER_PAGE': 30
 }
