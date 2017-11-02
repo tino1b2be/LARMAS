@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from socket import gethostname, gethostbyname
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,14 +26,7 @@ SECRET_KEY = '_nsn8(wnmgb!x6vu=p6@d$x4k%qv%$ovla^n2^i=hwu&gw1wv^'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '197.239.149.167',
-    'localhost',
-    '197.239.149.176',
-    '172.31.31.184',
-    'ip-172-31-31-184.us-west-2.compute.internal',
-    '52.26.85.89',
-    'ec2-52-26-85-89.us-west-2.compute.amazonaws.com',
-    '34.214.150.108',
+    '*',
 ]
 
 # Application definition
@@ -196,7 +190,8 @@ CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 CONSTANCE_DATABASE_PREFIX = 'constance:larmas:'
 CONSTANCE_CONFIG = {
     'PROMPTS_PER_USER': (10, 'Number of unrecorded prompts a user can have at a time', int),
-    'RANDOM_DISTRIBUTION': (True, 'Parameter to toggle between random distribution of prompts and sorted distribution.', bool),
+    'RANDOM_DISTRIBUTION': (
+    True, 'Parameter to toggle between random distribution of prompts and sorted distribution.', bool),
 }
 
 SUIT_CONFIG = {
@@ -207,7 +202,7 @@ SUIT_CONFIG = {
 
     # forms
     'SHOW_REQUIRED_ASTERISK': True,  # Default True
-    'CONFIRM_UNSAVED_CHANGES': True, # Default True
+    'CONFIRM_UNSAVED_CHANGES': True,  # Default True
 
     # menu
     # 'SEARCH_URL': '/admin/auth/user/',
