@@ -32,8 +32,8 @@ class ParallelView(LoggingMixin, ListAPIView):
     permission_classes = (IsAdminUser,)
 
     def get_queryset(self):
-        first = self.kwargs.get('first', 0)
-        second = self.kwargs.get('second', 0)
+        first = self.kwargs.get('first', 0).upper()
+        second = self.kwargs.get('second', 0).upper()
         queryset = PromptTranslation.objects.filter(
             language__code=second,
             original_prompt__language__code=first)
