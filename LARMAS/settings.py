@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_framework_tracking',
+    # 'rest_framework_tracking',
     'constance',
     'constance.backends.database',
     'user',
@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'request.middleware.RequestMiddleware',
+    #'request.middleware.RequestMiddleware',
 ]
 
 ROOT_URLCONF = 'LARMAS.urls'

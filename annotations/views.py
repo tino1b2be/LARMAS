@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST, \
     HTTP_500_INTERNAL_SERVER_ERROR
 from rest_framework.views import APIView
-from rest_framework_tracking.mixins import LoggingMixin
 
 from LARMAS.settings import DEBUG
 from LARMAS.util import create_one_time_profile, upload_is_valid
@@ -16,7 +15,7 @@ from annotations.serializers import \
 from prompts.models import Prompt, DistributedPrompt
 
 
-class PromptUploadView(LoggingMixin, APIView):
+class PromptUploadView(APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request):
@@ -108,13 +107,13 @@ class PromptUploadView(LoggingMixin, APIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class PromptRecordingsListView(LoggingMixin, ListAPIView):
+class PromptRecordingsListView(ListAPIView):
     queryset = PromptRecording.objects.all()
     serializer_class = PromptRecordingSerializer
     permission_classes = (IsAdminUser,)
 
 
-class PromptRecordingDetailView(LoggingMixin, RetrieveAPIView):
+class PromptRecordingDetailView(RetrieveAPIView):
     queryset = PromptRecording.objects.all()
     serializer_class = PromptRecordingSerializer
     permission_classes = (IsAdminUser,)

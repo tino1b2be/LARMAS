@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST,\
     HTTP_500_INTERNAL_SERVER_ERROR, HTTP_201_CREATED
 from rest_framework.views import APIView
-from rest_framework_tracking.mixins import LoggingMixin
 
 from LARMAS.settings import DEBUG
 from prompts.models import DistributedPrompt
@@ -15,19 +14,19 @@ from user.models import Language
 from annotations.models import Prompt
 
 
-class TranslationListView(LoggingMixin, ListAPIView):
+class TranslationListView(ListAPIView):
     queryset = PromptTranslation.objects.all()
     serializer_class = PromptTranslationSerializer
     permission_classes = (IsAdminUser,)
 
 
-class TranslationDetail(LoggingMixin, RetrieveAPIView):
+class TranslationDetail(RetrieveAPIView):
     queryset = PromptTranslation.objects.all()
     serializer_class = PromptTranslationSerializer
     permission_classes = (IsAdminUser,)
 
 
-class ParallelView(LoggingMixin, ListAPIView):
+class ParallelView(ListAPIView):
     serializer_class = PromptTranslationSerializer
     permission_classes = (IsAdminUser,)
 
@@ -40,7 +39,7 @@ class ParallelView(LoggingMixin, ListAPIView):
         return queryset
 
 
-class TranslationUploadView(LoggingMixin, APIView):
+class TranslationUploadView(APIView):
 
     def post(self, request):
 

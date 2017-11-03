@@ -40,6 +40,10 @@ def create_one_time_profile(post, temp_user=User()):
         age = 0
 
     # save user to generate a new pk
+    temp_user.username = 'temp_user_' \
+                         + str(uuid.uuid4()) + '_' + str(uuid.uuid4())
+    temp_user.is_active = False
+    temp_user.set_password(str(uuid.uuid4()))
     temp_user.save()
 
     # create user profile
@@ -52,10 +56,7 @@ def create_one_time_profile(post, temp_user=User()):
     )
     temp_profile.save()
     # create unique username
-    temp_user.username = 'temp_user_' + str(temp_user.pk)
-    temp_user.is_active = False
-    temp_user.set_password(str(uuid.uuid4()))
-    temp_user.save()
+
     return temp_user
 
 
@@ -66,7 +67,7 @@ def upload_is_valid(file, source):
     :return: True if file is valid
     """
     if source == 'UPLOAD':
-        if not file.content_type.startswith('audio'):
+        if not file.name.endswith('wav'):
             raise ValidationError("Wrong file format")
     else:
         # perform more strict file validation

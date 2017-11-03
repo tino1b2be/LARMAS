@@ -6,14 +6,13 @@ from rest_framework.views import APIView
 from rest_framework.status import HTTP_403_FORBIDDEN, \
     HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_500_INTERNAL_SERVER_ERROR, \
     HTTP_200_OK
-from rest_framework_tracking.mixins import LoggingMixin
 
 from LARMAS.settings import DEBUG
 from user.models import Language, UserProfile
 from user.serializers import UserProfileSerializer
 
 
-class UserView(LoggingMixin, APIView):
+class UserView(APIView):
     """
     View class to display or change user details
     """
@@ -91,7 +90,7 @@ class UserView(LoggingMixin, APIView):
             return Response(data, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class UserRegistration(LoggingMixin, APIView):
+class UserRegistration(APIView):
     """
     View class to register a new user
     """
