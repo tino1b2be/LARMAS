@@ -182,9 +182,11 @@ The API supports token authentication. The token must be added to request header
 
 ## Group Prompts
 
-### Manage Prompts [/v1/prompts/]
+### Manage Prompts [/v1/prompts/{?language__code}]
++ Paramters
+	+ language__code : `SHO-ZW`(required, number) - The language code to specifiy which language to return
 
-#### List all prompts [GET]
+#### List prompts [GET]
 
 Listing all prompts will return a paginated response with links to next and previous pages.
 
