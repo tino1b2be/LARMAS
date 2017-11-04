@@ -119,6 +119,7 @@ class PromptRecordingsListView(ListAPIView):
         else:
             return PromptRecording.objects.all()
 
+
 class PromptRecordingDetailView(RetrieveAPIView):
     queryset = PromptRecording.objects.all()
     serializer_class = PromptRecordingSerializer

@@ -13,7 +13,7 @@ urlpatterns = [
         name='user'
         ),
     url(
-        r'^register$',
+        r'^register/$',
         UserRegistration.as_view(),
         name='create_user'
     ),

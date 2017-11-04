@@ -189,7 +189,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 CONSTANCE_DATABASE_PREFIX = 'constance:larmas:'
 CONSTANCE_CONFIG = {
-    'PROMPTS_PER_USER': (10, 'Number of unrecorded prompts a user can have at a time', int),
+    'PROMPTS_PER_USER': (50, 'Number of unrecorded prompts a user can have at a time', int),
     'RANDOM_DISTRIBUTION': (
     True, 'Parameter to toggle between random distribution of prompts and sorted distribution.', bool),
 }
