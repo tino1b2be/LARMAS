@@ -30,9 +30,6 @@ class ParallelView(ListAPIView):
     """
     Endpoint to retrieve parallel text between two languages
     that are specified in the URL. /{first_language}/{second_language}
-    `first_language` is the language code of the original prompts.
-    `second_language` is the language code of the language the original
-    prompt has been translated to.
     """
     serializer_class = PromptTranslationSerializer
     permission_classes = (IsAdminUser,)
