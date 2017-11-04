@@ -14,7 +14,7 @@ from user.serializers import UserProfileSerializer
 
 class UserView(APIView):
     """
-    View class to display or change user details
+    Endpoint to display details about a user.
     """
     permission_classes = (IsAuthenticated,)
 

@@ -11,6 +11,11 @@ urlpatterns = [
         name='list'
     ),
     url(
+        r'^(?P<language>.+)/$',
+        views.PromptRecordingsListView.as_view(),
+        name='list'
+    ),
+    url(
         r'^(?P<pk>\d+)/$',
         views.PromptRecordingDetailView.as_view(),
         name='recording'
