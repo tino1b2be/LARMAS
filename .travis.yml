@@ -9,5 +9,5 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - flake8 --exclude **migrations*,manage.py,**settings.py
+  - flake8 --exclude **migrations*,manage.py,**settings.py,suit/*,test_data/*,extra/*
   - python manage.py test -v 2

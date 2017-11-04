@@ -168,4 +168,3 @@ class TestTranslationDetails(APITestCase):
         url = reverse('translations:parallel', kwargs=args)
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-
