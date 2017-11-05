@@ -11,7 +11,12 @@ urlpatterns = [
         r'^$',
         UserView.as_view(),
         name='user'
-        ),
+    ),
+    url(
+        r'^(?P<id>\d+)/$',
+        UserView.as_view(),
+        name='user_id'
+    ),
     url(
         r'^register/$',
         UserRegistration.as_view(),

@@ -18,16 +18,18 @@ class UserView(APIView):
     """
     permission_classes = (IsAuthenticated,)
 
-    def get(self, request):
+    def get(self, request, id=0):
         """
         Show user details
         :param request:
         :return:
         """
         try:
-            id = int(request.query_params.get('id', 0))
             if request.user.is_staff:
                 try:
+                    if id == 0:
+                        id = request.user.id
+                    print(id)
                     s = User.objects.get(id=id)
                     user_profile = UserProfile.objects.get(user=s)
                     s = UserProfileSerializer(user_profile)
