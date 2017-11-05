@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'request.middleware.RequestMiddleware',
+    # 'request.middleware.RequestMiddleware',
 ]
 
 ROOT_URLCONF = 'LARMAS.urls'
@@ -191,7 +191,7 @@ CONSTANCE_DATABASE_PREFIX = 'constance:larmas:'
 CONSTANCE_CONFIG = {
     'PROMPTS_PER_USER': (50, 'Number of unrecorded prompts a user can have at a time', int),
     'RANDOM_DISTRIBUTION': (
-    True, 'Parameter to toggle between random distribution of prompts and sorted distribution.', bool),
+        False, 'Parameter to toggle between random distribution of prompts and sorted distribution.', bool),
 }
 
 SUIT_CONFIG = {

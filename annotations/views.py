@@ -74,6 +74,11 @@ class PromptUploadView(APIView):
                 data['detail'] = 'invalid file upload'
                 return Response(data, status=HTTP_400_BAD_REQUEST)
 
+            a = PromptRecording.objects.filter(user=user, prompt=prompt)
+            if a.count() != 0:
+                data['detail'] = 'This prompt was recorded already.'
+                return Response(data, status=HTTP_400_BAD_REQUEST)
+
             recording = PromptRecording(
                 user=user,
                 prompt=prompt,

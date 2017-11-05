@@ -3,15 +3,18 @@ import uuid
 import requests
 import json
 
-from prompts.models import Prompt
+# from prompts.models import Prompt
 
 url_reg = 'http://0.0.0.0:8000/v1/user/register/'
 url_token = 'http://0.0.0.0:8000/v1/user/api-token-auth/'
 url_prompts = 'http://0.0.0.0:8000/v1/prompts/retrieve/'
 url_upload = 'http://0.0.0.0:8000/v1/annotations/upload/'
+num_users = 2000
+total = num_users*50
+count = 50
 
-# loop 200 times for 200 users
-for i in range(2000):
+# loop 2000 times for 2000 users
+for i in range(1000,num_users):
     # create user
     data = {
         "username": "experiment_dist_%s" % i,
@@ -27,6 +30,8 @@ for i in range(2000):
     if not response.status_code // 200 == 1:
         raise Exception("couldn't create user.")
 
+    print('User - %s created' % data['username'])
+
     # user successfully created
     data = {
         "username": "experiment_dist_%s" % i,
@@ -37,6 +42,7 @@ for i in range(2000):
     if not response.status_code // 200 == 1:
         raise Exception("couldn't get token.")
 
+    print('Token received.')
     body = json.loads(response.text)
     token = body['token']
 
@@ -49,11 +55,14 @@ for i in range(2000):
     if not response.status_code // 200 == 1:
         raise Exception("couldn't get prompts.")
 
+    print('Prompts received.')
     prompts = json.loads(response.text)
 
+    count2 = 0
+    max = len(prompts)
     for prompt in prompts:
         # upload an annotation for each prompt.
-        file = open('test_data/files/tom.wav', 'rb')
+        file = open('tom.wav', 'rb')
         data = {
             'prompt': prompt['id'],
             'annotation': uuid.uuid4(),
@@ -64,7 +73,12 @@ for i in range(2000):
             files={'file': file},
             headers=headers,
         )
-        s = response.status_code
+        if not response.status_code // 200 == 1:
+            raise Exception('could not upload.')
+
+        count += 1
+        count2 += 1
+        print('Prompt %d of %d uploaded for user (%d/%d total).' % (count2, max, count, total))
 
     # done uploading annotations
 

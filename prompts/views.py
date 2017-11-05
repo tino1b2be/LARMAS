@@ -147,7 +147,7 @@ class PromptDistribution(APIView):
 
             # if there are not enough distributed prompts, add more.
 
-            queryset = Prompt.objects.all()
+            queryset = Prompt.objects.filter(language=language)
             if not config.RANDOM_DISTRIBUTION:
                 queryset.order_by('number_of_recordings')
             i = 0
@@ -177,15 +177,14 @@ class PromptDistribution(APIView):
                     .filter(user=user, prompt=prompt)
                 if dist.count() == 0:
                     # this prompt has not been distributed.
-                    if prompt.language == language:
-                        prompts.append(prompt)
-                        # add this prompt to the distributed prompts database
-                        DistributedPrompt(user=user, prompt=prompt).save()
-                        # next prompt
-                        i += 1
-                        # else:
-                        #     # wrong language
-                        #     continue
+                    prompts.append(prompt)
+                    # add this prompt to the distributed prompts database
+                    DistributedPrompt(user=user, prompt=prompt).save()
+                    # next prompt
+                    i += 1
+                    # else:
+                    #     # wrong language
+                    #     continue
 
             # serialize all prompts and respond to request.
             s = PromptSerializer(prompts, many=True)
