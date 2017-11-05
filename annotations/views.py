@@ -115,7 +115,7 @@ class PromptUploadView(APIView):
 
 class PromptRecordingsListView(ListAPIView):
     serializer_class = PromptRecordingSerializer
-    permission_classes = (IsAdminUser,)
+    permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
         code = self.kwargs.get('language', 'x')
@@ -129,4 +129,4 @@ class PromptRecordingsListView(ListAPIView):
 class PromptRecordingDetailView(RetrieveAPIView):
     queryset = PromptRecording.objects.all()
     serializer_class = PromptRecordingSerializer
-    permission_classes = (IsAdminUser,)
+    permission_classes = (IsAuthenticated,)

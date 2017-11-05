@@ -79,7 +79,7 @@ class PromptsView(ListAPIView):
 class PromptDetail(RetrieveAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
-    permission_classes = (IsAdminUser,)
+    permission_classes = (IsAuthenticated,)
 
 
 class PromptDistribution(APIView):
