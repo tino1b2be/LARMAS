@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import SuspiciousFileOperation,\
     ObjectDoesNotExist, ValidationError
 from rest_framework.generics import RetrieveAPIView, ListAPIView
-from rest_framework.permissions import IsAdminUser, AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST, \
     HTTP_500_INTERNAL_SERVER_ERROR

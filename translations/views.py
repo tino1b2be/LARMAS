@@ -1,6 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.generics import RetrieveAPIView, ListAPIView
-from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST,\
     HTTP_500_INTERNAL_SERVER_ERROR, HTTP_201_CREATED

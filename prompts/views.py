@@ -3,7 +3,7 @@ import random
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.decorators import permission_classes
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST, \
     HTTP_500_INTERNAL_SERVER_ERROR, HTTP_200_OK, \
@@ -24,7 +24,7 @@ class PromptsView(ListAPIView):
 
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
     def post(self, request):
         """
