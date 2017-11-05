@@ -1,6 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.generics import RetrieveAPIView, ListAPIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST,\
     HTTP_500_INTERNAL_SERVER_ERROR, HTTP_201_CREATED
@@ -17,7 +17,7 @@ from annotations.models import Prompt
 class TranslationListView(ListAPIView):
     queryset = PromptTranslation.objects.all()
     serializer_class = PromptTranslationSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAdminUser,)
 
 
 class TranslationDetail(RetrieveAPIView):
@@ -32,7 +32,7 @@ class ParallelView(ListAPIView):
     that are specified in the URL. /{first_language}/{second_language}
     """
     serializer_class = PromptTranslationSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAdminUser,)
 
     def get_queryset(self):
         first = self.kwargs.get('first', 0).upper()

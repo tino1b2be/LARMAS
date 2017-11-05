@@ -195,7 +195,7 @@ class User(TestCase):
     def test_show_this_user_details_by_id(self):
         if not self.client.login(username='test2', password='password'):
             self.fail('User could not login.')
-        response = self.client.get("%s?id=3" % reverse('user:user'))
+        response = self.client.get(reverse('user:user_id', kwargs={'id': 3}))
         self.assertEquals(response.status_code, 200)
         f = response.data['user']['first_name']
         l = response.data['user']['last_name']
@@ -213,19 +213,19 @@ class User(TestCase):
     def test_show_this_user_details_by_id_not_exist(self):
         if not self.client.login(username='admin', password='wellthen'):
             self.fail('User could not login.')
-        response = self.client.get("%s?id=999" % reverse('user:user'))
+        response = self.client.get(reverse('user:user_id', kwargs={'id': 99}))
         self.assertEquals(response.status_code, 400)
 
     def test_show_get_user_details_not_admin(self):
         if not self.client.login(username='test1', password='password'):
             self.fail('User could not login.')
-        response = self.client.get("%s?id=3" % reverse('user:user'))
+        response = self.client.get(reverse('user:user_id', kwargs={'id': 3}))
         self.assertEquals(response.status_code, 403)
 
     def test_show_get_user_details_admin(self):
         if not self.client.login(username='admin', password='wellthen'):
             self.fail('User could not login.')
-        response = self.client.get("%s?id=3" % reverse('user:user'))
+        response = self.client.get(reverse('user:user_id', kwargs={'id': 3}))
         self.assertEquals(response.status_code, 200)
 
     def test_change_this_user_first_language(self):

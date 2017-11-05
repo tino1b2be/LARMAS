@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import SuspiciousFileOperation,\
     ObjectDoesNotExist, ValidationError
 from rest_framework.generics import RetrieveAPIView, ListAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST, \
     HTTP_500_INTERNAL_SERVER_ERROR
@@ -115,7 +115,7 @@ class PromptUploadView(APIView):
 
 class PromptRecordingsListView(ListAPIView):
     serializer_class = PromptRecordingSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAdminUser,)
 
     def get_queryset(self):
         code = self.kwargs.get('language', 'x')
@@ -129,4 +129,4 @@ class PromptRecordingsListView(ListAPIView):
 class PromptRecordingDetailView(RetrieveAPIView):
     queryset = PromptRecording.objects.all()
     serializer_class = PromptRecordingSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAdminUser,)

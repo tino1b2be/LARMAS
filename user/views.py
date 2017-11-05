@@ -29,7 +29,6 @@ class UserView(APIView):
                 try:
                     if id == 0:
                         id = request.user.id
-                    print(id)
                     s = User.objects.get(id=id)
                     user_profile = UserProfile.objects.get(user=s)
                     s = UserProfileSerializer(user_profile)
@@ -38,7 +37,7 @@ class UserView(APIView):
                     data = {'detail': 'User does not exist'}
                     return Response(data, status=HTTP_400_BAD_REQUEST)
 
-            elif (id == 0) or (id == request.user.id):
+            elif (id == 0) or (id == str(request.user.id)):
                 user_profile = UserProfile.objects.get(user=request.user)
                 s = UserProfileSerializer(user_profile)
                 return Response(s.data, status=HTTP_200_OK)
