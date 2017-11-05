@@ -55,20 +55,20 @@ class TranslationUploadView(APIView):
 
         data = {'detail': 'text field is required.'}
         # check if all the relevant data is there
-        if not request.POST.__contains__('text'):
+        if not request.data.__contains__('text'):
             return Response(data, status=HTTP_400_BAD_REQUEST)
-        if not request.POST.__contains__('original_prompt'):
+        if not request.data.__contains__('original_prompt'):
             data['detail'] = 'original_prompt field is required.'
             return Response(data, status=HTTP_400_BAD_REQUEST)
-        if not request.POST.__contains__('language'):
+        if not request.data.__contains__('language'):
             data['detail'] = 'language field is required.'
             return Response(data, status=HTTP_400_BAD_REQUEST)
 
         try:
             user = request.user
-            text = request.POST.get('text')
-            p = request.POST.get('original_prompt')
-            l = request.POST.get('language')
+            text = request.data.get('text')
+            p = request.data.get('original_prompt')
+            l = request.data.get('language')
             try:
                 prompt = Prompt.objects.get(pk=p)
             except ObjectDoesNotExist:
@@ -81,11 +81,11 @@ class TranslationUploadView(APIView):
                 data['detail'] = 'The language code %s does not exist.' % l
                 return Response(data, status=HTTP_400_BAD_REQUEST)
 
-            try:
-                d1 = DistributedPrompt.objects.get(prompt=prompt, user=user)
-            except ObjectDoesNotExist:
-                data['detail'] = 'This prompt was not given to you.'
-                return Response(data, status=HTTP_400_BAD_REQUEST)
+            # try:
+            #     d1 = DistributedPrompt.objects.get(prompt=prompt, user=user)
+            # except ObjectDoesNotExist:
+            #     data['detail'] = 'This prompt was not given to you.'
+            #     return Response(data, status=HTTP_400_BAD_REQUEST)
 
             translation = PromptTranslation(
                 user=user,
@@ -93,8 +93,8 @@ class TranslationUploadView(APIView):
                 language=language,
                 text=text
             )
-            d1.translated = True
-            d1.save()
+            # d1.translated = True
+            # d1.save()
             translation.save()
             s = PromptTranslationSerializer(translation)
             return Response(s.data, status=HTTP_201_CREATED)
