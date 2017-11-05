@@ -74,10 +74,10 @@ class PromptUploadView(APIView):
                 data['detail'] = 'invalid file upload'
                 return Response(data, status=HTTP_400_BAD_REQUEST)
 
-            a = PromptRecording.objects.filter(user=user, prompt=prompt)
-            if a.count() != 0:
-                data['detail'] = 'This prompt was recorded already.'
-                return Response(data, status=HTTP_400_BAD_REQUEST)
+            # a = PromptRecording.objects.filter(user=user, prompt=prompt)
+            # if a.count() != 0:
+            #     data['detail'] = 'This prompt was recorded already.'
+            #     return Response(data, status=HTTP_400_BAD_REQUEST)
 
             recording = PromptRecording(
                 user=user,
@@ -86,17 +86,17 @@ class PromptUploadView(APIView):
                 file_type=file.name[-3:].upper(),
                 annotation=annotation,
             )
-            if request.user.is_authenticated:
-                try:
-                    d1 = DistributedPrompt.objects.get(
-                        prompt=prompt,
-                        user=user,
-                    )
-                    d1.recorded = True
-                    d1.save()  # save distributed prompt object
-                except ObjectDoesNotExist:
-                    data['detail'] = 'This prompt was not given to you.'
-                    return Response(data, status=HTTP_400_BAD_REQUEST)
+            # if request.user.is_authenticated:
+            #     try:
+            #         d1 = DistributedPrompt.objects.get(
+            #             prompt=prompt,
+            #             user=user,
+            #         )
+            #         d1.recorded = True
+            #         d1.save()  # save distributed prompt object
+            #     except ObjectDoesNotExist:
+            #         data['detail'] = 'This prompt was not given to you.'
+            #         return Response(data, status=HTTP_400_BAD_REQUEST)
 
             prompt.number_of_recordings += 1
             prompt.save()  # save prompt object
