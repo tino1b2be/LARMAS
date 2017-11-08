@@ -14,7 +14,7 @@ from annotations.models import PromptRecording
 from annotations.serializers import \
     PromptRecordingSerializer
 from prompts.models import Prompt, DistributedPrompt
-
+from prompts.serializers import PromptSerializer
 
 class PromptUploadView(APIView):
     permission_classes = (AllowAny,)
@@ -99,11 +99,13 @@ class PromptUploadView(APIView):
             #         data['detail'] = 'This prompt was not given to you.'
             #         return Response(data, status=HTTP_400_BAD_REQUEST)
 
+            a = Prompt.objects.all()
+            s = PromptSerializer(a)
             prompt.number_of_recordings += 1
             prompt.save()  # save prompt object
             # recording.save()  # save recording
             # s = PromptRecordingSerializer(recording)
-            return Response({}, status=HTTP_201_CREATED)
+            return Response(s.data, status=HTTP_201_CREATED)
 
         except SuspiciousFileOperation:
             data['detail'] = 'filename too short'
