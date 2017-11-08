@@ -100,7 +100,7 @@ class PromptUploadView(APIView):
             #         return Response(data, status=HTTP_400_BAD_REQUEST)
 
             a = Prompt.objects.all()
-            s = PromptSerializer(a)
+            s = PromptSerializer(a[0])
             prompt.number_of_recordings += 1
             prompt.save()  # save prompt object
             # recording.save()  # save recording
