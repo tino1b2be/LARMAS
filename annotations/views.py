@@ -103,7 +103,7 @@ class PromptUploadView(APIView):
             prompt.save()  # save prompt object
             # recording.save()  # save recording
             # s = PromptRecordingSerializer(recording)
-            return Response(s.data, status=HTTP_201_CREATED)
+            return Response({}, status=HTTP_201_CREATED)
 
         except SuspiciousFileOperation:
             data['detail'] = 'filename too short'
