@@ -270,6 +270,10 @@ class TestListRecordings(APITestCase):
         else:
             self.fail('Could not upload recording.')
 
+        # remove test files
+        if os.path.isdir('test_media'):
+            shutil.rmtree('test_media')
+
     @override_settings(MEDIA_URL='/test_media/',
                        MEDIA_ROOT=os.path.join(BASE_DIR, 'test_media'))
     def test_get_recordings_not_admin(self):

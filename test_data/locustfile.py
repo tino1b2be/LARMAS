@@ -1,17 +1,15 @@
 import random
 import uuid
+import json
 
 from locust import HttpLocust, TaskSet, task
 
 num_prompts = 28252
 headers_default = {'Content-type': 'application/json'}
-token_test1 = {
-    'Content-type': 'application/json',
-    "Authorization": "Token 189372f71e33d17f40eafd07fbf67ebabad52a5f"
-}
+
 token_admin = {
     'Content-type': 'application/json',
-    "Authorization": "Token e2d87c5be30862579826090708cbff2b76a1587e"
+    "Authorization": "Token 7f613e51d4d0227492b7c85d80913a3eeb6aef4f"
 }
 
 url_upload_ann = "/v1/annotations/upload/"
@@ -21,6 +19,7 @@ url_add_prompt = '/v1/prompts/'
 url_all_ann = '/v1/annotations/'
 
 wav_file = open('files/tom.wav', 'rb')
+wav_file.close()
 
 languages = [
     'ENG-ZA',
@@ -49,8 +48,6 @@ class UserBehavior(TaskSet):
     def upload_annotation(self):
         # get prompts
 
-        files = {'file': wav_file}
-
         data = {
             'prompt': random.randint(1, 28252),
             'annotation': str(uuid.uuid4()),
@@ -58,7 +55,7 @@ class UserBehavior(TaskSet):
             "age": 23,
 
         }
-        self.client.post(url_upload_ann, data=data, files=files, headers=headers_default)
+        self.client.post(url_upload_ann, data=json.dumps(data))
 
     @task(30)
     def upload_translation(self):
@@ -68,12 +65,7 @@ class UserBehavior(TaskSet):
             'language': random.choice(languages),
         }
 
-        self.client.post(url_upload_tran, data)
-
-    @task(1)
-    def get_profile(self):
-        r = self.client.get(url_profile)
-        print(r)
+        self.client.post(url_upload_tran, data=json.dumps(data))
 
     @task(15)
     def add_prompt(self):
@@ -81,17 +73,11 @@ class UserBehavior(TaskSet):
             'text': str(uuid.uuid4()),
             'language': random.choice(languages),
         }
-        self.client.post(url_add_prompt, data=data)
+        self.client.post(url_add_prompt, data=json.dumps(data))
 
-    @task(5)
+    @task(10)
     def get_parallel(self):
-        url = '/v1/prompt_translations/parallel/%s/%s/' % \
-              (random.choice(languages), random.choice(languages))
-        self.client.get(url)
-
-    @task(5)
-    def get_translation(self):
-        url = '/v1/prompt_translations/%d/' % random.randint(1, 14113)
+        url = '/v1/prompt_translations/parallel/ENG-ZA/SHO-ZW/'
         self.client.get(url)
 
     @task(10)
@@ -101,5 +87,5 @@ class UserBehavior(TaskSet):
 
 class WebsiteUser(HttpLocust):
     task_set = UserBehavior
-    min_wait = 5000
-    max_wait = 15000
+    min_wait = 500
+    max_wait = 500

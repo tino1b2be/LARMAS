@@ -174,7 +174,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # LARMA paramters
 
-# swift stuff
+# swift stuff comment out these lines to use the system filesystem
 
 # DEFAULT_FILE_STORAGE='swift.storage.SwiftStorage'
 # STATICFILES_STORAGE ='swift.storage.StaticSwiftStorage'
