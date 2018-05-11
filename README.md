@@ -1,5 +1,5 @@
 # LARMAS (LAnguage Resource MAnagement System)
-Thesis Project for final semester of my BSc.Eng Degree
+Final Year research project for my BSc.Eng Degree
 
 _Extract from report:_
 
